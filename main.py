@@ -1,5 +1,7 @@
 import logging, sys
 from importer import Importer
+from exporter import Exporter
+from triple_store import TripleStore
 
 fmt = "%(asctime)s [%(name)s] [%(levelname)s] %(message)s"
 datefmt = "%d/%m/%Y %H:%M:%S"
@@ -12,9 +14,11 @@ logging.basicConfig(format=fmt,
 log = logging.getLogger(__name__)
 
 if __name__ == "__main__":
-    log.info("Importer started")
+    log.info("Main function started")
 
-    importer = Importer()
+    triple_store = TripleStore()
+    exporter = Exporter(triple_store)
+    importer = Importer(triple_store)
     importer.start()
 
     while True:
@@ -23,5 +27,4 @@ if __name__ == "__main__":
             importer.queue.put(hazop_path)
 
         except KeyboardInterrupt as e:
-            importer.close()
             sys.exit(e)
