@@ -25,6 +25,5 @@ if __name__ == "__main__":
         try:
             hazop_path = input()
             importer.queue.put(hazop_path)
-
         except KeyboardInterrupt as e:
             sys.exit(e)
