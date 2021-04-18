@@ -1,4 +1,5 @@
-import logging, sys
+import logging, sys, glob
+
 from importer import Importer
 from exporter import Exporter
 from triple_store import TripleStore
@@ -21,9 +22,14 @@ if __name__ == "__main__":
     importer = Importer(triple_store)
     importer.start()
 
+    timeout = 1.0
+
     while True:
         try:
-            hazop_path = input()
-            importer.queue.put(hazop_path)
+            hazop_files = glob.glob("data/*.xlsb")
+            for file in hazop_files:
+                importer.queue.put(file)
+            importer.join(timeout)
+            sys.exit(f"Exit with timeout {timeout}")
         except KeyboardInterrupt as e:
             sys.exit(e)
