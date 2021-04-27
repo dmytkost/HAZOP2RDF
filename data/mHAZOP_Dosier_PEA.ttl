@@ -1,0 +1,488 @@
+@prefix HAZOPCase: <HAZOPCase/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.cae-pa.de/HAZOPCase/-> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/-/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/-/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/-/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/-/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/1> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/1/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/1/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/1/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/1/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/10> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/10/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/10/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/10/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/10/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/11> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/11/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/11/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/11/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/11/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/12> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/12/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/12/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/12/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/12/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/13> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/13/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/13/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/13/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/13/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/14> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/14/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/14/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/14/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/14/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/15> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/15/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/15/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/15/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/15/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/16> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/16/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/16/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/16/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/16/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/17> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/17/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/17/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/17/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/17/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/2> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/2/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/2/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/2/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/2/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/3> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/3/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/3/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/3/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/3/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/4> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/4/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/4/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/4/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/4/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/5> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/5/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/5/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/5/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/5/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/6> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/6/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/6/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/6/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/6/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/7> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/7/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/7/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/7/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/7/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/8> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/8/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/8/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/8/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/8/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/9_(wie_2)> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/9_(wie_2)/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/9_(wie_2)/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/9_(wie_2)/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/9_(wie_2)/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/nan> HAZOPCase:Cause <http://www.cae-pa.de/HAZOPCase/nan/Cause> ;
+    HAZOPCase:Consequence <http://www.cae-pa.de/HAZOPCase/nan/Consequence> ;
+    HAZOPCase:Deviation <http://www.cae-pa.de/HAZOPCase/nan/Deviation> ;
+    HAZOPCase:safeguard <http://www.cae-pa.de/HAZOPCase/nan/Safeguard> .
+
+<http://www.cae-pa.de/HAZOPCase/-/Cause> HAZOPCase:Consequence "NaN"^^xsd:double,
+        "Kein" ;
+    HAZOPCase:HAZOPNode "NaN"^^xsd:double,
+        "In 2 - N2 Eingang" ;
+    HAZOPCase:Parameter "NaN"^^xsd:double,
+        "Durchfluss" ;
+    HAZOPCase:Safeguard "NaN"^^xsd:double,
+        "Kein N2-Eingang bei gleichzeitigem Fördern der Pumpe (PL2010)" .
+
+<http://www.cae-pa.de/HAZOPCase/-/Consequence> HAZOPCase:Consequence "NaN"^^xsd:double ;
+    HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
+    HAZOPCase:Parameter "NaN"^^xsd:double ;
+    HAZOPCase:Safeguard "NaN"^^xsd:double .
+
+<http://www.cae-pa.de/HAZOPCase/-/Deviation> HAZOPCase:Consequence "Kein",
+        "Weniger" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Druck",
+        "Temperatur" ;
+    HAZOPCase:Safeguard "NaN"^^xsd:double,
+        "Unterschreitung des zulässigen Drucks im Behälter" .
+
+<http://www.cae-pa.de/HAZOPCase/-/Safeguard> HAZOPCase:Consequence "NaN"^^xsd:double ;
+    HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
+    HAZOPCase:Parameter "NaN"^^xsd:double ;
+    HAZOPCase:Safeguard "NaN"^^xsd:double .
+
+<http://www.cae-pa.de/HAZOPCase/1/Cause> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "In 1 - Feed-Eingang" ;
+    HAZOPCase:Parameter "Temperatur" ;
+    HAZOPCase:Safeguard "Zugeführtes Prozessmedium zu heiß (>200°C)" .
+
+<http://www.cae-pa.de/HAZOPCase/1/Consequence> HAZOPCase:Consequence "NaN"^^xsd:double ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "NaN"^^xsd:double ;
+    HAZOPCase:Safeguard "Materialversagen der Dichtungen, Leckage" .
+
+<http://www.cae-pa.de/HAZOPCase/1/Deviation> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Temperatur" ;
+    HAZOPCase:Safeguard "Überschreitung der zulässigen Temperatur im Behälter" .
+
+<http://www.cae-pa.de/HAZOPCase/1/Safeguard> HAZOPCase:Consequence "G2 - fast unmöglich" ;
+    HAZOPCase:HAZOPNode "S2 - geringe" ;
+    HAZOPCase:Parameter "A2 - häufig bis andauernd" ;
+    HAZOPCase:Safeguard "W2 - gering" .
+
+<http://www.cae-pa.de/HAZOPCase/10/Cause> HAZOPCase:Consequence "Kein" ;
+    HAZOPCase:HAZOPNode "In 1 - Feed-Eingang" ;
+    HAZOPCase:Parameter "Konzentration" ;
+    HAZOPCase:Safeguard "reines Lösungsmittel wird zugeführt" .
+
+<http://www.cae-pa.de/HAZOPCase/10/Consequence> HAZOPCase:Consequence "NaN"^^xsd:double ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "NaN"^^xsd:double ;
+    HAZOPCase:Safeguard "kein" .
+
+<http://www.cae-pa.de/HAZOPCase/10/Deviation> HAZOPCase:Consequence "Kein" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Konzentration" ;
+    HAZOPCase:Safeguard "nur reines Lösungsmittel in Behälter" .
+
+<http://www.cae-pa.de/HAZOPCase/10/Safeguard> HAZOPCase:Consequence "G1 - möglich" ;
+    HAZOPCase:HAZOPNode "S1 - minimale " ;
+    HAZOPCase:Parameter "A2 - häufig bis andauernd" ;
+    HAZOPCase:Safeguard "W3 - relativ hoch" .
+
+<http://www.cae-pa.de/HAZOPCase/11/Cause> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "In 1 - Feed-Eingang" ;
+    HAZOPCase:Parameter "Konzentration" ;
+    HAZOPCase:Safeguard "starke Säure oder Base wird zugeführt" .
+
+<http://www.cae-pa.de/HAZOPCase/11/Consequence> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Konzentration" ;
+    HAZOPCase:Safeguard "Korrosion an Wand, Schweißnähte oder Dichtungen" .
+
+<http://www.cae-pa.de/HAZOPCase/11/Deviation> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Konzentration" ;
+    HAZOPCase:Safeguard "starke Säure oder Base" .
+
+<http://www.cae-pa.de/HAZOPCase/11/Safeguard> HAZOPCase:Consequence "G2 - fast unmöglich" ;
+    HAZOPCase:HAZOPNode "S4 - katastophal" ;
+    HAZOPCase:Parameter "A2 - häufig bis andauernd" ;
+    HAZOPCase:Safeguard "W1 - sehr gering" .
+
+<http://www.cae-pa.de/HAZOPCase/12/Cause> HAZOPCase:Consequence "NaN"^^xsd:double ;
+    HAZOPCase:HAZOPNode "In 1 - Feed-Eingang" ;
+    HAZOPCase:Parameter "Konzentration" ;
+    HAZOPCase:Safeguard "organisches Lösungsmittel wird angeschlossen" .
+
+<http://www.cae-pa.de/HAZOPCase/12/Consequence> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Konzentration" ;
+    HAZOPCase:Safeguard "Beschädigung der Dichtungen" .
+
+<http://www.cae-pa.de/HAZOPCase/12/Deviation> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Konzentration" ;
+    HAZOPCase:Safeguard "organisches Lösungsmittel" .
+
+<http://www.cae-pa.de/HAZOPCase/12/Safeguard> HAZOPCase:Consequence "G1 - möglich" ;
+    HAZOPCase:HAZOPNode "S3 - schwerwiegende " ;
+    HAZOPCase:Parameter "A2 - häufig bis andauernd" ;
+    HAZOPCase:Safeguard "W2 - gering" .
+
+<http://www.cae-pa.de/HAZOPCase/13/Cause> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "In 1 - Feed-Eingang" ;
+    HAZOPCase:Parameter "Konzentration" ;
+    HAZOPCase:Safeguard "hoch viskoses Medium" .
+
+<http://www.cae-pa.de/HAZOPCase/13/Consequence> HAZOPCase:Consequence "Weniger" ;
+    HAZOPCase:HAZOPNode "Out 1 - Feed Ausgang" ;
+    HAZOPCase:Parameter "Leistung" ;
+    HAZOPCase:Safeguard "Pumpe ist überfordert" .
+
+<http://www.cae-pa.de/HAZOPCase/13/Deviation> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Konzentration" ;
+    HAZOPCase:Safeguard "hohe Viskosität" .
+
+<http://www.cae-pa.de/HAZOPCase/13/Safeguard> HAZOPCase:Consequence "G2 - fast unmöglich" ;
+    HAZOPCase:HAZOPNode "S2 - geringe" ;
+    HAZOPCase:Parameter "A2 - häufig bis andauernd" ;
+    HAZOPCase:Safeguard "W1 - sehr gering" .
+
+<http://www.cae-pa.de/HAZOPCase/14/Cause> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Konzentration" ;
+    HAZOPCase:Safeguard "Feststoffe durch Überschreiten einer Sättigungskonszentration" .
+
+<http://www.cae-pa.de/HAZOPCase/14/Consequence> HAZOPCase:Consequence "Weniger" ;
+    HAZOPCase:HAZOPNode "Out 1 - Feed Ausgang" ;
+    HAZOPCase:Parameter "Druck" ;
+    HAZOPCase:Safeguard "Höherer Druckverlust über Filter, Pumpe kavitiert" .
+
+<http://www.cae-pa.de/HAZOPCase/14/Deviation> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Konzentration" ;
+    HAZOPCase:Safeguard "Feststoffe bilden sich" .
+
+<http://www.cae-pa.de/HAZOPCase/14/Safeguard> HAZOPCase:Consequence "G1 - möglich" ;
+    HAZOPCase:HAZOPNode "S2 - geringe" ;
+    HAZOPCase:Parameter "A2 - häufig bis andauernd" ;
+    HAZOPCase:Safeguard "W2 - gering" .
+
+<http://www.cae-pa.de/HAZOPCase/15/Cause> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "In 1 - Feed-Eingang" ;
+    HAZOPCase:Parameter "Konzentration" ;
+    HAZOPCase:Safeguard "Feststoffe gelangen in Behälter" .
+
+<http://www.cae-pa.de/HAZOPCase/15/Consequence> HAZOPCase:Consequence "Weniger" ;
+    HAZOPCase:HAZOPNode "Out 1 - Feed Ausgang" ;
+    HAZOPCase:Parameter "Druck" ;
+    HAZOPCase:Safeguard "Höherer Druckverlust über Filter, Pumpe kavitiert" .
+
+<http://www.cae-pa.de/HAZOPCase/15/Deviation> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Konzentration" ;
+    HAZOPCase:Safeguard "Feststoffe werden in Behälter eingelassen" .
+
+<http://www.cae-pa.de/HAZOPCase/15/Safeguard> HAZOPCase:Consequence "G1 - möglich" ;
+    HAZOPCase:HAZOPNode "S2 - geringe" ;
+    HAZOPCase:Parameter "A2 - häufig bis andauernd" ;
+    HAZOPCase:Safeguard "W2 - gering" .
+
+<http://www.cae-pa.de/HAZOPCase/16/Cause> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Konzentration" ;
+    HAZOPCase:Safeguard "Feststoffe gelangen in Behälter" .
+
+<http://www.cae-pa.de/HAZOPCase/16/Consequence> HAZOPCase:Consequence "Weniger" ;
+    HAZOPCase:HAZOPNode "Out 1 - Feed Ausgang" ;
+    HAZOPCase:Parameter "Druck" ;
+    HAZOPCase:Safeguard "Höherer Druckverlust über Filter, Pumpe kavitiert" .
+
+<http://www.cae-pa.de/HAZOPCase/16/Deviation> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Konzentration" ;
+    HAZOPCase:Safeguard "Dichtungsabrieb in Behälter " .
+
+<http://www.cae-pa.de/HAZOPCase/16/Safeguard> HAZOPCase:Consequence "G1 - möglich" ;
+    HAZOPCase:HAZOPNode "S2 - geringe" ;
+    HAZOPCase:Parameter "A2 - häufig bis andauernd" ;
+    HAZOPCase:Safeguard "W2 - gering" .
+
+<http://www.cae-pa.de/HAZOPCase/17/Cause> HAZOPCase:Consequence "Anderer/Anders als" ;
+    HAZOPCase:HAZOPNode "In 2 - N2 Eingang" ;
+    HAZOPCase:Parameter "Konzentration" ;
+    HAZOPCase:Safeguard "Luft, O2, CH4 oder andere brennbare Medien --> HAZOPCase ID 5" .
+
+<http://www.cae-pa.de/HAZOPCase/17/Consequence> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Druck" ;
+    HAZOPCase:Safeguard "Explosionsfähige Atmosphäre" .
+
+<http://www.cae-pa.de/HAZOPCase/17/Deviation> HAZOPCase:Consequence "Anderer/Anders als" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Konzentration" ;
+    HAZOPCase:Safeguard "Stickstoff zum Inertisieren" .
+
+<http://www.cae-pa.de/HAZOPCase/17/Safeguard> HAZOPCase:Consequence "G2 - fast unmöglich" ;
+    HAZOPCase:HAZOPNode "S4 - katastophal" ;
+    HAZOPCase:Parameter "A2 - häufig bis andauernd" ;
+    HAZOPCase:Safeguard "W1 - sehr gering" .
+
+<http://www.cae-pa.de/HAZOPCase/2/Cause> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Temperatur" ;
+    HAZOPCase:Safeguard "Hohe Temperatur aus vorangegangenem Prozessschritt" .
+
+<http://www.cae-pa.de/HAZOPCase/2/Consequence> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Druck" ;
+    HAZOPCase:Safeguard "Schlagartiges Verdampfen (Druckstoß) der Edukte aufgrund der Hohen Temperatur im Behälter, bersten des Behälters" .
+
+<http://www.cae-pa.de/HAZOPCase/2/Deviation> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Temperatur" ;
+    HAZOPCase:Safeguard "Überschreitung der zulässigen Temperatur im Behälter" .
+
+<http://www.cae-pa.de/HAZOPCase/2/Safeguard> HAZOPCase:Consequence "G1 - möglich" ;
+    HAZOPCase:HAZOPNode "S3 - schwerwiegende " ;
+    HAZOPCase:Parameter "A2 - häufig bis andauernd" ;
+    HAZOPCase:Safeguard "W1 - sehr gering" .
+
+<http://www.cae-pa.de/HAZOPCase/3/Cause> HAZOPCase:Consequence "NaN"^^xsd:double ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "NaN"^^xsd:double ;
+    HAZOPCase:Safeguard "Brand im Außenbereich, Strahlungswärme >200°C" .
+
+<http://www.cae-pa.de/HAZOPCase/3/Consequence> HAZOPCase:Consequence "NaN"^^xsd:double ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "NaN"^^xsd:double ;
+    HAZOPCase:Safeguard "Leckage durch versagen der Dichtungen, Verdampfen der Edukte aufgrund hoher Umgebungstemperaturen" .
+
+<http://www.cae-pa.de/HAZOPCase/3/Deviation> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Temperatur" ;
+    HAZOPCase:Safeguard "Überschreitung der zulässigen Temperatur im Behälter" .
+
+<http://www.cae-pa.de/HAZOPCase/3/Safeguard> HAZOPCase:Consequence "G1 - möglich" ;
+    HAZOPCase:HAZOPNode "S2 - geringe" ;
+    HAZOPCase:Parameter "A2 - häufig bis andauernd" ;
+    HAZOPCase:Safeguard "W1 - sehr gering" .
+
+<http://www.cae-pa.de/HAZOPCase/4/Cause> HAZOPCase:Consequence "Anderer/Anders als" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Medium" ;
+    HAZOPCase:Safeguard "Verunreinigung, bspw. Säure/Lauge die zu einer Wäremeentwicklung führen" .
+
+<http://www.cae-pa.de/HAZOPCase/4/Consequence> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Druck" ;
+    HAZOPCase:Safeguard "Schlagartiges Verdampfen (Druckstoß) der Edukte aufgrund einer Reaktion im Behälter, bersten des Behälters" .
+
+<http://www.cae-pa.de/HAZOPCase/4/Deviation> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Temperatur" ;
+    HAZOPCase:Safeguard "Überschreitung der zulässigen Temperatur im Behälter" .
+
+<http://www.cae-pa.de/HAZOPCase/4/Safeguard> HAZOPCase:Consequence "G1 - möglich" ;
+    HAZOPCase:HAZOPNode "S3 - schwerwiegende " ;
+    HAZOPCase:Parameter "A2 - häufig bis andauernd" ;
+    HAZOPCase:Safeguard "W2 - gering" .
+
+<http://www.cae-pa.de/HAZOPCase/5/Cause> HAZOPCase:Consequence "Anderer/Anders als" ;
+    HAZOPCase:HAZOPNode "In 2 - N2 Eingang" ;
+    HAZOPCase:Parameter "Medium" ;
+    HAZOPCase:Safeguard "Stoffverwechslung am Stickstoffeingang (z.B. Chlor)" .
+
+<http://www.cae-pa.de/HAZOPCase/5/Consequence> HAZOPCase:Consequence "NaN"^^xsd:double ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "NaN"^^xsd:double ;
+    HAZOPCase:Safeguard "Bilden einer explosionsfähige Atmosphäre" .
+
+<http://www.cae-pa.de/HAZOPCase/5/Deviation> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Temperatur" ;
+    HAZOPCase:Safeguard "Überschreitung der zulässigen Temperatur im Behälter" .
+
+<http://www.cae-pa.de/HAZOPCase/5/Safeguard> HAZOPCase:Consequence "G1 - möglich" ;
+    HAZOPCase:HAZOPNode "S3 - schwerwiegende " ;
+    HAZOPCase:Parameter "A2 - häufig bis andauernd" ;
+    HAZOPCase:Safeguard "W1 - sehr gering" .
+
+<http://www.cae-pa.de/HAZOPCase/6/Cause> HAZOPCase:Consequence "NaN"^^xsd:double ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "NaN"^^xsd:double ;
+    HAZOPCase:Safeguard "Extrem niedrige Umgebungstemperatur" .
+
+<http://www.cae-pa.de/HAZOPCase/6/Consequence> HAZOPCase:Consequence "Anderer/Anders als" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Aggregatzustand" ;
+    HAZOPCase:Safeguard "Einfrieren des Mediums" .
+
+<http://www.cae-pa.de/HAZOPCase/6/Deviation> HAZOPCase:Consequence "Weniger" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Temperatur" ;
+    HAZOPCase:Safeguard "Unterschreitung der zulässigen Temperatur im Behälter" .
+
+<http://www.cae-pa.de/HAZOPCase/6/Safeguard> HAZOPCase:Consequence "G1 - möglich" ;
+    HAZOPCase:HAZOPNode "S2 - geringe" ;
+    HAZOPCase:Parameter "A2 - häufig bis andauernd" ;
+    HAZOPCase:Safeguard "W1 - sehr gering" .
+
+<http://www.cae-pa.de/HAZOPCase/7/Cause> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "In 1 - Feed-Eingang" ;
+    HAZOPCase:Parameter "Druck" ;
+    HAZOPCase:Safeguard "Druck des eingehenden Mediums zu hoch" .
+
+<http://www.cae-pa.de/HAZOPCase/7/Consequence> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Druck" ;
+    HAZOPCase:Safeguard "Druckerhöhung innerhalb des Behälters" .
+
+<http://www.cae-pa.de/HAZOPCase/7/Deviation> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Druck" ;
+    HAZOPCase:Safeguard "Überschreitung des zulässigen Druckes im Behälter" .
+
+<http://www.cae-pa.de/HAZOPCase/7/Safeguard> HAZOPCase:Consequence "G1 - möglich" ;
+    HAZOPCase:HAZOPNode "S3 - schwerwiegende " ;
+    HAZOPCase:Parameter "A2 - häufig bis andauernd" ;
+    HAZOPCase:Safeguard "W2 - gering" .
+
+<http://www.cae-pa.de/HAZOPCase/8/Cause> HAZOPCase:Consequence "Anderer/Anders als" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Medium" ;
+    HAZOPCase:Safeguard "Verunreinigung im Behälter führt zu exothermer Reaktion unter Gasbildung" .
+
+<http://www.cae-pa.de/HAZOPCase/8/Consequence> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Druck" ;
+    HAZOPCase:Safeguard "Temperatur zusätzlich zum Druckanstieg im Behälter" .
+
+<http://www.cae-pa.de/HAZOPCase/8/Deviation> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Druck" ;
+    HAZOPCase:Safeguard "Überschreitung des zulässigen Druckes im Behälter" .
+
+<http://www.cae-pa.de/HAZOPCase/8/Safeguard> HAZOPCase:Consequence "G1 - möglich" ;
+    HAZOPCase:HAZOPNode "S3 - schwerwiegende " ;
+    HAZOPCase:Parameter "A2 - häufig bis andauernd" ;
+    HAZOPCase:Safeguard "W2 - gering" .
+
+<http://www.cae-pa.de/HAZOPCase/9_(wie_2)/Cause> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Temperatur" ;
+    HAZOPCase:Safeguard "z.B. Starke Wärmestrahlung auf Behälter" .
+
+<http://www.cae-pa.de/HAZOPCase/9_(wie_2)/Consequence> HAZOPCase:Consequence "NaN"^^xsd:double ;
+    HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
+    HAZOPCase:Parameter "NaN"^^xsd:double ;
+    HAZOPCase:Safeguard "NaN"^^xsd:double .
+
+<http://www.cae-pa.de/HAZOPCase/9_(wie_2)/Deviation> HAZOPCase:Consequence "Mehr" ;
+    HAZOPCase:HAZOPNode "Speicherbehälter" ;
+    HAZOPCase:Parameter "Druck" ;
+    HAZOPCase:Safeguard "Überschreitung des zulässigen Druckes im Behälter" .
+
+<http://www.cae-pa.de/HAZOPCase/9_(wie_2)/Safeguard> HAZOPCase:Consequence "NaN"^^xsd:double ;
+    HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
+    HAZOPCase:Parameter "NaN"^^xsd:double ;
+    HAZOPCase:Safeguard "NaN"^^xsd:double .
+
+<http://www.cae-pa.de/HAZOPCase/nan/Cause> HAZOPCase:Consequence "NaN"^^xsd:double ;
+    HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
+    HAZOPCase:Parameter "NaN"^^xsd:double ;
+    HAZOPCase:Safeguard "NaN"^^xsd:double .
+
+<http://www.cae-pa.de/HAZOPCase/nan/Consequence> HAZOPCase:Consequence "NaN"^^xsd:double ;
+    HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
+    HAZOPCase:Parameter "NaN"^^xsd:double ;
+    HAZOPCase:Safeguard "NaN"^^xsd:double .
+
+<http://www.cae-pa.de/HAZOPCase/nan/Deviation> HAZOPCase:Consequence "NaN"^^xsd:double,
+        "Mehr" ;
+    HAZOPCase:HAZOPNode "NaN"^^xsd:double,
+        "Speicherbehälter" ;
+    HAZOPCase:Parameter "NaN"^^xsd:double,
+        "Durchfluss" ;
+    HAZOPCase:Safeguard "NaN"^^xsd:double .
+
+<http://www.cae-pa.de/HAZOPCase/nan/Safeguard> HAZOPCase:Consequence "NaN"^^xsd:double ;
+    HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
+    HAZOPCase:Parameter "NaN"^^xsd:double ;
+    HAZOPCase:Safeguard "NaN"^^xsd:double .
+
