@@ -20,6 +20,8 @@ if __name__ == "__main__":
     triple_store = TripleStore()
     exporter = Exporter(triple_store)
     importer = Importer(triple_store)
+
+    triple_store.start()
     importer.start()
 
     timeout = 1.0

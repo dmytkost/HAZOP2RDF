@@ -1,8 +1,16 @@
-import logging
+import logging, threading, queue
 
 log = logging.getLogger(__name__)
 
 
-class TripleStore:
+class TripleStore(threading.Thread):
     def __init__(self):
-    	pass
+        super(TripleStore, self).__init__()
+        self.queue = queue.Queue()
+        self.daemon = True
+
+    def run(self):
+        while True:
+            graph = self.queue.get(True)
+            log.info(graph)
+

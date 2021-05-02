@@ -11,6 +11,7 @@ class Importer(threading.Thread):
     def __init__(self, triple_store):
         super(Importer, self).__init__()
         self.triple_store = triple_store
+        self.rdf = RDFGraphMaker()
         self.queue = queue.Queue()
         self.daemon = True
 
@@ -18,27 +19,23 @@ class Importer(threading.Thread):
         while True:
             hazop_path = self.queue.get(True)
             df_hazop = self.read_hazop(hazop_path)
-
-            # log.info(df_hazop["Deviation"]["HAZOPNode"])
-
-            maker = GraphMaker()
-            maker.make(df_hazop)
+            graph = self.rdf.make(df_hazop)
+            self.triple_store.queue.put(graph)
 
     def read_hazop(self, hazop_path):
         df = pd.read_excel(hazop_path,
                            engine="pyxlsb",
                            header=[2, 3],
                            sheet_name=1)
+        df_filtered = df[df.iloc[:, 0].notnull()]
 
-        return df
+        return df_filtered
 
 
-class GraphMaker:
+class RDFGraphMaker:
     def make(self, df):
         g = Graph()
-
         n = Namespace("HAZOPCase/")
-
         g.bind("HAZOPCase", n)
 
         for i, row in df.iterrows():
@@ -76,7 +73,10 @@ class GraphMaker:
             g.add((safeguard, n.Guideword, Literal(row[15])))
             g.add((safeguard, n.Description, Literal(row[16])))
 
-        with open("data/mHAZOP_Dosier_PEA.ttl", "w") as file:
-            file.write(g.serialize(format="turtle").decode("utf-8"))
+        g_str = g.serialize(format="turtle").decode("utf-8")
 
-        log.info(g.serialize(format="turtle").decode("utf-8"))
+        # with open("data/mHAZOP_Dosier_PEA.ttl", "w") as file:
+        #     file.write(g_str)
+        # log.info(g_str)
+
+        return g_str
