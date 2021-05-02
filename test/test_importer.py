@@ -10,8 +10,8 @@ class TestImporter(unittest.TestCase):
         self.importer = Importer()
 
     def test_read_hazop(self):
-        samples = glob.glob("test/data/samples/*.xlsx")
-        results = glob.glob("test/data/results/*.xlsx")
+        samples = glob.glob("test/samples/*.xlsx")
+        results = glob.glob("test/results/*.xlsx")
 
         for sample, result in zip(samples, results):
             config = {
@@ -29,8 +29,8 @@ class TestImporter(unittest.TestCase):
                                           check_dtype=False)
 
     def test_graph_maker(self):
-        samples = glob.glob("test/data/samples/*.xlsb")
-        results = glob.glob("test/data/results/*.ttl")
+        samples = glob.glob("test/samples/*.xlsb")
+        results = glob.glob("test/results/*.ttl")
 
         warnings.simplefilter("ignore", ResourceWarning)
 
@@ -64,4 +64,4 @@ def testImporterSuite():
 
 if __name__ == "__main__":
     runner = unittest.TextTestRunner()
-    runner.run(TestImporterSuite())
+    runner.run(testImporterSuite())
