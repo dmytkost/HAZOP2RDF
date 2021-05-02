@@ -46,12 +46,16 @@ class RDFGraphMaker:
             deviation   = BNode()
             cause       = BNode()
             consequence = BNode()
+            riskgraph   = BNode()
             safeguard   = BNode()
+            restrisiko  = BNode()
 
             g.add((reference, n.Deviation, deviation))
             g.add((reference, n.Cause, cause))
             g.add((reference, n.Consequence, consequence))
+            g.add((reference, n.Riskgraph, riskgraph))
             g.add((reference, n.Safeguard, safeguard))
+            g.add((reference, n.Restrisiko, restrisiko))
 
             g.add((deviation, n.HAZOPNode, Literal(row[1])))
             g.add((deviation, n.Parameter, Literal(row[2])))
@@ -68,10 +72,20 @@ class RDFGraphMaker:
             g.add((consequence, n.Guideword, Literal(row[11])))
             g.add((consequence, n.Description, Literal(row[12])))
 
-            g.add((safeguard, n.HAZOPNode, Literal(row[13])))
-            g.add((safeguard, n.Parameter, Literal(row[14])))
-            g.add((safeguard, n.Guideword, Literal(row[15])))
-            g.add((safeguard, n.Description, Literal(row[16])))
+            g.add((riskgraph, n.Severity, Literal(row[13])))
+            g.add((riskgraph, n.FrequencyOfPresence, Literal(row[14])))
+            g.add((riskgraph, n.PossibilityOfAvoiding, Literal(row[15])))
+            g.add((riskgraph, n.Probability, Literal(row[16])))
+
+            g.add((safeguard, n.HAZOPNode, Literal(row[17])))
+            g.add((safeguard, n.Parameter, Literal(row[18])))
+            g.add((safeguard, n.Recommendation, Literal(row[19])))
+            g.add((safeguard, n.Recommendation, Literal(row[20])))
+
+            g.add((restrisiko, n.Severity, Literal(row[21])))
+            g.add((restrisiko, n.FrequencyOfPresence, Literal(row[22])))
+            g.add((restrisiko, n.PossibilityOfAvoiding, Literal(row[23])))
+            g.add((restrisiko, n.Probability, Literal(row[24])))
 
         g_str = g.serialize(format="turtle").decode("utf-8")
 

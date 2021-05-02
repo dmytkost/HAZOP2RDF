@@ -1,14 +1,14 @@
 @prefix HAZOPCase: <HAZOPCase/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://www.cae-pa.de/HAZOPCase/-> HAZOPCase:Cause [ HAZOPCase:Description "Kein N2-Eingang bei gleichzeitigem Fördern der Pumpe (PL2010)" ;
-            HAZOPCase:Guideword "Kein" ;
-            HAZOPCase:HAZOPNode "In 2 - N2 Eingang" ;
-            HAZOPCase:Parameter "Durchfluss" ],
-        [ HAZOPCase:Description "NaN"^^xsd:double ;
+<http://www.cae-pa.de/HAZOPCase/-> HAZOPCase:Cause [ HAZOPCase:Description "NaN"^^xsd:double ;
             HAZOPCase:Guideword "NaN"^^xsd:double ;
             HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
-            HAZOPCase:Parameter "NaN"^^xsd:double ] ;
+            HAZOPCase:Parameter "NaN"^^xsd:double ],
+        [ HAZOPCase:Description "Kein N2-Eingang bei gleichzeitigem Fördern der Pumpe (PL2010)" ;
+            HAZOPCase:Guideword "Kein" ;
+            HAZOPCase:HAZOPNode "In 2 - N2 Eingang" ;
+            HAZOPCase:Parameter "Durchfluss" ] ;
     HAZOPCase:Consequence [ HAZOPCase:Description "NaN"^^xsd:double ;
             HAZOPCase:Guideword "NaN"^^xsd:double ;
             HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
@@ -17,22 +17,36 @@
             HAZOPCase:Guideword "NaN"^^xsd:double ;
             HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
             HAZOPCase:Parameter "NaN"^^xsd:double ] ;
-    HAZOPCase:Deviation [ HAZOPCase:Description "Unterschreitung des zulässigen Drucks im Behälter" ;
-            HAZOPCase:Guideword "Weniger" ;
-            HAZOPCase:HAZOPNode "Speicherbehälter" ;
-            HAZOPCase:Parameter "Druck" ],
-        [ HAZOPCase:Description "NaN"^^xsd:double ;
+    HAZOPCase:Deviation [ HAZOPCase:Description "NaN"^^xsd:double ;
             HAZOPCase:Guideword "Kein" ;
             HAZOPCase:HAZOPNode "Speicherbehälter" ;
-            HAZOPCase:Parameter "Temperatur" ] ;
-    HAZOPCase:Safeguard [ HAZOPCase:Description "NaN"^^xsd:double ;
-            HAZOPCase:Guideword "NaN"^^xsd:double ;
-            HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
-            HAZOPCase:Parameter "NaN"^^xsd:double ],
-        [ HAZOPCase:Description "NaN"^^xsd:double ;
-            HAZOPCase:Guideword "NaN"^^xsd:double ;
-            HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
-            HAZOPCase:Parameter "NaN"^^xsd:double ] .
+            HAZOPCase:Parameter "Temperatur" ],
+        [ HAZOPCase:Description "Unterschreitung des zulässigen Drucks im Behälter" ;
+            HAZOPCase:Guideword "Weniger" ;
+            HAZOPCase:HAZOPNode "Speicherbehälter" ;
+            HAZOPCase:Parameter "Druck" ] ;
+    HAZOPCase:Restrisiko [ HAZOPCase:FrequencyOfPresence "NaN"^^xsd:double ;
+            HAZOPCase:PossibilityOfAvoiding "NaN"^^xsd:double ;
+            HAZOPCase:Probability "NaN"^^xsd:double ;
+            HAZOPCase:Severity "NaN"^^xsd:double ],
+        [ HAZOPCase:FrequencyOfPresence "NaN"^^xsd:double ;
+            HAZOPCase:PossibilityOfAvoiding "NaN"^^xsd:double ;
+            HAZOPCase:Probability "NaN"^^xsd:double ;
+            HAZOPCase:Severity "NaN"^^xsd:double ] ;
+    HAZOPCase:Riskgraph [ HAZOPCase:FrequencyOfPresence "NaN"^^xsd:double ;
+            HAZOPCase:PossibilityOfAvoiding "NaN"^^xsd:double ;
+            HAZOPCase:Probability "NaN"^^xsd:double ;
+            HAZOPCase:Severity "NaN"^^xsd:double ],
+        [ HAZOPCase:FrequencyOfPresence "NaN"^^xsd:double ;
+            HAZOPCase:PossibilityOfAvoiding "NaN"^^xsd:double ;
+            HAZOPCase:Probability "NaN"^^xsd:double ;
+            HAZOPCase:Severity "NaN"^^xsd:double ] ;
+    HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
+            HAZOPCase:Parameter "NaN"^^xsd:double ;
+            HAZOPCase:Recommendation "NaN"^^xsd:double ],
+        [ HAZOPCase:HAZOPNode "Speicherbehälter" ;
+            HAZOPCase:Parameter "Speicherbehälter und Filter für Unterdruck/Vakuum ausgelegt" ;
+            HAZOPCase:Recommendation "NaN"^^xsd:double ] .
 
 <http://www.cae-pa.de/HAZOPCase/1> HAZOPCase:Cause [ HAZOPCase:Description "Zugeführtes Prozessmedium zu heiß (>200°C)" ;
             HAZOPCase:Guideword "Mehr" ;
@@ -46,10 +60,17 @@
             HAZOPCase:Guideword "Mehr" ;
             HAZOPCase:HAZOPNode "Speicherbehälter" ;
             HAZOPCase:Parameter "Temperatur" ] ;
-    HAZOPCase:Safeguard [ HAZOPCase:Description "W2 - gering" ;
-            HAZOPCase:Guideword "G2 - fast unmöglich" ;
-            HAZOPCase:HAZOPNode "S2 - geringe" ;
-            HAZOPCase:Parameter "A2 - häufig bis andauernd" ] .
+    HAZOPCase:Restrisiko [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G2 - fast unmöglich" ;
+            HAZOPCase:Probability "W2 - gering" ;
+            HAZOPCase:Severity "S1 - minimale " ] ;
+    HAZOPCase:Riskgraph [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G2 - fast unmöglich" ;
+            HAZOPCase:Probability "W2 - gering" ;
+            HAZOPCase:Severity "S2 - geringe" ] ;
+    HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "Speicherbehälter" ;
+            HAZOPCase:Parameter "Hochwertige Dichtungen für Temp. über 200°C (bei 25bar)" ;
+            HAZOPCase:Recommendation "NaN"^^xsd:double ] .
 
 <http://www.cae-pa.de/HAZOPCase/10> HAZOPCase:Cause [ HAZOPCase:Description "reines Lösungsmittel wird zugeführt" ;
             HAZOPCase:Guideword "Kein" ;
@@ -63,10 +84,18 @@
             HAZOPCase:Guideword "Kein" ;
             HAZOPCase:HAZOPNode "Speicherbehälter" ;
             HAZOPCase:Parameter "Konzentration" ] ;
-    HAZOPCase:Safeguard [ HAZOPCase:Description "W3 - relativ hoch" ;
-            HAZOPCase:Guideword "G1 - möglich" ;
-            HAZOPCase:HAZOPNode "S1 - minimale " ;
-            HAZOPCase:Parameter "A2 - häufig bis andauernd" ] .
+    HAZOPCase:Restrisiko [ HAZOPCase:FrequencyOfPresence "NaN"^^xsd:double ;
+            HAZOPCase:PossibilityOfAvoiding "NaN"^^xsd:double ;
+            HAZOPCase:Probability "NaN"^^xsd:double ;
+            HAZOPCase:Severity "NaN"^^xsd:double ] ;
+    HAZOPCase:Riskgraph [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G1 - möglich" ;
+            HAZOPCase:Probability "W3 - relativ hoch" ;
+            HAZOPCase:Severity "S1 - minimale " ] ;
+    HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "In 1 - Feed-Eingang" ;
+            HAZOPCase:Parameter "keine Aktion erforderlich" ;
+            HAZOPCase:Recommendation "NaN"^^xsd:double,
+                "Normalzustand" ] .
 
 <http://www.cae-pa.de/HAZOPCase/11> HAZOPCase:Cause [ HAZOPCase:Description "starke Säure oder Base wird zugeführt" ;
             HAZOPCase:Guideword "Mehr" ;
@@ -80,10 +109,18 @@
             HAZOPCase:Guideword "Mehr" ;
             HAZOPCase:HAZOPNode "Speicherbehälter" ;
             HAZOPCase:Parameter "Konzentration" ] ;
-    HAZOPCase:Safeguard [ HAZOPCase:Description "W1 - sehr gering" ;
-            HAZOPCase:Guideword "G2 - fast unmöglich" ;
-            HAZOPCase:HAZOPNode "S4 - katastophal" ;
-            HAZOPCase:Parameter "A2 - häufig bis andauernd" ] .
+    HAZOPCase:Restrisiko [ HAZOPCase:FrequencyOfPresence "A1 - selten bis häufig" ;
+            HAZOPCase:PossibilityOfAvoiding "G2 - fast unmöglich" ;
+            HAZOPCase:Probability "W1 - sehr gering" ;
+            HAZOPCase:Severity "S1 - minimale " ] ;
+    HAZOPCase:Riskgraph [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G2 - fast unmöglich" ;
+            HAZOPCase:Probability "W1 - sehr gering" ;
+            HAZOPCase:Severity "S4 - katastophal" ] ;
+    HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "In 1 - Feed-Eingang" ;
+            HAZOPCase:Parameter "Schulung und SOPs" ;
+            HAZOPCase:Recommendation "NaN"^^xsd:double,
+                "Mitarbeiter vor Verwendung starker Säuren und Basen gut trainieren" ] .
 
 <http://www.cae-pa.de/HAZOPCase/12> HAZOPCase:Cause [ HAZOPCase:Description "organisches Lösungsmittel wird angeschlossen" ;
             HAZOPCase:Guideword "NaN"^^xsd:double ;
@@ -97,10 +134,18 @@
             HAZOPCase:Guideword "Mehr" ;
             HAZOPCase:HAZOPNode "Speicherbehälter" ;
             HAZOPCase:Parameter "Konzentration" ] ;
-    HAZOPCase:Safeguard [ HAZOPCase:Description "W2 - gering" ;
-            HAZOPCase:Guideword "G1 - möglich" ;
-            HAZOPCase:HAZOPNode "S3 - schwerwiegende " ;
-            HAZOPCase:Parameter "A2 - häufig bis andauernd" ] .
+    HAZOPCase:Restrisiko [ HAZOPCase:FrequencyOfPresence "A1 - selten bis häufig" ;
+            HAZOPCase:PossibilityOfAvoiding "G2 - fast unmöglich" ;
+            HAZOPCase:Probability "W1 - sehr gering" ;
+            HAZOPCase:Severity "S1 - minimale " ] ;
+    HAZOPCase:Riskgraph [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G1 - möglich" ;
+            HAZOPCase:Probability "W2 - gering" ;
+            HAZOPCase:Severity "S3 - schwerwiegende " ] ;
+    HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "In 1 - Feed-Eingang" ;
+            HAZOPCase:Parameter "Schulung und SOPs" ;
+            HAZOPCase:Recommendation "NaN"^^xsd:double,
+                "Mitarbeiter vor Verwendung organischer Medien gut trainieren" ] .
 
 <http://www.cae-pa.de/HAZOPCase/13> HAZOPCase:Cause [ HAZOPCase:Description "hoch viskoses Medium" ;
             HAZOPCase:Guideword "Mehr" ;
@@ -114,10 +159,18 @@
             HAZOPCase:Guideword "Mehr" ;
             HAZOPCase:HAZOPNode "Speicherbehälter" ;
             HAZOPCase:Parameter "Konzentration" ] ;
-    HAZOPCase:Safeguard [ HAZOPCase:Description "W1 - sehr gering" ;
-            HAZOPCase:Guideword "G2 - fast unmöglich" ;
-            HAZOPCase:HAZOPNode "S2 - geringe" ;
-            HAZOPCase:Parameter "A2 - häufig bis andauernd" ] .
+    HAZOPCase:Restrisiko [ HAZOPCase:FrequencyOfPresence "A1 - selten bis häufig" ;
+            HAZOPCase:PossibilityOfAvoiding "G2 - fast unmöglich" ;
+            HAZOPCase:Probability "W1 - sehr gering" ;
+            HAZOPCase:Severity "S1 - minimale " ] ;
+    HAZOPCase:Riskgraph [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G2 - fast unmöglich" ;
+            HAZOPCase:Probability "W1 - sehr gering" ;
+            HAZOPCase:Severity "S2 - geringe" ] ;
+    HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "In 1 - Feed-Eingang" ;
+            HAZOPCase:Parameter "Schulung und SOPs" ;
+            HAZOPCase:Recommendation "NaN"^^xsd:double,
+                "Mitarbeiter vor Verwendung hoch-viskoser Medien gut trainieren" ] .
 
 <http://www.cae-pa.de/HAZOPCase/14> HAZOPCase:Cause [ HAZOPCase:Description "Feststoffe durch Überschreiten einer Sättigungskonszentration" ;
             HAZOPCase:Guideword "Mehr" ;
@@ -131,10 +184,18 @@
             HAZOPCase:Guideword "Mehr" ;
             HAZOPCase:HAZOPNode "Speicherbehälter" ;
             HAZOPCase:Parameter "Konzentration" ] ;
-    HAZOPCase:Safeguard [ HAZOPCase:Description "W2 - gering" ;
-            HAZOPCase:Guideword "G1 - möglich" ;
-            HAZOPCase:HAZOPNode "S2 - geringe" ;
-            HAZOPCase:Parameter "A2 - häufig bis andauernd" ] .
+    HAZOPCase:Restrisiko [ HAZOPCase:FrequencyOfPresence "A1 - selten bis häufig" ;
+            HAZOPCase:PossibilityOfAvoiding "G2 - fast unmöglich" ;
+            HAZOPCase:Probability "W1 - sehr gering" ;
+            HAZOPCase:Severity "S1 - minimale " ] ;
+    HAZOPCase:Riskgraph [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G1 - möglich" ;
+            HAZOPCase:Probability "W2 - gering" ;
+            HAZOPCase:Severity "S2 - geringe" ] ;
+    HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
+            HAZOPCase:Parameter "NaN"^^xsd:double ;
+            HAZOPCase:Recommendation "NaN"^^xsd:double,
+                "Bei häufigem Feststoffauftritt muss Filter wechselbar sein, bzw. Parallelen Filter oder Bypass-Schaltung für Filter FL1010" ] .
 
 <http://www.cae-pa.de/HAZOPCase/15> HAZOPCase:Cause [ HAZOPCase:Description "Feststoffe gelangen in Behälter" ;
             HAZOPCase:Guideword "Mehr" ;
@@ -148,10 +209,18 @@
             HAZOPCase:Guideword "Mehr" ;
             HAZOPCase:HAZOPNode "Speicherbehälter" ;
             HAZOPCase:Parameter "Konzentration" ] ;
-    HAZOPCase:Safeguard [ HAZOPCase:Description "W2 - gering" ;
-            HAZOPCase:Guideword "G1 - möglich" ;
-            HAZOPCase:HAZOPNode "S2 - geringe" ;
-            HAZOPCase:Parameter "A2 - häufig bis andauernd" ] .
+    HAZOPCase:Restrisiko [ HAZOPCase:FrequencyOfPresence "A1 - selten bis häufig" ;
+            HAZOPCase:PossibilityOfAvoiding "G2 - fast unmöglich" ;
+            HAZOPCase:Probability "W1 - sehr gering" ;
+            HAZOPCase:Severity "S1 - minimale " ] ;
+    HAZOPCase:Riskgraph [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G1 - möglich" ;
+            HAZOPCase:Probability "W2 - gering" ;
+            HAZOPCase:Severity "S2 - geringe" ] ;
+    HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "In 1 - Feed-Eingang" ;
+            HAZOPCase:Parameter "Filter vor Behälter oder Schulung" ;
+            HAZOPCase:Recommendation "NaN"^^xsd:double,
+                "Filter muss bei Feststoffgefahr am Einlass vorgesehen werden, oder MA werden auf Vorhandensein von Feststoffen geschult" ] .
 
 <http://www.cae-pa.de/HAZOPCase/16> HAZOPCase:Cause [ HAZOPCase:Description "Feststoffe gelangen in Behälter" ;
             HAZOPCase:Guideword "Mehr" ;
@@ -165,10 +234,18 @@
             HAZOPCase:Guideword "Mehr" ;
             HAZOPCase:HAZOPNode "Speicherbehälter" ;
             HAZOPCase:Parameter "Konzentration" ] ;
-    HAZOPCase:Safeguard [ HAZOPCase:Description "W2 - gering" ;
-            HAZOPCase:Guideword "G1 - möglich" ;
-            HAZOPCase:HAZOPNode "S2 - geringe" ;
-            HAZOPCase:Parameter "A2 - häufig bis andauernd" ] .
+    HAZOPCase:Restrisiko [ HAZOPCase:FrequencyOfPresence "A1 - selten bis häufig" ;
+            HAZOPCase:PossibilityOfAvoiding "G2 - fast unmöglich" ;
+            HAZOPCase:Probability "W1 - sehr gering" ;
+            HAZOPCase:Severity "S1 - minimale " ] ;
+    HAZOPCase:Riskgraph [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G1 - möglich" ;
+            HAZOPCase:Probability "W2 - gering" ;
+            HAZOPCase:Severity "S2 - geringe" ] ;
+    HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
+            HAZOPCase:Parameter "NaN"^^xsd:double ;
+            HAZOPCase:Recommendation "NaN"^^xsd:double,
+                "MA überprüfen vor jedem Befüllen die Behälterdichtungen" ] .
 
 <http://www.cae-pa.de/HAZOPCase/17> HAZOPCase:Cause [ HAZOPCase:Description "Luft, O2, CH4 oder andere brennbare Medien --> HAZOPCase ID 5" ;
             HAZOPCase:Guideword "Anderer/Anders als" ;
@@ -182,10 +259,18 @@
             HAZOPCase:Guideword "Anderer/Anders als" ;
             HAZOPCase:HAZOPNode "Speicherbehälter" ;
             HAZOPCase:Parameter "Konzentration" ] ;
-    HAZOPCase:Safeguard [ HAZOPCase:Description "W1 - sehr gering" ;
-            HAZOPCase:Guideword "G2 - fast unmöglich" ;
-            HAZOPCase:HAZOPNode "S4 - katastophal" ;
-            HAZOPCase:Parameter "A2 - häufig bis andauernd" ] .
+    HAZOPCase:Restrisiko [ HAZOPCase:FrequencyOfPresence "A1 - selten bis häufig" ;
+            HAZOPCase:PossibilityOfAvoiding "G2 - fast unmöglich" ;
+            HAZOPCase:Probability "W1 - sehr gering" ;
+            HAZOPCase:Severity "S1 - minimale " ] ;
+    HAZOPCase:Riskgraph [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G2 - fast unmöglich" ;
+            HAZOPCase:Probability "W1 - sehr gering" ;
+            HAZOPCase:Severity "S4 - katastophal" ] ;
+    HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
+            HAZOPCase:Parameter "NaN"^^xsd:double ;
+            HAZOPCase:Recommendation "NaN"^^xsd:double,
+                "Mitarbeiter vor Verwendung Stickstoff oder anderer gasförmiger Medien gut trainieren" ] .
 
 <http://www.cae-pa.de/HAZOPCase/2> HAZOPCase:Cause [ HAZOPCase:Description "Hohe Temperatur aus vorangegangenem Prozessschritt" ;
             HAZOPCase:Guideword "Mehr" ;
@@ -199,10 +284,18 @@
             HAZOPCase:Guideword "Mehr" ;
             HAZOPCase:HAZOPNode "Speicherbehälter" ;
             HAZOPCase:Parameter "Temperatur" ] ;
-    HAZOPCase:Safeguard [ HAZOPCase:Description "W1 - sehr gering" ;
-            HAZOPCase:Guideword "G1 - möglich" ;
-            HAZOPCase:HAZOPNode "S3 - schwerwiegende " ;
-            HAZOPCase:Parameter "A2 - häufig bis andauernd" ] .
+    HAZOPCase:Restrisiko [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G1 - möglich" ;
+            HAZOPCase:Probability "W1 - sehr gering" ;
+            HAZOPCase:Severity "S1 - minimale " ] ;
+    HAZOPCase:Riskgraph [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G1 - möglich" ;
+            HAZOPCase:Probability "W1 - sehr gering" ;
+            HAZOPCase:Severity "S3 - schwerwiegende " ] ;
+    HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "Speicherbehälter" ;
+            HAZOPCase:Parameter "Sicherheitsventil VY3010" ;
+            HAZOPCase:Recommendation "NaN"^^xsd:double,
+                "regelmäßige Prüfung des Sicherheitsventils (Ausbau + Test)" ] .
 
 <http://www.cae-pa.de/HAZOPCase/3> HAZOPCase:Cause [ HAZOPCase:Description "Brand im Außenbereich, Strahlungswärme >200°C" ;
             HAZOPCase:Guideword "NaN"^^xsd:double ;
@@ -216,10 +309,18 @@
             HAZOPCase:Guideword "Mehr" ;
             HAZOPCase:HAZOPNode "Speicherbehälter" ;
             HAZOPCase:Parameter "Temperatur" ] ;
-    HAZOPCase:Safeguard [ HAZOPCase:Description "W1 - sehr gering" ;
-            HAZOPCase:Guideword "G1 - möglich" ;
-            HAZOPCase:HAZOPNode "S2 - geringe" ;
-            HAZOPCase:Parameter "A2 - häufig bis andauernd" ] .
+    HAZOPCase:Restrisiko [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G1 - möglich" ;
+            HAZOPCase:Probability "W1 - sehr gering" ;
+            HAZOPCase:Severity "S2 - geringe" ] ;
+    HAZOPCase:Riskgraph [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G1 - möglich" ;
+            HAZOPCase:Probability "W1 - sehr gering" ;
+            HAZOPCase:Severity "S2 - geringe" ] ;
+    HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "Speicherbehälter" ;
+            HAZOPCase:Parameter "Stromlos-schalten des Moduls, Fail-safe stellung der Ventile" ;
+            HAZOPCase:Recommendation "Brandmelde- und Löschanlage in Infrastruktur ",
+                "externe Sicherung notwendig" ] .
 
 <http://www.cae-pa.de/HAZOPCase/4> HAZOPCase:Cause [ HAZOPCase:Description "Verunreinigung, bspw. Säure/Lauge die zu einer Wäremeentwicklung führen" ;
             HAZOPCase:Guideword "Anderer/Anders als" ;
@@ -233,10 +334,17 @@
             HAZOPCase:Guideword "Mehr" ;
             HAZOPCase:HAZOPNode "Speicherbehälter" ;
             HAZOPCase:Parameter "Temperatur" ] ;
-    HAZOPCase:Safeguard [ HAZOPCase:Description "W2 - gering" ;
-            HAZOPCase:Guideword "G1 - möglich" ;
-            HAZOPCase:HAZOPNode "S3 - schwerwiegende " ;
-            HAZOPCase:Parameter "A2 - häufig bis andauernd" ] .
+    HAZOPCase:Restrisiko [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G1 - möglich" ;
+            HAZOPCase:Probability "W2 - gering" ;
+            HAZOPCase:Severity "S1 - minimale " ] ;
+    HAZOPCase:Riskgraph [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G1 - möglich" ;
+            HAZOPCase:Probability "W2 - gering" ;
+            HAZOPCase:Severity "S3 - schwerwiegende " ] ;
+    HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "Speicherbehälter" ;
+            HAZOPCase:Parameter "Sicherheitsventil VY3010" ;
+            HAZOPCase:Recommendation "NaN"^^xsd:double ] .
 
 <http://www.cae-pa.de/HAZOPCase/5> HAZOPCase:Cause [ HAZOPCase:Description "Stoffverwechslung am Stickstoffeingang (z.B. Chlor)" ;
             HAZOPCase:Guideword "Anderer/Anders als" ;
@@ -250,10 +358,18 @@
             HAZOPCase:Guideword "Mehr" ;
             HAZOPCase:HAZOPNode "Speicherbehälter" ;
             HAZOPCase:Parameter "Temperatur" ] ;
-    HAZOPCase:Safeguard [ HAZOPCase:Description "W1 - sehr gering" ;
-            HAZOPCase:Guideword "G1 - möglich" ;
-            HAZOPCase:HAZOPNode "S3 - schwerwiegende " ;
-            HAZOPCase:Parameter "A2 - häufig bis andauernd" ] .
+    HAZOPCase:Restrisiko [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G1 - möglich" ;
+            HAZOPCase:Probability "W1 - sehr gering" ;
+            HAZOPCase:Severity "S3 - schwerwiegende " ] ;
+    HAZOPCase:Riskgraph [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G1 - möglich" ;
+            HAZOPCase:Probability "W1 - sehr gering" ;
+            HAZOPCase:Severity "S3 - schwerwiegende " ] ;
+    HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
+            HAZOPCase:Parameter "NaN"^^xsd:double ;
+            HAZOPCase:Recommendation "NaN"^^xsd:double,
+                "Organisatorisch ausschließen, dass Chlor an Inertisierung angeschlossen wird" ] .
 
 <http://www.cae-pa.de/HAZOPCase/6> HAZOPCase:Cause [ HAZOPCase:Description "Extrem niedrige Umgebungstemperatur" ;
             HAZOPCase:Guideword "NaN"^^xsd:double ;
@@ -267,10 +383,18 @@
             HAZOPCase:Guideword "Weniger" ;
             HAZOPCase:HAZOPNode "Speicherbehälter" ;
             HAZOPCase:Parameter "Temperatur" ] ;
-    HAZOPCase:Safeguard [ HAZOPCase:Description "W1 - sehr gering" ;
-            HAZOPCase:Guideword "G1 - möglich" ;
-            HAZOPCase:HAZOPNode "S2 - geringe" ;
-            HAZOPCase:Parameter "A2 - häufig bis andauernd" ] .
+    HAZOPCase:Restrisiko [ HAZOPCase:FrequencyOfPresence "NaN"^^xsd:double ;
+            HAZOPCase:PossibilityOfAvoiding "NaN"^^xsd:double ;
+            HAZOPCase:Probability "NaN"^^xsd:double ;
+            HAZOPCase:Severity "NaN"^^xsd:double ] ;
+    HAZOPCase:Riskgraph [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G1 - möglich" ;
+            HAZOPCase:Probability "W1 - sehr gering" ;
+            HAZOPCase:Severity "S2 - geringe" ] ;
+    HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
+            HAZOPCase:Parameter "NaN"^^xsd:double ;
+            HAZOPCase:Recommendation "NaN"^^xsd:double,
+                "Betrieb nur im Innebereich bei moderaten Bedingungen" ] .
 
 <http://www.cae-pa.de/HAZOPCase/7> HAZOPCase:Cause [ HAZOPCase:Description "Druck des eingehenden Mediums zu hoch" ;
             HAZOPCase:Guideword "Mehr" ;
@@ -284,10 +408,17 @@
             HAZOPCase:Guideword "Mehr" ;
             HAZOPCase:HAZOPNode "Speicherbehälter" ;
             HAZOPCase:Parameter "Druck" ] ;
-    HAZOPCase:Safeguard [ HAZOPCase:Description "W2 - gering" ;
-            HAZOPCase:Guideword "G1 - möglich" ;
-            HAZOPCase:HAZOPNode "S3 - schwerwiegende " ;
-            HAZOPCase:Parameter "A2 - häufig bis andauernd" ] .
+    HAZOPCase:Restrisiko [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G1 - möglich" ;
+            HAZOPCase:Probability "W2 - gering" ;
+            HAZOPCase:Severity "S1 - minimale " ] ;
+    HAZOPCase:Riskgraph [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G1 - möglich" ;
+            HAZOPCase:Probability "W2 - gering" ;
+            HAZOPCase:Severity "S3 - schwerwiegende " ] ;
+    HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "Speicherbehälter" ;
+            HAZOPCase:Parameter "Sicherheitsventil VY3010" ;
+            HAZOPCase:Recommendation "NaN"^^xsd:double ] .
 
 <http://www.cae-pa.de/HAZOPCase/8> HAZOPCase:Cause [ HAZOPCase:Description "Verunreinigung im Behälter führt zu exothermer Reaktion unter Gasbildung" ;
             HAZOPCase:Guideword "Anderer/Anders als" ;
@@ -301,10 +432,17 @@
             HAZOPCase:Guideword "Mehr" ;
             HAZOPCase:HAZOPNode "Speicherbehälter" ;
             HAZOPCase:Parameter "Druck" ] ;
-    HAZOPCase:Safeguard [ HAZOPCase:Description "W2 - gering" ;
-            HAZOPCase:Guideword "G1 - möglich" ;
-            HAZOPCase:HAZOPNode "S3 - schwerwiegende " ;
-            HAZOPCase:Parameter "A2 - häufig bis andauernd" ] .
+    HAZOPCase:Restrisiko [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G1 - möglich" ;
+            HAZOPCase:Probability "W2 - gering" ;
+            HAZOPCase:Severity "S1 - minimale " ] ;
+    HAZOPCase:Riskgraph [ HAZOPCase:FrequencyOfPresence "A2 - häufig bis andauernd" ;
+            HAZOPCase:PossibilityOfAvoiding "G1 - möglich" ;
+            HAZOPCase:Probability "W2 - gering" ;
+            HAZOPCase:Severity "S3 - schwerwiegende " ] ;
+    HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "Speicherbehälter" ;
+            HAZOPCase:Parameter "Sicherheitsventil VY3010" ;
+            HAZOPCase:Recommendation "NaN"^^xsd:double ] .
 
 <http://www.cae-pa.de/HAZOPCase/9_(wie_2)> HAZOPCase:Cause [ HAZOPCase:Description "z.B. Starke Wärmestrahlung auf Behälter" ;
             HAZOPCase:Guideword "Mehr" ;
@@ -318,8 +456,15 @@
             HAZOPCase:Guideword "Mehr" ;
             HAZOPCase:HAZOPNode "Speicherbehälter" ;
             HAZOPCase:Parameter "Druck" ] ;
-    HAZOPCase:Safeguard [ HAZOPCase:Description "NaN"^^xsd:double ;
-            HAZOPCase:Guideword "NaN"^^xsd:double ;
-            HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
-            HAZOPCase:Parameter "NaN"^^xsd:double ] .
+    HAZOPCase:Restrisiko [ HAZOPCase:FrequencyOfPresence "NaN"^^xsd:double ;
+            HAZOPCase:PossibilityOfAvoiding "NaN"^^xsd:double ;
+            HAZOPCase:Probability "NaN"^^xsd:double ;
+            HAZOPCase:Severity "NaN"^^xsd:double ] ;
+    HAZOPCase:Riskgraph [ HAZOPCase:FrequencyOfPresence "NaN"^^xsd:double ;
+            HAZOPCase:PossibilityOfAvoiding "NaN"^^xsd:double ;
+            HAZOPCase:Probability "NaN"^^xsd:double ;
+            HAZOPCase:Severity "NaN"^^xsd:double ] ;
+    HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
+            HAZOPCase:Parameter "NaN"^^xsd:double ;
+            HAZOPCase:Recommendation "NaN"^^xsd:double ] .
 
