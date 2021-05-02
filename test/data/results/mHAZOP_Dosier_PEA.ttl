@@ -467,4 +467,3 @@
     HAZOPCase:Safeguard [ HAZOPCase:HAZOPNode "NaN"^^xsd:double ;
             HAZOPCase:Parameter "NaN"^^xsd:double ;
             HAZOPCase:Recommendation "NaN"^^xsd:double ] .
-

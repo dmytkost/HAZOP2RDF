@@ -2,7 +2,7 @@ import logging, sys, glob
 
 from importer import Importer
 from exporter import Exporter
-from triple_store import TripleStore
+from triplestore import TripleStore
 
 fmt = "%(asctime)s [%(name)s] [%(levelname)s] %(message)s"
 datefmt = "%d/%m/%Y %H:%M:%S"
@@ -30,7 +30,13 @@ if __name__ == "__main__":
         try:
             hazop_files = glob.glob("data/*.xlsb")
             for file in hazop_files:
-                importer.queue.put(file)
+                hazop_config = {
+                    "path": file,
+                    "engine": "pyxlsb",
+                    "header": [2, 3],
+                    "sheet_name": 1
+                }
+                importer.queue.put(hazop_config)
             importer.join(timeout)
             sys.exit(f"Exit with timeout {timeout}")
         except KeyboardInterrupt as e:

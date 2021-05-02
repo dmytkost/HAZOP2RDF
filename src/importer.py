@@ -8,25 +8,25 @@ log = logging.getLogger(__name__)
 
 
 class Importer(threading.Thread):
-    def __init__(self, triple_store):
+    def __init__(self, triple_store=None):
         super(Importer, self).__init__()
         self.triple_store = triple_store
-        self.rdf = RDFGraphMaker()
+        self.rdf_graph = RDFGraphMaker()
         self.queue = queue.Queue()
         self.daemon = True
 
     def run(self):
         while True:
-            hazop_path = self.queue.get(True)
-            df_hazop = self.read_hazop(hazop_path)
-            rdf_graph = self.rdf.make(df_hazop)
+            hazop_config = self.queue.get(True)
+            df_hazop = self.read_hazop(hazop_config)
+            rdf_graph = self.rdf_graph.make(df_hazop)
             self.triple_store.queue.put(rdf_graph)
 
-    def read_hazop(self, hazop_path):
-        df = pd.read_excel(hazop_path,
-                           engine="pyxlsb",
-                           header=[2, 3],
-                           sheet_name=1)
+    def read_hazop(self, config):
+        df = pd.read_excel(config["path"],
+                           engine=config["engine"],
+                           header=config["header"],
+                           sheet_name=config["sheet_name"])
         df_filtered = df[df.iloc[:, 0].notnull()]
 
         return df_filtered
