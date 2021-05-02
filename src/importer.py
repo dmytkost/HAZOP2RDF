@@ -19,8 +19,8 @@ class Importer(threading.Thread):
         while True:
             hazop_path = self.queue.get(True)
             df_hazop = self.read_hazop(hazop_path)
-            graph = self.rdf.make(df_hazop)
-            self.triple_store.queue.put(graph)
+            rdf_graph = self.rdf.make(df_hazop)
+            self.triple_store.queue.put(rdf_graph)
 
     def read_hazop(self, hazop_path):
         df = pd.read_excel(hazop_path,
@@ -74,9 +74,5 @@ class RDFGraphMaker:
             g.add((safeguard, n.Description, Literal(row[16])))
 
         g_str = g.serialize(format="turtle").decode("utf-8")
-
-        # with open("data/mHAZOP_Dosier_PEA.ttl", "w") as file:
-        #     file.write(g_str)
-        # log.info(g_str)
 
         return g_str

@@ -11,6 +11,10 @@ class TripleStore(threading.Thread):
 
     def run(self):
         while True:
-            graph = self.queue.get(True)
-            log.info(graph)
+            rdf_graph = self.queue.get(True)
+
+	        with open("data/mHAZOP_Dosier_PEA.ttl", "w") as file:
+	            file.write(rdf_graph)
+
+            log.info(rdf_graph)
 
