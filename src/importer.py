@@ -1,7 +1,4 @@
-import logging, threading, queue
-
-import pandas as pd
-
+import logging, threading, queue, pandas as pd
 from rdflib import Namespace, Graph, URIRef, BNode, Literal
 
 log = logging.getLogger(__name__)
@@ -17,8 +14,8 @@ class Importer(threading.Thread):
 
     def run(self):
         while True:
-            hazop_config = self.queue.get(True)
-            df_hazop = self.read_hazop(hazop_config)
+            read_config = self.queue.get(True)
+            df_hazop = self.read_hazop(read_config)
             rdf_graph = self.rdf_graph.make(df_hazop)
             self.triple_store.queue.put(rdf_graph)
 

@@ -30,14 +30,16 @@ if __name__ == "__main__":
         try:
             hazop_files = glob.glob("data/*.xlsb")
             for file in hazop_files:
-                hazop_config = {
+                read_config = {
                     "path": file,
                     "engine": "pyxlsb",
                     "header": [2, 3],
                     "sheet_name": 1
                 }
-                importer.queue.put(hazop_config)
+                importer.queue.put(read_config)
             importer.join(timeout)
-            sys.exit(f"Exit with timeout {timeout}")
+            log.info("Exit with timeout {}".format(timeout))
+            sys.exit(0)
         except KeyboardInterrupt as e:
-            sys.exit(e)
+            log.error("Keyboard interrupt {}".format(e))
+            sys.exit(1)

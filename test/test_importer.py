@@ -14,14 +14,14 @@ class TestImporter(unittest.TestCase):
         results = glob.glob("test/results/*.xlsx")
 
         for sample, result in zip(samples, results):
-            config = {
+            read_config = {
                 "path": sample,
                 "engine": None,
                 "header": 0,
                 "sheet_name": 0
             }
 
-            df_sample = self.importer.read_hazop(config)
+            df_sample = self.importer.read_hazop(read_config)
             df_result = pd.read_excel(result)
 
             pd.testing.assert_frame_equal(df_sample,
@@ -35,14 +35,14 @@ class TestImporter(unittest.TestCase):
         warnings.simplefilter("ignore", ResourceWarning)
 
         for sample, result in zip(samples, results):
-            config = {
+            read_config = {
                 "path": sample,
                 "engine": "pyxlsb",
                 "header": [2, 3],
                 "sheet_name": 1
             }
 
-            df_sample = self.importer.read_hazop(config)
+            df_sample = self.importer.read_hazop(read_config)
             rdf_graph = self.importer.rdf_graph.make(df_sample)
 
             rdf_sample = rdf_graph.split("\n")
