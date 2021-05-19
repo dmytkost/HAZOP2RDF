@@ -1,36 +1,44 @@
-import logging, threading, queue, pandas as pd
+import glob, pandas as pd
+
 from rdflib import Namespace, Graph, URIRef, BNode, Literal
 
-log = logging.getLogger(__name__)
+class Service:
+    def __init__(self):
+        self.config = {
+            "data/PEA-HAZOP-Dosiermodul_v07.xlsb": {
+                "engine": "pyxlsb",
+                "header": [2, 3],
+                "sheet_name": 1
+            }
+        }
 
+    def read_excel_data(self):
+        return glob.glob("data/*.xlsb")
 
-class Importer(threading.Thread):
-    def __init__(self, triple_store=None):
-        super(Importer, self).__init__()
-        self.triple_store = triple_store
-        self.rdf_graph = RDFGraphMaker()
-        self.queue = queue.Queue()
-        self.daemon = True
+    def read_hazop_data(self, excel_data):
+        hazop_data = []
 
-    def run(self):
-        while True:
-            read_config = self.queue.get(True)
-            df_hazop = self.read_hazop(read_config)
-            rdf_graph = self.rdf_graph.make(df_hazop)
-            self.triple_store.queue.put(rdf_graph)
+        for file in excel_data:
+            if file in self.config:
+                df = pd.read_excel(file,
+                                   engine=self.config[file]["engine"],
+                                   header=self.config[file]["header"],
+                                   sheet_name=self.config[file]["sheet_name"])
 
-    def read_hazop(self, config):
-        df = pd.read_excel(config["path"],
-                           engine=config["engine"],
-                           header=config["header"],
-                           sheet_name=config["sheet_name"])
-        df_filtered = df[df.iloc[:, 0].notnull()]
+                df_filtered = df[df.iloc[:, 0].notnull()]
+                hazop_data.append(df_filtered)
 
-        return df_filtered
+        return hazop_data
 
+    def make_rdf_graphs(self, hazop_data):
+        rdf_graphs = []
 
-class RDFGraphMaker:
-    def make(self, df):
+        for df in hazop_data:
+            rdf_graphs.append(self.make_rdf_graph(df))
+
+        return rdf_graphs
+
+    def make_rdf_graph(self, df):
         g = Graph()
         n = Namespace("HAZOPCase/")
         g.bind("HAZOPCase", n)
@@ -84,6 +92,4 @@ class RDFGraphMaker:
             g.add((restrisiko, n.PossibilityOfAvoiding, Literal(row[23])))
             g.add((restrisiko, n.Probability, Literal(row[24])))
 
-        g_str = g.serialize(format="turtle").decode("utf-8")
-
-        return g_str
+        return g
