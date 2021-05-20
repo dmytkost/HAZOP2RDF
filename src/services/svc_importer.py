@@ -2,50 +2,31 @@ import glob, pandas as pd
 
 from rdflib import Namespace, Graph, URIRef, BNode, Literal
 
-class Service:
-    def __init__(self):
-        self.config = {
-            "data/PEA-HAZOP-Dosiermodul_v07.xlsb": {
-                "engine": "pyxlsb",
-                "header": [2, 3],
-                "sheet_name": 1
-            }
-        }
 
+class Service:
     def read_excel_data(self):
         return glob.glob("data/*.xlsb")
 
-    def read_hazop_data(self, excel_data):
-        hazop_data = []
+    def read_hazop_data(self, filename, engine, header, sheet_name):
+        df = pd.read_excel(filename,
+                           engine=engine,
+                           header=header,
+                           sheet_name=sheet_name)
 
-        for file in excel_data:
-            if file in self.config:
-                df = pd.read_excel(file,
-                                   engine=self.config[file]["engine"],
-                                   header=self.config[file]["header"],
-                                   sheet_name=self.config[file]["sheet_name"])
+        df_filtered = df[df.iloc[:, 0].notnull()]
 
-                df_filtered = df[df.iloc[:, 0].notnull()]
-                hazop_data.append(df_filtered)
-
-        return hazop_data
-
-    def make_rdf_graphs(self, hazop_data):
-        rdf_graphs = []
-
-        for df in hazop_data:
-            rdf_graphs.append(self.make_rdf_graph(df))
-
-        return rdf_graphs
+        return df_filtered
 
     def make_rdf_graph(self, df):
         g = Graph()
-        n = Namespace("HAZOPCase/")
+        n = Namespace("HAZOPCase:")
         g.bind("HAZOPCase", n)
 
         for i, row in df.iterrows():
-            hazop_case = str(row[0]).replace(" ", "_")
-            uri = "http://www.cae-pa.de/HAZOPCase/" + hazop_case
+            if not str(row[0]).isdigit():
+                continue
+
+            uri = "http://www.cae-pa.de/HAZOPCase/" + str(row[0])
 
             reference   = URIRef(uri)
             deviation   = BNode()
