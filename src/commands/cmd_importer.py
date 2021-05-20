@@ -1,19 +1,21 @@
 import click, glob, os
 
-from src.services.svc_importer import Service
+from src.services.svc_importer import Service as service_importer
+from src.services.svc_triplestore import Service as service_triplestore
 from src.config.config import config
 
 
 class Context:
     def __init__(self):
-        self.service = Service()
+        self.svc_importer = service_importer()
+        self.svc_triplestore = service_triplestore()
         self.excel_data = None
         self.hazop_data = None
         self.rdf_graphs = None
 
 
 def list_excel_data(ctx):
-    excel_data_path = ctx.obj.service.read_excel_data()
+    excel_data_path = ctx.obj.svc_importer.read_excel_data()
 
     if not bool(excel_data_path):
         raise click.ClickException("No Excel data found")
@@ -35,15 +37,15 @@ def read_hazop_data(ctx):
 
     for filename in ctx.obj.excel_data:
         if filename == config["HAZOP"]["filename"]:
-            engine     = config["HAZOP"]["engine"]
-            header     = config["HAZOP"]["header"]
+            engine = config["HAZOP"]["engine"]
+            header = config["HAZOP"]["header"]
             sheet_name = config["HAZOP"]["sheet_name"]
 
             filepath = os.path.join("data", filename)
-            df = ctx.obj.service.read_hazop_data(filepath,
-                                                 engine,
-                                                 header,
-                                                 sheet_name)
+            df = ctx.obj.svc_importer.read_hazop_data(filepath,
+                                                      engine,
+                                                      header,
+                                                      sheet_name)
             df.name = filename
             ctx.obj.hazop_data.append(df)
         else:
@@ -55,19 +57,21 @@ def read_hazop_data(ctx):
     click.echo("Number of HAZOP files: {}".format(len(ctx.obj.hazop_data)))
 
 
-def make_rdf_graphs(ctx):
+def build_rdf_graphs(ctx):
     read_hazop_data(ctx)
 
     ctx.obj.rdf_graphs = {}
 
     for df in ctx.obj.hazop_data:
-        graph = ctx.obj.service.make_rdf_graph(df)
-        graph_name = df.name.replace(".xlsb", ".ttl")
-        ctx.obj.rdf_graphs[graph_name] = graph
+        graph = ctx.obj.svc_importer.build_rdf_graph(df)
+        filename = df.name.replace(".xlsb", ".ttl")
+        filepath = os.path.join("data/turtle", filename)
 
-        save_graph_locally(graph, graph_name)
-        # upload_graph_to_fuseki(graph, graph_name)
+        ctx.obj.rdf_graphs[filename] = graph
+
         echo_graphs_info(ctx)
+        save_graph_locally(graph, filepath)
+        upload_graph_to_fuseki(ctx, filename, filepath)
 
 
 def echo_graphs_info(ctx):
@@ -76,20 +80,25 @@ def echo_graphs_info(ctx):
     for k, v in ctx.obj.rdf_graphs.items():
         number_of_triples += len(v)
 
-    click.echo("Number of RDF-Graphs: {}".format(len(ctx.obj.rdf_graphs)))
     click.echo("Nubmer of Triples: {}".format(number_of_triples))
 
 
-def save_graph_locally(graph, graph_name):
+def save_graph_locally(graph, filepath):
     graph_str = graph.serialize(format="turtle").decode("utf-8")
-    pathname = os.path.join("data/turtle", graph_name)
 
-    with open(pathname, "w") as file:
+    with open(filepath, "w") as file:
         file.write(graph_str)
 
+    click.echo("Saved file in data directory: {}".format(filepath))
 
-# # def upload_graph_to_fuseki(graph):
-# #     ctx.obj.triplestore_service.upload(graph)
+
+def upload_graph_to_fuseki(ctx, filename, filepath):
+    response = ctx.obj.svc_triplestore.upload_turtle_file(filename, filepath)
+
+    if response != 0:
+        raise click.ClickException("Failed connection to Fuseki server")
+
+    click.echo("Uploaded file to Fuseki server: {}".format(filename))
 
 
 @click.group()
@@ -115,6 +124,6 @@ def cmd_read_hazop_data(ctx):
 
 @cli.command()
 @click.pass_context
-def cmd_make_rdf_graphs(ctx):
+def cmd_build_rdf_graphs(ctx):
     """Make RDF-Graphs"""
-    make_rdf_graphs(ctx)
+    build_rdf_graphs(ctx)
