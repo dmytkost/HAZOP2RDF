@@ -1,0 +1,27 @@
+PREFIX cause: <http://www.cae-pa.de/hazop/predicate/cause>
+PREFIX consequence: <http://www.cae-pa.de/hazop/predicate/consequence>
+PREFIX description: <http://www.cae-pa.de/hazop/predicate/description>
+PREFIX deviation: <http://www.cae-pa.de/hazop/predicate/deviation>
+PREFIX frequencyofpresence: <http://www.cae-pa.de/hazop/predicate/frequencyofpresence>
+PREFIX guideword: <http://www.cae-pa.de/hazop/predicate/guideword>
+PREFIX hazopcase: <http://www.cae-pa.de/hazop/object/hazopcase/>
+PREFIX hazopnode: <http://www.cae-pa.de/hazop/predicate/hazopnode>
+PREFIX parameter: <http://www.cae-pa.de/hazop/predicate/parameter>
+PREFIX possibilityofavoiding: <http://www.cae-pa.de/hazop/predicate/possibilityofavoiding>
+PREFIX probability: <http://www.cae-pa.de/hazop/predicate/probability>
+PREFIX recommendation: <http://www.cae-pa.de/hazop/predicate/recommendation>
+PREFIX restrisiko: <http://www.cae-pa.de/hazop/predicate/restrisiko>
+PREFIX riskgraph: <http://www.cae-pa.de/hazop/predicate/iskgraph>
+PREFIX safeguard: <http://www.cae-pa.de/hazop/predicate/safegurd>
+PREFIX severity: <http://www.cae-pa.de/hazop/predicate/sverity>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?hazopcase ?deviation_hazopnode ?deviation_parameter ?deviation_guideword ?deviation_description
+WHERE {
+    ?case deviation: ?deviation .
+    ?deviation hazopnode: ?deviation_hazopnode .
+    ?deviation parameter: ?deviation_parameter .
+    ?deviation guideword: ?deviation_guideword .
+    ?deviation description: ?deviation_description
+  BIND(REPLACE(str(?case), ".*/", "") AS ?hazopcase)
+}
