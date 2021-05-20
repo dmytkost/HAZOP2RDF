@@ -17,7 +17,7 @@ class Service:
 
         return df_filtered
 
-    def build_rdf_graph(self, df):
+    def build_hazop_graph(self, df):
         uri = "http://www.cae-pa.de/"
         o_ref = uri + "hazop/object/"
         p_ref = uri + "hazop/predicate/"
