@@ -10,13 +10,14 @@ PREFIX parameter: <http://www.cae-pa.de/hazop/predicate/parameter>
 PREFIX possibilityofavoiding: <http://www.cae-pa.de/hazop/predicate/possibilityofavoiding>
 PREFIX probability: <http://www.cae-pa.de/hazop/predicate/probability>
 PREFIX recommendation: <http://www.cae-pa.de/hazop/predicate/recommendation>
+PREFIX otherinfo: <http://www.cae-pa.de/hazop/predicate/otherinfo>
 PREFIX restrisiko: <http://www.cae-pa.de/hazop/predicate/restrisiko>
 PREFIX riskgraph: <http://www.cae-pa.de/hazop/predicate/iskgraph>
 PREFIX safeguard: <http://www.cae-pa.de/hazop/predicate/safegurd>
 PREFIX severity: <http://www.cae-pa.de/hazop/predicate/sverity>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT DISTINCT
+SELECT
 ?hazopcase
 ?deviation_hazopnode
 ?deviation_parameter
@@ -36,12 +37,13 @@ SELECT DISTINCT
 ?riskgraph_probability
 ?safeguard_hazopnode
 ?safeguard_parameter
-?safeguard_recommendation1
-?safeguard_recommendation2
+?safeguard_recommendation
+?safeguard_otherinfo
 ?restrisiko_severity
 ?restrisiko_presence
 ?restrisiko_avoiding
 ?restrisiko_probability
+
 WHERE {
     ?case deviation: ?deviation .
     ?deviation hazopnode: ?deviation_hazopnode .
@@ -70,8 +72,8 @@ WHERE {
     ?case safeguard: ?safeguard .
     ?safeguard hazopnode: ?safeguard_hazopnode .
     ?safeguard parameter: ?safeguard_parameter .
-    ?safeguard recommendation: ?safeguard_recommendation1 .
-    ?safeguard recommendation: ?safeguard_recommendation2 .
+    ?safeguard recommendation: ?safeguard_recommendation .
+    ?safeguard recommendation: ?safeguard_otherinfo .
 
     ?case restrisiko: ?restrisiko .
     ?restrisiko severity: ?restrisiko_severity .

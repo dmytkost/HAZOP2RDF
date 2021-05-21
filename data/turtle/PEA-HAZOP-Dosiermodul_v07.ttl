@@ -6,6 +6,7 @@
 @prefix guideword: <http://www.cae-pa.de/hazop/predicate/guideword> .
 @prefix hazopcase: <http://www.cae-pa.de/hazop/object/hazopcase/> .
 @prefix hazopnode: <http://www.cae-pa.de/hazop/predicate/hazopnode> .
+@prefix otherinfo: <http://www.cae-pa.de/hazop/predicate/otherinfo> .
 @prefix parameter: <http://www.cae-pa.de/hazop/predicate/parameter> .
 @prefix possibilityofavoiding: <http://www.cae-pa.de/hazop/predicate/possibilityofavoiding> .
 @prefix probability: <http://www.cae-pa.de/hazop/predicate/probability> .
@@ -37,6 +38,7 @@ hazopcase:1 cause: [ description: "Zugeführtes Prozessmedium zu heiß (>200°C)
             probability: "W2 - gering" ;
             severity: "S1 - minimale " ] ;
     safeguard: [ hazopnode: "Speicherbehälter" ;
+            otherinfo: "NaN"^^xsd:double ;
             parameter: "Hochwertige Dichtungen für Temp. über 200°C (bei 25bar)" ;
             recommendation: "NaN"^^xsd:double ] .
 
@@ -61,9 +63,9 @@ hazopcase:10 cause: [ description: "reines Lösungsmittel wird zugeführt" ;
             probability: "NaN"^^xsd:double ;
             severity: "NaN"^^xsd:double ] ;
     safeguard: [ hazopnode: "In 1 - Feed-Eingang" ;
+            otherinfo: "NaN"^^xsd:double ;
             parameter: "keine Aktion erforderlich" ;
-            recommendation: "NaN"^^xsd:double,
-                "Normalzustand" ] .
+            recommendation: "Normalzustand" ] .
 
 hazopcase:11 cause: [ description: "starke Säure oder Base wird zugeführt" ;
             guideword: "Mehr" ;
@@ -86,9 +88,9 @@ hazopcase:11 cause: [ description: "starke Säure oder Base wird zugeführt" ;
             probability: "W1 - sehr gering" ;
             severity: "S1 - minimale " ] ;
     safeguard: [ hazopnode: "In 1 - Feed-Eingang" ;
+            otherinfo: "NaN"^^xsd:double ;
             parameter: "Schulung und SOPs" ;
-            recommendation: "NaN"^^xsd:double,
-                "Mitarbeiter vor Verwendung starker Säuren und Basen gut trainieren" ] .
+            recommendation: "Mitarbeiter vor Verwendung starker Säuren und Basen gut trainieren" ] .
 
 hazopcase:12 cause: [ description: "organisches Lösungsmittel wird angeschlossen" ;
             guideword: "NaN"^^xsd:double ;
@@ -111,9 +113,9 @@ hazopcase:12 cause: [ description: "organisches Lösungsmittel wird angeschlosse
             probability: "W1 - sehr gering" ;
             severity: "S1 - minimale " ] ;
     safeguard: [ hazopnode: "In 1 - Feed-Eingang" ;
+            otherinfo: "NaN"^^xsd:double ;
             parameter: "Schulung und SOPs" ;
-            recommendation: "NaN"^^xsd:double,
-                "Mitarbeiter vor Verwendung organischer Medien gut trainieren" ] .
+            recommendation: "Mitarbeiter vor Verwendung organischer Medien gut trainieren" ] .
 
 hazopcase:13 cause: [ description: "hoch viskoses Medium" ;
             guideword: "Mehr" ;
@@ -136,9 +138,9 @@ hazopcase:13 cause: [ description: "hoch viskoses Medium" ;
             probability: "W1 - sehr gering" ;
             severity: "S1 - minimale " ] ;
     safeguard: [ hazopnode: "In 1 - Feed-Eingang" ;
+            otherinfo: "NaN"^^xsd:double ;
             parameter: "Schulung und SOPs" ;
-            recommendation: "NaN"^^xsd:double,
-                "Mitarbeiter vor Verwendung hoch-viskoser Medien gut trainieren" ] .
+            recommendation: "Mitarbeiter vor Verwendung hoch-viskoser Medien gut trainieren" ] .
 
 hazopcase:14 cause: [ description: "Feststoffe durch Überschreiten einer Sättigungskonszentration" ;
             guideword: "Mehr" ;
@@ -161,9 +163,9 @@ hazopcase:14 cause: [ description: "Feststoffe durch Überschreiten einer Sätti
             probability: "W1 - sehr gering" ;
             severity: "S1 - minimale " ] ;
     safeguard: [ hazopnode: "NaN"^^xsd:double ;
+            otherinfo: "NaN"^^xsd:double ;
             parameter: "NaN"^^xsd:double ;
-            recommendation: "NaN"^^xsd:double,
-                "Bei häufigem Feststoffauftritt muss Filter wechselbar sein, bzw. Parallelen Filter oder Bypass-Schaltung für Filter FL1010" ] .
+            recommendation: "Bei häufigem Feststoffauftritt muss Filter wechselbar sein, bzw. Parallelen Filter oder Bypass-Schaltung für Filter FL1010" ] .
 
 hazopcase:15 cause: [ description: "Feststoffe gelangen in Behälter" ;
             guideword: "Mehr" ;
@@ -186,9 +188,9 @@ hazopcase:15 cause: [ description: "Feststoffe gelangen in Behälter" ;
             probability: "W1 - sehr gering" ;
             severity: "S1 - minimale " ] ;
     safeguard: [ hazopnode: "In 1 - Feed-Eingang" ;
+            otherinfo: "NaN"^^xsd:double ;
             parameter: "Filter vor Behälter oder Schulung" ;
-            recommendation: "NaN"^^xsd:double,
-                "Filter muss bei Feststoffgefahr am Einlass vorgesehen werden, oder MA werden auf Vorhandensein von Feststoffen geschult" ] .
+            recommendation: "Filter muss bei Feststoffgefahr am Einlass vorgesehen werden, oder MA werden auf Vorhandensein von Feststoffen geschult" ] .
 
 hazopcase:16 cause: [ description: "Feststoffe gelangen in Behälter" ;
             guideword: "Mehr" ;
@@ -211,9 +213,9 @@ hazopcase:16 cause: [ description: "Feststoffe gelangen in Behälter" ;
             probability: "W1 - sehr gering" ;
             severity: "S1 - minimale " ] ;
     safeguard: [ hazopnode: "NaN"^^xsd:double ;
+            otherinfo: "NaN"^^xsd:double ;
             parameter: "NaN"^^xsd:double ;
-            recommendation: "NaN"^^xsd:double,
-                "MA überprüfen vor jedem Befüllen die Behälterdichtungen" ] .
+            recommendation: "MA überprüfen vor jedem Befüllen die Behälterdichtungen" ] .
 
 hazopcase:17 cause: [ description: "Luft, O2, CH4 oder andere brennbare Medien --> HAZOPCase ID 5" ;
             guideword: "Anderer/Anders als" ;
@@ -236,9 +238,9 @@ hazopcase:17 cause: [ description: "Luft, O2, CH4 oder andere brennbare Medien -
             probability: "W1 - sehr gering" ;
             severity: "S1 - minimale " ] ;
     safeguard: [ hazopnode: "NaN"^^xsd:double ;
+            otherinfo: "NaN"^^xsd:double ;
             parameter: "NaN"^^xsd:double ;
-            recommendation: "NaN"^^xsd:double,
-                "Mitarbeiter vor Verwendung Stickstoff oder anderer gasförmiger Medien gut trainieren" ] .
+            recommendation: "Mitarbeiter vor Verwendung Stickstoff oder anderer gasförmiger Medien gut trainieren" ] .
 
 hazopcase:2 cause: [ description: "Hohe Temperatur aus vorangegangenem Prozessschritt" ;
             guideword: "Mehr" ;
@@ -261,9 +263,9 @@ hazopcase:2 cause: [ description: "Hohe Temperatur aus vorangegangenem Prozesssc
             probability: "W1 - sehr gering" ;
             severity: "S1 - minimale " ] ;
     safeguard: [ hazopnode: "Speicherbehälter" ;
+            otherinfo: "NaN"^^xsd:double ;
             parameter: "Sicherheitsventil VY3010" ;
-            recommendation: "NaN"^^xsd:double,
-                "regelmäßige Prüfung des Sicherheitsventils (Ausbau + Test)" ] .
+            recommendation: "regelmäßige Prüfung des Sicherheitsventils (Ausbau + Test)" ] .
 
 hazopcase:3 cause: [ description: "Brand im Außenbereich, Strahlungswärme >200°C" ;
             guideword: "NaN"^^xsd:double ;
@@ -286,9 +288,9 @@ hazopcase:3 cause: [ description: "Brand im Außenbereich, Strahlungswärme >200
             probability: "W1 - sehr gering" ;
             severity: "S2 - geringe" ] ;
     safeguard: [ hazopnode: "Speicherbehälter" ;
+            otherinfo: "externe Sicherung notwendig" ;
             parameter: "Stromlos-schalten des Moduls, Fail-safe stellung der Ventile" ;
-            recommendation: "Brandmelde- und Löschanlage in Infrastruktur ",
-                "externe Sicherung notwendig" ] .
+            recommendation: "Brandmelde- und Löschanlage in Infrastruktur " ] .
 
 hazopcase:4 cause: [ description: "Verunreinigung, bspw. Säure/Lauge die zu einer Wäremeentwicklung führen" ;
             guideword: "Anderer/Anders als" ;
@@ -311,6 +313,7 @@ hazopcase:4 cause: [ description: "Verunreinigung, bspw. Säure/Lauge die zu ein
             probability: "W2 - gering" ;
             severity: "S1 - minimale " ] ;
     safeguard: [ hazopnode: "Speicherbehälter" ;
+            otherinfo: "NaN"^^xsd:double ;
             parameter: "Sicherheitsventil VY3010" ;
             recommendation: "NaN"^^xsd:double ] .
 
@@ -335,9 +338,9 @@ hazopcase:5 cause: [ description: "Stoffverwechslung am Stickstoffeingang (z.B. 
             probability: "W1 - sehr gering" ;
             severity: "S3 - schwerwiegende " ] ;
     safeguard: [ hazopnode: "NaN"^^xsd:double ;
+            otherinfo: "NaN"^^xsd:double ;
             parameter: "NaN"^^xsd:double ;
-            recommendation: "NaN"^^xsd:double,
-                "Organisatorisch ausschließen, dass Chlor an Inertisierung angeschlossen wird" ] .
+            recommendation: "Organisatorisch ausschließen, dass Chlor an Inertisierung angeschlossen wird" ] .
 
 hazopcase:6 cause: [ description: "Extrem niedrige Umgebungstemperatur" ;
             guideword: "NaN"^^xsd:double ;
@@ -360,9 +363,9 @@ hazopcase:6 cause: [ description: "Extrem niedrige Umgebungstemperatur" ;
             probability: "NaN"^^xsd:double ;
             severity: "NaN"^^xsd:double ] ;
     safeguard: [ hazopnode: "NaN"^^xsd:double ;
+            otherinfo: "NaN"^^xsd:double ;
             parameter: "NaN"^^xsd:double ;
-            recommendation: "NaN"^^xsd:double,
-                "Betrieb nur im Innebereich bei moderaten Bedingungen" ] .
+            recommendation: "Betrieb nur im Innebereich bei moderaten Bedingungen" ] .
 
 hazopcase:7 cause: [ description: "Druck des eingehenden Mediums zu hoch" ;
             guideword: "Mehr" ;
@@ -385,6 +388,7 @@ hazopcase:7 cause: [ description: "Druck des eingehenden Mediums zu hoch" ;
             probability: "W2 - gering" ;
             severity: "S1 - minimale " ] ;
     safeguard: [ hazopnode: "Speicherbehälter" ;
+            otherinfo: "NaN"^^xsd:double ;
             parameter: "Sicherheitsventil VY3010" ;
             recommendation: "NaN"^^xsd:double ] .
 
@@ -409,6 +413,7 @@ hazopcase:8 cause: [ description: "Verunreinigung im Behälter führt zu exother
             probability: "W2 - gering" ;
             severity: "S1 - minimale " ] ;
     safeguard: [ hazopnode: "Speicherbehälter" ;
+            otherinfo: "NaN"^^xsd:double ;
             parameter: "Sicherheitsventil VY3010" ;
             recommendation: "NaN"^^xsd:double ] .
 

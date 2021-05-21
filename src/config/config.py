@@ -39,7 +39,7 @@ config = {
             "Risk Graph Severity", "Risk Graph Frequency of Presence ",
             "Risk Graph Possibility of avoiding", "Risk Graph Probability",
             "Safeguard HAZOPNode", "Safeguard Description",
-            "Safeguard Recommendation", "Safeguard Recommendation.1",
+            "Safeguard Recommendation", "Safeguard Otherinfo",
             "Restrisiko Severity", "Restrisiko Frequency of Presence ",
             "Restrisiko Possibility of avoiding", "Restrisiko Probability"
         ],
