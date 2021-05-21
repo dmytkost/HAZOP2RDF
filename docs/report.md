@@ -6,3 +6,9 @@
 * [Mermaid](https://mermaid-js.github.io/mermaid/#/)
 * [Guide for better Flowcharts](https://www.smartdraw.com/flowchart/flowchart-tips.htm)
 
+## Implementierung
+
+* CLI STRUCTURE
+* SOFTWARE ARCHITECTURE
+* FUNCTIONS FLOWCHARTS?
+

@@ -14,7 +14,7 @@ Below is a list of the currently support API commands.
 
 * [`cli importer`](#importer) - Importer functions.
 
-### Importer
+### Importer (outdated)
 This interface is made as an entry point for reading data and making RDF-Graphs. Below you can see the command's description.
 
 ```cmd
