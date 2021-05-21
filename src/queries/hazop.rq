@@ -73,7 +73,7 @@ WHERE {
     ?safeguard hazopnode: ?safeguard_hazopnode .
     ?safeguard parameter: ?safeguard_parameter .
     ?safeguard recommendation: ?safeguard_recommendation .
-    ?safeguard recommendation: ?safeguard_otherinfo .
+    ?safeguard otherinfo: ?safeguard_otherinfo .
 
     ?case restrisiko: ?restrisiko .
     ?restrisiko severity: ?restrisiko_severity .
