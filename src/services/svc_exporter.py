@@ -3,7 +3,7 @@ from rdflib import Graph
 
 
 class Service:
-    def read_local_directory(self):
+    def read_turtle_data(self):
         return glob.glob("data/turtle/*.ttl")
 
     def create_hazop_dataframe(self, graph, index):

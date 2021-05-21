@@ -1,4 +1,4 @@
-import click, glob
+import click, glob, json
 
 from src.services.svc_exporter import Service as service_exporter
 from src.services.svc_triplestore import Service as service_triplestore
@@ -12,7 +12,16 @@ class Context:
 
 
 def export_rdf_graphs_from_fuseki_server(ctx):
-    list_of_graphs = ctx.obj.svc_triplestore.get_hazop_graph_bindings()
+    response = ctx.obj.svc_triplestore.get_hazop_graph_bindings()
+
+    if not bool(response):
+        raise click.ClickException("Failed connection to Fuseki server")
+
+    response_dict = json.loads(response)
+
+    list_of_graphs = []
+    for graph in response_dict["results"]["bindings"]:
+        list_of_graphs.append(graph["g"]["value"])
 
     if not bool(list_of_graphs):
         raise click.ClickException("There is no data in Fuseki server")
@@ -28,7 +37,7 @@ def export_rdf_graphs_from_fuseki_server(ctx):
 
 
 def export_rdf_graphs_from_local_directory(ctx):
-    list_of_graphs = ctx.obj.svc_exporter.read_local_directory()
+    list_of_graphs = ctx.obj.svc_exporter.read_turtle_data()
 
     if not bool(list_of_graphs):
         raise click.ClickException("There is no data in local directory")
@@ -38,7 +47,8 @@ def export_rdf_graphs_from_local_directory(ctx):
             graph = f.read()
 
         index = config["HAZOP"]["new_index"]
-        filename = filepath.replace("data/turtle/", "").replace(".ttl", ".xlsx")
+        filename = filepath.replace("data/turtle/",
+                                    "").replace(".ttl", ".xlsx")
         df_graph = ctx.obj.svc_exporter.create_hazop_dataframe(graph, index)
         ctx.obj.svc_exporter.export_to_excel(df_graph, filename)
         click.echo("Saved file in data/excel directory: {}".format(filename))
