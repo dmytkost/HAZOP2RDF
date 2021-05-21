@@ -1,5 +1,5 @@
-run:
-	python src/main.py
+ds:
+	fuseki-server --update --mem /ds
 
-test_importer:
-	python -m unittest test.test_importer
+cli:
+	pip install --editable .

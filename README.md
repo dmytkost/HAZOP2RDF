@@ -1,44 +1,34 @@
-# HAZOP-Project for "Projektierung von Automatisierungssystemen"
+# CAE-PA
 
-# Installation
-Clone the repository
+## How to install
+1. `git clone https://github.com/DimakDev/hazop.git`
+1. `cd hazop`
+1. `python3 -m venv ./venv`
+1. `source venv/bin/activate`
+1. `pip install .`
+1. `cli [cmd]` See [API](#API) section for commands to run.
+2. `deactivate`
 
-```console
-git clone https://github.com/DimakDev/hazop.git
-```
+## API
+Below is a list of the currently support API commands.
 
-Change your current working directory
+* [`cli importer`](#importer) - Importer functions.
 
-```console
-cd hazop
-```
+### Importer
+This interface is made as an entry point for reading data and making RDF-Graphs. Below you can see the command's description.
 
-Install python virtualenv (python3 required)
+```cmd
+Usage: cli cli [OPTIONS] COMMAND [ARGS]...
 
-```console
-python3 -m venv ./venv
-```
+  Entry point for reading data and making RDF-Graphs
 
-Activate the virtualenv
+Options:
+  --help  Show this message and exit.
 
-```console
-source venv/bin/activate
-```
+Commands:
+  list-excel-data  List Excel data
+  make-rdf-graphs  Make RDF-Graphs
+  read-hazop-data  Read HAZOP data
+ ```
 
-Install all requirements
-
-```console
-python3 install -r requirements.txt
-```
-
-Run program
-
-```console
-python3 src/main.py
-```
-
-Deactivate the virtualenv
-
-```console
-deactivate
-```
+To use a function from the commands list use: ***`cli importer list-excel-data`***

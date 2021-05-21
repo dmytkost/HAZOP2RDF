@@ -1,0 +1,414 @@
+@prefix cause: <http://www.cae-pa.de/hazop/predicate/cause> .
+@prefix consequence: <http://www.cae-pa.de/hazop/predicate/consequence> .
+@prefix description: <http://www.cae-pa.de/hazop/predicate/description> .
+@prefix deviation: <http://www.cae-pa.de/hazop/predicate/deviation> .
+@prefix frequencyofpresence: <http://www.cae-pa.de/hazop/predicate/frequencyofpresence> .
+@prefix guideword: <http://www.cae-pa.de/hazop/predicate/guideword> .
+@prefix hazopcase: <http://www.cae-pa.de/hazop/object/hazopcase/> .
+@prefix hazopnode: <http://www.cae-pa.de/hazop/predicate/hazopnode> .
+@prefix parameter: <http://www.cae-pa.de/hazop/predicate/parameter> .
+@prefix possibilityofavoiding: <http://www.cae-pa.de/hazop/predicate/possibilityofavoiding> .
+@prefix probability: <http://www.cae-pa.de/hazop/predicate/probability> .
+@prefix recommendation: <http://www.cae-pa.de/hazop/predicate/recommendation> .
+@prefix restrisiko: <http://www.cae-pa.de/hazop/predicate/restrisiko> .
+@prefix riskgraph: <http://www.cae-pa.de/hazop/predicate/iskgraph> .
+@prefix safeguard: <http://www.cae-pa.de/hazop/predicate/safegurd> .
+@prefix severity: <http://www.cae-pa.de/hazop/predicate/sverity> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+hazopcase:1 cause: [ description: "Zugeführtes Prozessmedium zu heiß (>200°C)" ;
+            guideword: "Mehr" ;
+            hazopnode: "In 1 - Feed-Eingang" ;
+            parameter: "Temperatur" ] ;
+    consequence: [ description: "Materialversagen der Dichtungen, Leckage" ;
+            guideword: "NaN"^^xsd:double ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "NaN"^^xsd:double ] ;
+    deviation: [ description: "Überschreitung der zulässigen Temperatur im Behälter" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Temperatur" ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G2 - fast unmöglich" ;
+            probability: "W2 - gering" ;
+            severity: "S2 - geringe" ] ;
+    restrisiko: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G2 - fast unmöglich" ;
+            probability: "W2 - gering" ;
+            severity: "S1 - minimale " ] ;
+    safeguard: [ hazopnode: "Speicherbehälter" ;
+            parameter: "Hochwertige Dichtungen für Temp. über 200°C (bei 25bar)" ;
+            recommendation: "NaN"^^xsd:double ] .
+
+hazopcase:10 cause: [ description: "reines Lösungsmittel wird zugeführt" ;
+            guideword: "Kein" ;
+            hazopnode: "In 1 - Feed-Eingang" ;
+            parameter: "Konzentration" ] ;
+    consequence: [ description: "kein" ;
+            guideword: "NaN"^^xsd:double ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "NaN"^^xsd:double ] ;
+    deviation: [ description: "nur reines Lösungsmittel in Behälter" ;
+            guideword: "Kein" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Konzentration" ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W3 - relativ hoch" ;
+            severity: "S1 - minimale " ] ;
+    restrisiko: [ frequencyofpresence: "NaN"^^xsd:double ;
+            possibilityofavoiding: "NaN"^^xsd:double ;
+            probability: "NaN"^^xsd:double ;
+            severity: "NaN"^^xsd:double ] ;
+    safeguard: [ hazopnode: "In 1 - Feed-Eingang" ;
+            parameter: "keine Aktion erforderlich" ;
+            recommendation: "NaN"^^xsd:double,
+                "Normalzustand" ] .
+
+hazopcase:11 cause: [ description: "starke Säure oder Base wird zugeführt" ;
+            guideword: "Mehr" ;
+            hazopnode: "In 1 - Feed-Eingang" ;
+            parameter: "Konzentration" ] ;
+    consequence: [ description: "Korrosion an Wand, Schweißnähte oder Dichtungen" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Konzentration" ] ;
+    deviation: [ description: "starke Säure oder Base" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Konzentration" ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G2 - fast unmöglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S4 - katastophal" ] ;
+    restrisiko: [ frequencyofpresence: "A1 - selten bis häufig" ;
+            possibilityofavoiding: "G2 - fast unmöglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S1 - minimale " ] ;
+    safeguard: [ hazopnode: "In 1 - Feed-Eingang" ;
+            parameter: "Schulung und SOPs" ;
+            recommendation: "NaN"^^xsd:double,
+                "Mitarbeiter vor Verwendung starker Säuren und Basen gut trainieren" ] .
+
+hazopcase:12 cause: [ description: "organisches Lösungsmittel wird angeschlossen" ;
+            guideword: "NaN"^^xsd:double ;
+            hazopnode: "In 1 - Feed-Eingang" ;
+            parameter: "Konzentration" ] ;
+    consequence: [ description: "Beschädigung der Dichtungen" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Konzentration" ] ;
+    deviation: [ description: "organisches Lösungsmittel" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Konzentration" ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W2 - gering" ;
+            severity: "S3 - schwerwiegende " ] ;
+    restrisiko: [ frequencyofpresence: "A1 - selten bis häufig" ;
+            possibilityofavoiding: "G2 - fast unmöglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S1 - minimale " ] ;
+    safeguard: [ hazopnode: "In 1 - Feed-Eingang" ;
+            parameter: "Schulung und SOPs" ;
+            recommendation: "NaN"^^xsd:double,
+                "Mitarbeiter vor Verwendung organischer Medien gut trainieren" ] .
+
+hazopcase:13 cause: [ description: "hoch viskoses Medium" ;
+            guideword: "Mehr" ;
+            hazopnode: "In 1 - Feed-Eingang" ;
+            parameter: "Konzentration" ] ;
+    consequence: [ description: "Pumpe ist überfordert" ;
+            guideword: "Weniger" ;
+            hazopnode: "Out 1 - Feed Ausgang" ;
+            parameter: "Leistung" ] ;
+    deviation: [ description: "hohe Viskosität" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Konzentration" ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G2 - fast unmöglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S2 - geringe" ] ;
+    restrisiko: [ frequencyofpresence: "A1 - selten bis häufig" ;
+            possibilityofavoiding: "G2 - fast unmöglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S1 - minimale " ] ;
+    safeguard: [ hazopnode: "In 1 - Feed-Eingang" ;
+            parameter: "Schulung und SOPs" ;
+            recommendation: "NaN"^^xsd:double,
+                "Mitarbeiter vor Verwendung hoch-viskoser Medien gut trainieren" ] .
+
+hazopcase:14 cause: [ description: "Feststoffe durch Überschreiten einer Sättigungskonszentration" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Konzentration" ] ;
+    consequence: [ description: "Höherer Druckverlust über Filter, Pumpe kavitiert" ;
+            guideword: "Weniger" ;
+            hazopnode: "Out 1 - Feed Ausgang" ;
+            parameter: "Druck" ] ;
+    deviation: [ description: "Feststoffe bilden sich" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Konzentration" ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W2 - gering" ;
+            severity: "S2 - geringe" ] ;
+    restrisiko: [ frequencyofpresence: "A1 - selten bis häufig" ;
+            possibilityofavoiding: "G2 - fast unmöglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S1 - minimale " ] ;
+    safeguard: [ hazopnode: "NaN"^^xsd:double ;
+            parameter: "NaN"^^xsd:double ;
+            recommendation: "NaN"^^xsd:double,
+                "Bei häufigem Feststoffauftritt muss Filter wechselbar sein, bzw. Parallelen Filter oder Bypass-Schaltung für Filter FL1010" ] .
+
+hazopcase:15 cause: [ description: "Feststoffe gelangen in Behälter" ;
+            guideword: "Mehr" ;
+            hazopnode: "In 1 - Feed-Eingang" ;
+            parameter: "Konzentration" ] ;
+    consequence: [ description: "Höherer Druckverlust über Filter, Pumpe kavitiert" ;
+            guideword: "Weniger" ;
+            hazopnode: "Out 1 - Feed Ausgang" ;
+            parameter: "Druck" ] ;
+    deviation: [ description: "Feststoffe werden in Behälter eingelassen" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Konzentration" ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W2 - gering" ;
+            severity: "S2 - geringe" ] ;
+    restrisiko: [ frequencyofpresence: "A1 - selten bis häufig" ;
+            possibilityofavoiding: "G2 - fast unmöglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S1 - minimale " ] ;
+    safeguard: [ hazopnode: "In 1 - Feed-Eingang" ;
+            parameter: "Filter vor Behälter oder Schulung" ;
+            recommendation: "NaN"^^xsd:double,
+                "Filter muss bei Feststoffgefahr am Einlass vorgesehen werden, oder MA werden auf Vorhandensein von Feststoffen geschult" ] .
+
+hazopcase:16 cause: [ description: "Feststoffe gelangen in Behälter" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Konzentration" ] ;
+    consequence: [ description: "Höherer Druckverlust über Filter, Pumpe kavitiert" ;
+            guideword: "Weniger" ;
+            hazopnode: "Out 1 - Feed Ausgang" ;
+            parameter: "Druck" ] ;
+    deviation: [ description: "Dichtungsabrieb in Behälter " ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Konzentration" ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W2 - gering" ;
+            severity: "S2 - geringe" ] ;
+    restrisiko: [ frequencyofpresence: "A1 - selten bis häufig" ;
+            possibilityofavoiding: "G2 - fast unmöglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S1 - minimale " ] ;
+    safeguard: [ hazopnode: "NaN"^^xsd:double ;
+            parameter: "NaN"^^xsd:double ;
+            recommendation: "NaN"^^xsd:double,
+                "MA überprüfen vor jedem Befüllen die Behälterdichtungen" ] .
+
+hazopcase:17 cause: [ description: "Luft, O2, CH4 oder andere brennbare Medien --> HAZOPCase ID 5" ;
+            guideword: "Anderer/Anders als" ;
+            hazopnode: "In 2 - N2 Eingang" ;
+            parameter: "Konzentration" ] ;
+    consequence: [ description: "Explosionsfähige Atmosphäre" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Druck" ] ;
+    deviation: [ description: "Stickstoff zum Inertisieren" ;
+            guideword: "Anderer/Anders als" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Konzentration" ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G2 - fast unmöglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S4 - katastophal" ] ;
+    restrisiko: [ frequencyofpresence: "A1 - selten bis häufig" ;
+            possibilityofavoiding: "G2 - fast unmöglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S1 - minimale " ] ;
+    safeguard: [ hazopnode: "NaN"^^xsd:double ;
+            parameter: "NaN"^^xsd:double ;
+            recommendation: "NaN"^^xsd:double,
+                "Mitarbeiter vor Verwendung Stickstoff oder anderer gasförmiger Medien gut trainieren" ] .
+
+hazopcase:2 cause: [ description: "Hohe Temperatur aus vorangegangenem Prozessschritt" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Temperatur" ] ;
+    consequence: [ description: "Schlagartiges Verdampfen (Druckstoß) der Edukte aufgrund der Hohen Temperatur im Behälter, bersten des Behälters" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Druck" ] ;
+    deviation: [ description: "Überschreitung der zulässigen Temperatur im Behälter" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Temperatur" ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S3 - schwerwiegende " ] ;
+    restrisiko: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S1 - minimale " ] ;
+    safeguard: [ hazopnode: "Speicherbehälter" ;
+            parameter: "Sicherheitsventil VY3010" ;
+            recommendation: "NaN"^^xsd:double,
+                "regelmäßige Prüfung des Sicherheitsventils (Ausbau + Test)" ] .
+
+hazopcase:3 cause: [ description: "Brand im Außenbereich, Strahlungswärme >200°C" ;
+            guideword: "NaN"^^xsd:double ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "NaN"^^xsd:double ] ;
+    consequence: [ description: "Leckage durch versagen der Dichtungen, Verdampfen der Edukte aufgrund hoher Umgebungstemperaturen" ;
+            guideword: "NaN"^^xsd:double ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "NaN"^^xsd:double ] ;
+    deviation: [ description: "Überschreitung der zulässigen Temperatur im Behälter" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Temperatur" ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S2 - geringe" ] ;
+    restrisiko: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S2 - geringe" ] ;
+    safeguard: [ hazopnode: "Speicherbehälter" ;
+            parameter: "Stromlos-schalten des Moduls, Fail-safe stellung der Ventile" ;
+            recommendation: "Brandmelde- und Löschanlage in Infrastruktur ",
+                "externe Sicherung notwendig" ] .
+
+hazopcase:4 cause: [ description: "Verunreinigung, bspw. Säure/Lauge die zu einer Wäremeentwicklung führen" ;
+            guideword: "Anderer/Anders als" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Medium" ] ;
+    consequence: [ description: "Schlagartiges Verdampfen (Druckstoß) der Edukte aufgrund einer Reaktion im Behälter, bersten des Behälters" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Druck" ] ;
+    deviation: [ description: "Überschreitung der zulässigen Temperatur im Behälter" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Temperatur" ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W2 - gering" ;
+            severity: "S3 - schwerwiegende " ] ;
+    restrisiko: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W2 - gering" ;
+            severity: "S1 - minimale " ] ;
+    safeguard: [ hazopnode: "Speicherbehälter" ;
+            parameter: "Sicherheitsventil VY3010" ;
+            recommendation: "NaN"^^xsd:double ] .
+
+hazopcase:5 cause: [ description: "Stoffverwechslung am Stickstoffeingang (z.B. Chlor)" ;
+            guideword: "Anderer/Anders als" ;
+            hazopnode: "In 2 - N2 Eingang" ;
+            parameter: "Medium" ] ;
+    consequence: [ description: "Bilden einer explosionsfähige Atmosphäre" ;
+            guideword: "NaN"^^xsd:double ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "NaN"^^xsd:double ] ;
+    deviation: [ description: "Überschreitung der zulässigen Temperatur im Behälter" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Temperatur" ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S3 - schwerwiegende " ] ;
+    restrisiko: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S3 - schwerwiegende " ] ;
+    safeguard: [ hazopnode: "NaN"^^xsd:double ;
+            parameter: "NaN"^^xsd:double ;
+            recommendation: "NaN"^^xsd:double,
+                "Organisatorisch ausschließen, dass Chlor an Inertisierung angeschlossen wird" ] .
+
+hazopcase:6 cause: [ description: "Extrem niedrige Umgebungstemperatur" ;
+            guideword: "NaN"^^xsd:double ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "NaN"^^xsd:double ] ;
+    consequence: [ description: "Einfrieren des Mediums" ;
+            guideword: "Anderer/Anders als" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Aggregatzustand" ] ;
+    deviation: [ description: "Unterschreitung der zulässigen Temperatur im Behälter" ;
+            guideword: "Weniger" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Temperatur" ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S2 - geringe" ] ;
+    restrisiko: [ frequencyofpresence: "NaN"^^xsd:double ;
+            possibilityofavoiding: "NaN"^^xsd:double ;
+            probability: "NaN"^^xsd:double ;
+            severity: "NaN"^^xsd:double ] ;
+    safeguard: [ hazopnode: "NaN"^^xsd:double ;
+            parameter: "NaN"^^xsd:double ;
+            recommendation: "NaN"^^xsd:double,
+                "Betrieb nur im Innebereich bei moderaten Bedingungen" ] .
+
+hazopcase:7 cause: [ description: "Druck des eingehenden Mediums zu hoch" ;
+            guideword: "Mehr" ;
+            hazopnode: "In 1 - Feed-Eingang" ;
+            parameter: "Druck" ] ;
+    consequence: [ description: "Druckerhöhung innerhalb des Behälters" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Druck" ] ;
+    deviation: [ description: "Überschreitung des zulässigen Druckes im Behälter" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Druck" ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W2 - gering" ;
+            severity: "S3 - schwerwiegende " ] ;
+    restrisiko: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W2 - gering" ;
+            severity: "S1 - minimale " ] ;
+    safeguard: [ hazopnode: "Speicherbehälter" ;
+            parameter: "Sicherheitsventil VY3010" ;
+            recommendation: "NaN"^^xsd:double ] .
+
+hazopcase:8 cause: [ description: "Verunreinigung im Behälter führt zu exothermer Reaktion unter Gasbildung" ;
+            guideword: "Anderer/Anders als" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Medium" ] ;
+    consequence: [ description: "Temperatur zusätzlich zum Druckanstieg im Behälter" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Druck" ] ;
+    deviation: [ description: "Überschreitung des zulässigen Druckes im Behälter" ;
+            guideword: "Mehr" ;
+            hazopnode: "Speicherbehälter" ;
+            parameter: "Druck" ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W2 - gering" ;
+            severity: "S3 - schwerwiegende " ] ;
+    restrisiko: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W2 - gering" ;
+            severity: "S1 - minimale " ] ;
+    safeguard: [ hazopnode: "Speicherbehälter" ;
+            parameter: "Sicherheitsventil VY3010" ;
+            recommendation: "NaN"^^xsd:double ] .
+

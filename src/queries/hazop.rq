@@ -1,0 +1,84 @@
+PREFIX cause: <http://www.cae-pa.de/hazop/predicate/cause>
+PREFIX consequence: <http://www.cae-pa.de/hazop/predicate/consequence>
+PREFIX description: <http://www.cae-pa.de/hazop/predicate/description>
+PREFIX deviation: <http://www.cae-pa.de/hazop/predicate/deviation>
+PREFIX frequencyofpresence: <http://www.cae-pa.de/hazop/predicate/frequencyofpresence>
+PREFIX guideword: <http://www.cae-pa.de/hazop/predicate/guideword>
+PREFIX hazopcase: <http://www.cae-pa.de/hazop/object/hazopcase/>
+PREFIX hazopnode: <http://www.cae-pa.de/hazop/predicate/hazopnode>
+PREFIX parameter: <http://www.cae-pa.de/hazop/predicate/parameter>
+PREFIX possibilityofavoiding: <http://www.cae-pa.de/hazop/predicate/possibilityofavoiding>
+PREFIX probability: <http://www.cae-pa.de/hazop/predicate/probability>
+PREFIX recommendation: <http://www.cae-pa.de/hazop/predicate/recommendation>
+PREFIX restrisiko: <http://www.cae-pa.de/hazop/predicate/restrisiko>
+PREFIX riskgraph: <http://www.cae-pa.de/hazop/predicate/iskgraph>
+PREFIX safeguard: <http://www.cae-pa.de/hazop/predicate/safegurd>
+PREFIX severity: <http://www.cae-pa.de/hazop/predicate/sverity>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT
+?hazopcase
+?deviation_hazopnode
+?deviation_parameter
+?deviation_guideword
+?deviation_description
+?cause_hazopnode
+?cause_parameter
+?cause_guideword
+?cause_description
+?consequence_hazopnode
+?consequence_parameter
+?consequence_guideword
+?consequence_description
+?riskgraph_severity
+?riskgraph_presence
+?riskgraph_avoiding
+?riskgraph_probability
+?safeguard_hazopnode
+?safeguard_parameter
+?safeguard_recommendation1
+?safeguard_recommendation2
+?restrisiko_severity
+?restrisiko_presence
+?restrisiko_avoiding
+?restrisiko_probability
+WHERE {
+    ?case deviation: ?deviation .
+    ?deviation hazopnode: ?deviation_hazopnode .
+    ?deviation parameter: ?deviation_parameter .
+    ?deviation guideword: ?deviation_guideword .
+    ?deviation description: ?deviation_description .
+
+    ?case cause: ?cause .
+    ?cause hazopnode: ?cause_hazopnode .
+    ?cause parameter: ?cause_parameter .
+    ?cause guideword: ?cause_guideword .
+    ?cause description: ?cause_description .
+
+    ?case consequence: ?consequence .
+    ?consequence hazopnode: ?consequence_hazopnode .
+    ?consequence parameter: ?consequence_parameter .
+    ?consequence guideword: ?consequence_guideword .
+    ?consequence description: ?consequence_description .
+
+    ?case riskgraph: ?riskgraph .
+    ?riskgraph severity: ?riskgraph_severity .
+    ?riskgraph frequencyofpresence: ?riskgraph_presence .
+    ?riskgraph possibilityofavoiding: ?riskgraph_avoiding .
+    ?riskgraph probability: ?riskgraph_probability .
+
+    ?case safeguard: ?safeguard .
+    ?safeguard hazopnode: ?safeguard_hazopnode .
+    ?safeguard parameter: ?safeguard_parameter .
+    ?safeguard recommendation: ?safeguard_recommendation1 .
+    ?safeguard recommendation: ?safeguard_recommendation2 .
+
+    ?case restrisiko: ?restrisiko .
+    ?restrisiko severity: ?restrisiko_severity .
+    ?restrisiko frequencyofpresence: ?restrisiko_presence .
+    ?restrisiko possibilityofavoiding: ?restrisiko_avoiding .
+    ?restrisiko probability: ?restrisiko_probability .
+
+
+    BIND(REPLACE(str(?case), ".*/", "") AS ?hazopcase)
+}
