@@ -27,5 +27,5 @@ class ComplexCLI(click.MultiCommand):
 
 @click.command(cls=ComplexCLI)
 def cli():
-    """Welcome to hazop CLI!"""
+    """Welcome to HAZOP CLI!"""
     pass

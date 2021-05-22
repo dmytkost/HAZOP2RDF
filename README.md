@@ -7,15 +7,34 @@
 1. `source venv/bin/activate`
 1. `pip install .`
 1. `cli [cmd]` See [API](#API) section for commands to run.
-2. `deactivate`
+1. `pytest` Run tests
+1. `deactivate`
 
 ## API
-Below is a list of the currently support API commands.
 
-* [`cli importer`](#importer) - Importer functions.
+To see the list of available commands, run `cli`.
 
-### Importer (outdated)
-This interface is made as an entry point for reading data and making RDF-Graphs. Below you can see the command's description.
+```cmd
+Usage: cli [OPTIONS] COMMAND [ARGS]...
+
+  Welcome to HAZOP CLI!
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  exporter  Exporter interface for RDF-Graphs
+  importer  Entry point for reading data and making RDF-Graphs
+```
+
+* `cli importer` - [Importer API](#importer)
+* `cli exporter` - [Exporter API](#exporter)
+
+### Importer
+
+This API is an entry point for reading Excel data and building RDF-Graphs
+
+Command: `cli importer`
 
 ```cmd
 Usage: cli cli [OPTIONS] COMMAND [ARGS]...
@@ -26,9 +45,35 @@ Options:
   --help  Show this message and exit.
 
 Commands:
-  list-excel-data  List Excel data
-  make-rdf-graphs  Make RDF-Graphs
-  read-hazop-data  Read HAZOP data
+  cmd-build-hazop-graphs  Make RDF-Graphs
+  cmd-list-excel-data     List Excel data
+  cmd-read-hazop-data     Read HAZOP data
  ```
 
-To use a function from the commands list use: ***`cli importer list-excel-data`***
+* `cli importer cmd-list-excel-data`- to see the list of available Excel binary data
+* `cli importer cmd-read-hazop-data`- to read the HAZOP data if its config is available
+* `cli importer cmd-build-hazop-graphs`- to build HAZOP graphs, save it locally and upload to Fuseki server, if the server is up
+
+### Exporter
+
+This API exports RDF-Data either from local directory or from Fuseki server, if it is available.
+
+Command: `cli exporter`
+
+```cmd
+Usage: cli cli [OPTIONS] COMMAND [ARGS]...
+
+  Exporter interface for RDF-Graphs
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  cmd-export-graphs-from-fuseki-server
+                                  Export RDF-Graphs from Fuseki...
+  cmd-export-graphs-from-local-directory
+                                  Export RDF-Graphs from local...
+```
+
+* `cli exporter cmd-export-graphs-from-local-directory`- to convert graphs from Turtle in Excel format and save it locally
+* `cli exporter cmd-export-graphs-from-fuseki-server`- to get graphs from Fuseki server, if the server is running, convert it to Excel format and save it locally

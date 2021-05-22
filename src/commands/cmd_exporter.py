@@ -65,12 +65,12 @@ def cli(ctx):
 @cli.command()
 @click.pass_context
 def cmd_export_graphs_from_fuseki_server(ctx):
-    """Export RDF-Graphs"""
+    """Export RDF-Graphs from Fuseki server"""
     export_graphs_from_fuseki_server(ctx)
 
 
 @cli.command()
 @click.pass_context
 def cmd_export_graphs_from_local_directory(ctx):
-    """Export RDF-Graphs"""
+    """Export RDF-Graphs from local directory"""
     export_graphs_from_local_directory(ctx)
