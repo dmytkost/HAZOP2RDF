@@ -35,7 +35,7 @@ def read_hazop_data(ctx):
 
     ctx.obj.hazop_data = []
     for filename in ctx.obj.excel_data:
-        if filename == config["HAZOP"]["filename"]:
+        if filename in config["HAZOP"]["files"]:
             engine     = config["HAZOP"]["engine"]
             header     = config["HAZOP"]["header"]
             sheet_name = config["HAZOP"]["sheet_name"]
@@ -46,22 +46,22 @@ def read_hazop_data(ctx):
                                                       header,
                                                       sheet_name)
             df.name = filename
-            validator = (set(df.columns.tolist()) ==
-                         set(config["HAZOP"]["imp_multiindex"]))
+            validator = (set(df.columns.tolist()) == set(
+                config["HAZOP"]["imp_multiindex"]))
 
             if bool(validator):
                 ctx.obj.hazop_data.append(df)
             else:
-                click.echo("Hazop data does not match the schema")
+                click.echo("HAZOP data does not match the schema")
         else:
             click.echo("Missed config for {}".format(filename))
     if not bool(ctx.obj.hazop_data):
         raise click.ClickException("No HAZOP data found")
 
-    click.echo("Number of HAZOP files: {}".format(len(ctx.obj.hazop_data)))
+    click.echo(f"Number of files with HAZOP config: {len(ctx.obj.hazop_data)}")
 
 
-def build_hazop_graph(ctx):
+def build_hazop_graphs(ctx):
     read_hazop_data(ctx)
 
     ctx.obj.rdf_graphs = {}
@@ -128,6 +128,6 @@ def cmd_read_hazop_data(ctx):
 
 @cli.command()
 @click.pass_context
-def cmd_build_hazop_graph(ctx):
+def cmd_build_hazop_graphs(ctx):
     """Make RDF-Graphs"""
-    build_hazop_graph(ctx)
+    build_hazop_graphs(ctx)

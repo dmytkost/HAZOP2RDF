@@ -1,12 +1,9 @@
 config = {
     "HAZOP": {
-        "filename":
-        "PEA-HAZOP-Dosiermodul_v07.xlsb",
-        "engine":
-        "pyxlsb",
+        "files": ["PEA-HAZOP-Dosiermodul_v07.xlsb"],
+        "engine": "pyxlsb",
         "header": [2, 3],
-        "sheet_name":
-        1,
+        "sheet_name": 1,
         "imp_multiindex": [("Unnamed: 0_level_0", "ID HAZOP Case"),
                            ("Deviation", "HAZOPNode"),
                            ("Deviation", "Parameter"),
