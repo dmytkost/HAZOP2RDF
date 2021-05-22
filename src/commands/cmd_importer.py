@@ -25,7 +25,7 @@ def list_excel_data(ctx):
     click.echo("Excel data list:")
 
     for path in list_of_excel_data:
-        filename = path.replace("data/", "")
+        filename = os.path.split(path)[1]
         ctx.obj.excel_data.append(filename)
         click.echo(filename)
 
@@ -69,7 +69,7 @@ def build_hazop_graphs(ctx):
     for df in ctx.obj.hazop_data:
         graph = ctx.obj.svc_importer.build_hazop_graph(df)
         filename = df.name.replace(".xlsb", ".ttl")
-        filepath = os.path.join("data/turtle", filename)
+        filepath = os.path.join("data", "turtle", filename)
 
         ctx.obj.rdf_graphs[filename] = graph
 
@@ -93,7 +93,7 @@ def save_graph_locally(graph, filepath):
     with open(filepath, "w") as file:
         file.write(graph_str)
 
-    click.echo("Saved file in data/turtle directory: {}".format(filepath))
+    click.echo("Saved file in data turtle directory: {}".format(filepath))
 
 
 def upload_graph_to_fuseki(ctx, filename, filepath):

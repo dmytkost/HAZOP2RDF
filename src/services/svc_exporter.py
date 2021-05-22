@@ -1,16 +1,19 @@
-import glob, pandas as pd
+import os, glob, pandas as pd
 from rdflib import Graph
 
 
 class Service:
     def read_turtle_data(self):
-        return glob.glob("data/turtle/*.ttl")
+        path = os.path.join("data", "turtle", "*.ttl")
+        
+        return glob.glob(path)
 
     def parse_graph(self, graph):
         g = Graph()
         g.parse(data=graph, format="turtle")
 
-        with open("src/queries/hazop.rq", "r") as f:
+        query_path = os.path.join("src", "queries", "hazop.rq")
+        with open(query_path, "r") as f:
             qres = g.query(f.read())
 
         rows = []
@@ -28,4 +31,5 @@ class Service:
         df.replace(r"\bnan\b", "", regex=True, inplace=True)
         df[df.columns[0]] = df[df.columns[0]].astype("int32")
         df.sort_values(by=df.columns[0], ascending=True, inplace=True)
-        df.to_excel(f"data/excel/{df.name}", columns=df.columns, index=False)
+        filepath = os.path.join("data", "excel", df.name)
+        df.to_excel(filepath, columns=df.columns, index=False)

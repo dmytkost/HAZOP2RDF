@@ -1,11 +1,13 @@
-import glob, pandas as pd
+import os, glob, pandas as pd
 
 from rdflib import Namespace, Graph, URIRef, BNode, Literal
 
 
 class Service:
     def read_excel_data(self):
-        return glob.glob("data/*.xlsb")
+        path = os.path.join("data", "*.xlsb")
+        
+        return glob.glob(path)
 
     def read_hazop_data(self, filename, engine, header, sheet_name):
         df = pd.read_excel(filename,

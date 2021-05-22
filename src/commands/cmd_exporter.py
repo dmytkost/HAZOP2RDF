@@ -1,4 +1,4 @@
-import click, glob, json
+import click, os, glob, json
 
 from src.services.svc_exporter import Service as service_exporter
 from src.services.svc_triplestore import Service as service_triplestore
@@ -28,13 +28,7 @@ def export_graphs_from_fuseki_server(ctx):
 
     for filename in list_of_graphs:
         graph = ctx.obj.svc_triplestore.get_hazop_graph(filename)
-
-        index = config["HAZOP"]["new_multiindex"]
-        graph_parsed = ctx.obj.svc_exporter.parse_graph(graph)
-        df = ctx.obj.svc_exporter.create_hazop_dataframe(graph_parsed, index)
-        df.name = filename.replace(".ttl", ".xlsx")
-        ctx.obj.svc_exporter.export_to_excel(df)
-        click.echo("Saved file in data/excel directory: {}".format(df.name))
+        save_graph_in_data_excel_directory(ctx, graph, filename)
 
 
 def export_graphs_from_local_directory(ctx):
@@ -46,13 +40,18 @@ def export_graphs_from_local_directory(ctx):
     for filepath in list_of_graphs:
         with open(filepath, "r") as f:
             graph = f.read()
+        
+        filename = os.path.split(filepath)[1]
+        save_graph_in_data_excel_directory(ctx, graph, filename)
 
-        index = config["HAZOP"]["new_multiindex"]
-        graph_parsed = ctx.obj.svc_exporter.parse_graph(graph)
-        df = ctx.obj.svc_exporter.create_hazop_dataframe(graph_parsed, index)
-        df.name = filepath.replace("data/turtle/", "").replace(".ttl", ".xlsx")
-        ctx.obj.svc_exporter.export_to_excel(df)
-        click.echo("Saved file in data/excel directory: {}".format(df.name))
+
+def save_graph_in_data_excel_directory(ctx, graph, filename):
+    index = config["HAZOP"]["new_multiindex"]
+    graph_parsed = ctx.obj.svc_exporter.parse_graph(graph)
+    df = ctx.obj.svc_exporter.create_hazop_dataframe(graph_parsed, index)
+    df.name = filename.replace(".ttl", ".xlsx")
+    ctx.obj.svc_exporter.export_to_excel(df)
+    click.echo("Saved file in data excel directory: {}".format(df.name))
 
 
 @click.group()
