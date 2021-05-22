@@ -29,7 +29,7 @@ def export_graphs_from_fuseki_server(ctx):
     for filename in list_of_graphs:
         graph = ctx.obj.svc_triplestore.get_hazop_graph(filename)
 
-        index = config["HAZOP"]["new_index"]
+        index = config["HAZOP"]["new_multiindex"]
         graph_parsed = ctx.obj.svc_exporter.parse_graph(graph)
         df = ctx.obj.svc_exporter.create_hazop_dataframe(graph_parsed, index)
         df.name = filename.replace(".ttl", ".xlsx")
@@ -47,7 +47,7 @@ def export_graphs_from_local_directory(ctx):
         with open(filepath, "r") as f:
             graph = f.read()
 
-        index = config["HAZOP"]["new_index"]
+        index = config["HAZOP"]["new_multiindex"]
         graph_parsed = ctx.obj.svc_exporter.parse_graph(graph)
         df = ctx.obj.svc_exporter.create_hazop_dataframe(graph_parsed, index)
         df.name = filepath.replace("data/turtle/", "").replace(".ttl", ".xlsx")

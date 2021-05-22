@@ -25,4 +25,7 @@ class Service:
         return df
 
     def export_to_excel(self, df):
-        df.to_excel(f"data/excel/{df.name}", index=False)
+        df.replace(r"\bnan\b", "", regex=True, inplace=True)
+        df[df.columns[0]] = df[df.columns[0]].astype("int32")
+        df.sort_values(by=df.columns[0], ascending=True, inplace=True)
+        df.to_excel(f"data/excel/{df.name}", columns=df.columns, index=False)

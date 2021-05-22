@@ -47,7 +47,7 @@ def read_hazop_data(ctx):
                                                       sheet_name)
             df.name = filename
             validator = (set(df.columns.tolist()) == set(
-                config["HAZOP"]["imp_multiindex"]))
+                config["HAZOP"]["old_multiindex"]))
 
             if bool(validator):
                 ctx.obj.hazop_data.append(df)
