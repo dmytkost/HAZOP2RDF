@@ -32,25 +32,27 @@ def read_hazop_data(ctx):
     for filepath in list_of_excel_data:
         filename = os.path.split(filepath)[1]
 
-        if filename in config["HAZOP"]["files"]:
-            engine = config["HAZOP"]["engine"]
-            header = config["HAZOP"]["header"]
-            sheet_name = config["HAZOP"]["sheet_name"]
-
-            df = ctx.obj.svc_importer.read_hazop_data(filepath,
-                                                      engine,
-                                                      header,
-                                                      sheet_name)
-
-            validator = (set(df.columns.tolist()) == set(
-                config["HAZOP"]["old_multiindex"]))
-
-            if bool(validator):
-                list_of_hazop_data[filename] = df
-            else:
-                click.echo("HAZOP data does not match the schema")
-        else:
+        if not filename in config["HAZOP"]["files"]:
             click.echo("Missed config for {}".format(filename))
+            continue
+
+        engine = config["HAZOP"]["engine"]
+        header = config["HAZOP"]["header"]
+        sheet_name = config["HAZOP"]["sheet_name"]
+
+        df = ctx.obj.svc_importer.read_hazop_data(filepath,
+                                                  engine,
+                                                  header,
+                                                  sheet_name)
+
+        validator = (set(df.columns.tolist()) == set(
+            config["HAZOP"]["old_multiindex"]))
+
+        if not bool(validator):
+            click.echo("HAZOP data does not match the schema")
+            continue
+
+        list_of_hazop_data[filename] = df
 
     if not bool(list_of_hazop_data):
         raise click.ClickException("No HAZOP data found")
