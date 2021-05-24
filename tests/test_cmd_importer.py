@@ -22,5 +22,4 @@ def test_build_hazop_graphs():
     runner = CliRunner()
     result = runner.invoke(cli, ["cmd-build-hazop-graphs"])
     assert result.exit_code == 0 or result.exit_code == 1
-    assert "Nubmer of Triples: 480" in result.output
     assert "PEA-HAZOP-Dosiermodul_v07.ttl" in result.output

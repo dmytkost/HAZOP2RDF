@@ -1,4 +1,7 @@
-import click, os, glob, json
+import click
+import os
+import glob
+import json
 
 from src.services.svc_exporter import Service as service_exporter
 from src.services.svc_triplestore import Service as service_triplestore
@@ -40,7 +43,7 @@ def export_graphs_from_local_directory(ctx):
     for filepath in list_of_graphs:
         with open(filepath, "r") as f:
             graph = f.read()
-        
+
         filename = os.path.split(filepath)[1]
         save_graph_in_data_excel_directory(ctx, graph, filename)
 

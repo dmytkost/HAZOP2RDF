@@ -1,4 +1,6 @@
-import click, glob, os
+import click
+import glob
+import os
 
 from src.services.svc_importer import Service as service_importer
 from src.services.svc_triplestore import Service as service_triplestore
@@ -9,9 +11,6 @@ class Context:
     def __init__(self):
         self.svc_importer = service_importer()
         self.svc_triplestore = service_triplestore()
-        self.excel_data = None
-        self.hazop_data = None
-        self.rdf_graphs = None
 
 
 def list_excel_data(ctx):
@@ -20,71 +19,57 @@ def list_excel_data(ctx):
     if not bool(list_of_excel_data):
         raise click.ClickException("No Excel data found")
 
-    ctx.obj.excel_data = []
+    click.echo("List of Excel data:")
+    click.echo(*list_of_excel_data)
 
-    click.echo("Excel data list:")
-
-    for path in list_of_excel_data:
-        filename = os.path.split(path)[1]
-        ctx.obj.excel_data.append(filename)
-        click.echo(filename)
+    return list_of_excel_data
 
 
 def read_hazop_data(ctx):
-    list_excel_data(ctx)
+    list_of_excel_data = list_excel_data(ctx)
+    list_of_hazop_data = {}
 
-    ctx.obj.hazop_data = []
-    for filename in ctx.obj.excel_data:
+    for filepath in list_of_excel_data:
+        filename = os.path.split(filepath)[1]
+
         if filename in config["HAZOP"]["files"]:
-            engine     = config["HAZOP"]["engine"]
-            header     = config["HAZOP"]["header"]
+            engine = config["HAZOP"]["engine"]
+            header = config["HAZOP"]["header"]
             sheet_name = config["HAZOP"]["sheet_name"]
 
-            filepath = os.path.join("data", filename)
             df = ctx.obj.svc_importer.read_hazop_data(filepath,
                                                       engine,
                                                       header,
                                                       sheet_name)
-            df.name = filename
+
             validator = (set(df.columns.tolist()) == set(
                 config["HAZOP"]["old_multiindex"]))
 
             if bool(validator):
-                ctx.obj.hazop_data.append(df)
+                list_of_hazop_data[filename] = df
             else:
                 click.echo("HAZOP data does not match the schema")
         else:
             click.echo("Missed config for {}".format(filename))
-    if not bool(ctx.obj.hazop_data):
+
+    if not bool(list_of_hazop_data):
         raise click.ClickException("No HAZOP data found")
 
-    click.echo(f"Number of files with HAZOP config: {len(ctx.obj.hazop_data)}")
+    click.echo(f"Number of files with HAZOP config: {len(list_of_hazop_data)}")
+
+    return list_of_hazop_data
 
 
 def build_hazop_graphs(ctx):
-    read_hazop_data(ctx)
+    list_of_hazop_data = read_hazop_data(ctx)
 
-    ctx.obj.rdf_graphs = {}
-
-    for df in ctx.obj.hazop_data:
-        graph = ctx.obj.svc_importer.build_hazop_graph(df)
-        filename = df.name.replace(".xlsb", ".ttl")
+    for key, val in list_of_hazop_data.items():
+        graph = ctx.obj.svc_importer.build_hazop_graph(val)
+        filename = key.replace(".xlsb", ".ttl")
         filepath = os.path.join("data", "turtle", filename)
 
-        ctx.obj.rdf_graphs[filename] = graph
-
-        hazop_build_info(ctx)
         save_graph_locally(graph, filepath)
         upload_graph_to_fuseki(ctx, filename, filepath)
-
-
-def hazop_build_info(ctx):
-    number_of_triples = 0
-
-    for k, v in ctx.obj.rdf_graphs.items():
-        number_of_triples += len(v)
-
-    click.echo("Nubmer of Triples: {}".format(number_of_triples))
 
 
 def save_graph_locally(graph, filepath):

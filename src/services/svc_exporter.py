@@ -1,11 +1,13 @@
-import os, glob, pandas as pd
+import os
+import glob
+import pandas as pd
 from rdflib import Graph
 
 
 class Service:
     def read_turtle_data(self):
         path = os.path.join("data", "turtle", "*.ttl")
-        
+
         return glob.glob(path)
 
     def parse_graph(self, graph):
@@ -32,4 +34,7 @@ class Service:
         df[df.columns[0]] = df[df.columns[0]].astype("int32")
         df.sort_values(by=df.columns[0], ascending=True, inplace=True)
         filepath = os.path.join("data", "excel", df.name)
-        df.to_excel(filepath, columns=df.columns, index=False)
+        df.to_excel(filepath,
+                    columns=df.columns,
+                    index=False,
+                    sheet_name="HAZOP")

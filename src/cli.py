@@ -1,4 +1,5 @@
-import click, os
+import click
+import os
 
 
 class ComplexCLI(click.MultiCommand):

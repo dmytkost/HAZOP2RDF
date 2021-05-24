@@ -1,12 +1,13 @@
-import os, glob, pandas as pd
-
+import os
+import glob
+import pandas as pd
 from rdflib import Namespace, Graph, URIRef, BNode, Literal
 
 
 class Service:
     def read_excel_data(self):
         path = os.path.join("data", "*.xlsb")
-        
+
         return glob.glob(path)
 
     def read_hazop_data(self, filename, engine, header, sheet_name):
@@ -25,23 +26,23 @@ class Service:
         p_ref = uri + "hazop/predicate/"
         g = Graph()
 
-        hazopcase                = URIRef(f"{o_ref}hazopcase/")
-        predicate_deviation      = URIRef(f"{p_ref}deviation")
-        predicate_cause          = URIRef(f"{p_ref}cause")
-        predicate_consequence    = URIRef(f"{p_ref}consequence")
-        predicate_riskgraph      = URIRef(f"{p_ref}iskgraph")
-        predicate_safeguard      = URIRef(f"{p_ref}safegurd")
-        predicate_restrisiko     = URIRef(f"{p_ref}restrisiko")
-        predicate_hazopnode      = URIRef(f"{p_ref}hazopnode")
-        predicate_parameter      = URIRef(f"{p_ref}parameter")
-        predicate_guideword      = URIRef(f"{p_ref}guideword")
-        predicate_description    = URIRef(f"{p_ref}description")
+        hazopcase = URIRef(f"{o_ref}hazopcase/")
+        predicate_deviation = URIRef(f"{p_ref}deviation")
+        predicate_cause = URIRef(f"{p_ref}cause")
+        predicate_consequence = URIRef(f"{p_ref}consequence")
+        predicate_riskgraph = URIRef(f"{p_ref}iskgraph")
+        predicate_safeguard = URIRef(f"{p_ref}safegurd")
+        predicate_restrisiko = URIRef(f"{p_ref}restrisiko")
+        predicate_hazopnode = URIRef(f"{p_ref}hazopnode")
+        predicate_parameter = URIRef(f"{p_ref}parameter")
+        predicate_guideword = URIRef(f"{p_ref}guideword")
+        predicate_description = URIRef(f"{p_ref}description")
         predicate_recommendation = URIRef(f"{p_ref}recommendation")
-        predicate_otherinfo      = URIRef(f"{p_ref}otherinfo")
-        predicate_severity       = URIRef(f"{p_ref}sverity")
-        predicate_presence       = URIRef(f"{p_ref}frequencyofpresence")
-        predicate_avoiding       = URIRef(f"{p_ref}possibilityofavoiding")
-        predicate_probability    = URIRef(f"{p_ref}probability")
+        predicate_otherinfo = URIRef(f"{p_ref}otherinfo")
+        predicate_severity = URIRef(f"{p_ref}sverity")
+        predicate_presence = URIRef(f"{p_ref}frequencyofpresence")
+        predicate_avoiding = URIRef(f"{p_ref}possibilityofavoiding")
+        predicate_probability = URIRef(f"{p_ref}probability")
 
         g.bind("hazopcase", hazopcase)
         g.bind("deviation", predicate_deviation)
@@ -65,13 +66,13 @@ class Service:
             if not str(row[0]).isdigit():
                 continue
 
-            case             = URIRef(str(row[0]))
-            node_deviation   = BNode()
-            node_cause       = BNode()
+            case = URIRef(str(row[0]))
+            node_deviation = BNode()
+            node_cause = BNode()
             node_consequence = BNode()
-            node_riskgraph   = BNode()
-            node_safeguard   = BNode()
-            node_restrisiko  = BNode()
+            node_riskgraph = BNode()
+            node_safeguard = BNode()
+            node_restrisiko = BNode()
 
             g.add((hazopcase + case, predicate_deviation, node_deviation))
             g.add((hazopcase + case, predicate_cause, node_cause))
