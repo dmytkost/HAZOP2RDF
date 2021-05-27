@@ -14,6 +14,7 @@
 1. `deactivate`
 
 ### macOS
+
 1. `git clone https://github.com/DimakDev/hazop.git`
 1. `cd hazop`
 1. `python3 -m venv ./venv`
@@ -52,16 +53,16 @@ Command: `cli importer`
 ```cmd
 Usage: cli cli [OPTIONS] COMMAND [ARGS]...
 
-  Entry point for reading data and making RDF-Graphs
+  Entry point for reading data and building RDF-Graphs
 
 Options:
   --help  Show this message and exit.
 
 Commands:
-  cmd-build-hazop-graphs  Make RDF-Graphs
+  cmd-build-hazop-graphs  Build RDF-Graphs
   cmd-list-excel-data     List Excel data
   cmd-read-hazop-data     Read HAZOP data
- ```
+```
 
 * `cli importer cmd-list-excel-data`- to see the list of available Excel binary data
 * `cli importer cmd-read-hazop-data`- to read the HAZOP data if its config is available

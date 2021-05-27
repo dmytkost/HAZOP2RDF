@@ -95,7 +95,7 @@ def upload_graph_to_fuseki(ctx, filename, filepath):
 @click.group()
 @click.pass_context
 def cli(ctx):
-    """Entry point for reading data and making RDF-Graphs"""
+    """Entry point for reading data and building RDF-Graphs"""
     ctx.obj = Context()
 
 
@@ -116,5 +116,5 @@ def cmd_read_hazop_data(ctx):
 @cli.command()
 @click.pass_context
 def cmd_build_hazop_graphs(ctx):
-    """Make RDF-Graphs"""
+    """Build RDF-Graphs"""
     build_hazop_graphs(ctx)

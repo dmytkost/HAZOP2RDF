@@ -22,16 +22,16 @@ class Service:
         return df_filtered
 
     def build_hazop_graph(self, df):
-        uri = "http://www.cae-pa.de/"
-        o_ref = uri + "hazop/object/"
-        p_ref = uri + "hazop/predicate/"
+        uri = "http://www.hazop2rdf.de/hazop/"
+        s_ref = uri + "subject/"
+        p_ref = uri + "predicate/"
         g = Graph()
 
-        hazopcase = URIRef(f"{o_ref}hazopcase/")
+        hazopcase = URIRef(f"{s_ref}hazopcase/")
         predicate_deviation = URIRef(f"{p_ref}deviation")
         predicate_cause = URIRef(f"{p_ref}cause")
         predicate_consequence = URIRef(f"{p_ref}consequence")
-        predicate_riskgraph = URIRef(f"{p_ref}iskgraph")
+        predicate_riskgraph = URIRef(f"{p_ref}riskgraph")
         predicate_safeguard = URIRef(f"{p_ref}safegurd")
         predicate_restrisiko = URIRef(f"{p_ref}restrisiko")
         predicate_hazopnode = URIRef(f"{p_ref}hazopnode")
@@ -40,7 +40,7 @@ class Service:
         predicate_description = URIRef(f"{p_ref}description")
         predicate_recommendation = URIRef(f"{p_ref}recommendation")
         predicate_otherinfo = URIRef(f"{p_ref}otherinfo")
-        predicate_severity = URIRef(f"{p_ref}sverity")
+        predicate_severity = URIRef(f"{p_ref}severity")
         predicate_presence = URIRef(f"{p_ref}frequencyofpresence")
         predicate_avoiding = URIRef(f"{p_ref}possibilityofavoiding")
         predicate_probability = URIRef(f"{p_ref}probability")

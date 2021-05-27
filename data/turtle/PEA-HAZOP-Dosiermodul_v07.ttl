@@ -1,20 +1,20 @@
-@prefix cause: <http://www.cae-pa.de/hazop/predicate/cause> .
-@prefix consequence: <http://www.cae-pa.de/hazop/predicate/consequence> .
-@prefix description: <http://www.cae-pa.de/hazop/predicate/description> .
-@prefix deviation: <http://www.cae-pa.de/hazop/predicate/deviation> .
-@prefix frequencyofpresence: <http://www.cae-pa.de/hazop/predicate/frequencyofpresence> .
-@prefix guideword: <http://www.cae-pa.de/hazop/predicate/guideword> .
-@prefix hazopcase: <http://www.cae-pa.de/hazop/object/hazopcase/> .
-@prefix hazopnode: <http://www.cae-pa.de/hazop/predicate/hazopnode> .
-@prefix otherinfo: <http://www.cae-pa.de/hazop/predicate/otherinfo> .
-@prefix parameter: <http://www.cae-pa.de/hazop/predicate/parameter> .
-@prefix possibilityofavoiding: <http://www.cae-pa.de/hazop/predicate/possibilityofavoiding> .
-@prefix probability: <http://www.cae-pa.de/hazop/predicate/probability> .
-@prefix recommendation: <http://www.cae-pa.de/hazop/predicate/recommendation> .
-@prefix restrisiko: <http://www.cae-pa.de/hazop/predicate/restrisiko> .
-@prefix riskgraph: <http://www.cae-pa.de/hazop/predicate/iskgraph> .
-@prefix safeguard: <http://www.cae-pa.de/hazop/predicate/safegurd> .
-@prefix severity: <http://www.cae-pa.de/hazop/predicate/sverity> .
+@prefix cause: <http://www.hazop2rdf.de/hazop/predicate/cause> .
+@prefix consequence: <http://www.hazop2rdf.de/hazop/predicate/consequence> .
+@prefix description: <http://www.hazop2rdf.de/hazop/predicate/description> .
+@prefix deviation: <http://www.hazop2rdf.de/hazop/predicate/deviation> .
+@prefix frequencyofpresence: <http://www.hazop2rdf.de/hazop/predicate/frequencyofpresence> .
+@prefix guideword: <http://www.hazop2rdf.de/hazop/predicate/guideword> .
+@prefix hazopcase: <http://www.hazop2rdf.de/hazop/subject/hazopcase/> .
+@prefix hazopnode: <http://www.hazop2rdf.de/hazop/predicate/hazopnode> .
+@prefix otherinfo: <http://www.hazop2rdf.de/hazop/predicate/otherinfo> .
+@prefix parameter: <http://www.hazop2rdf.de/hazop/predicate/parameter> .
+@prefix possibilityofavoiding: <http://www.hazop2rdf.de/hazop/predicate/possibilityofavoiding> .
+@prefix probability: <http://www.hazop2rdf.de/hazop/predicate/probability> .
+@prefix recommendation: <http://www.hazop2rdf.de/hazop/predicate/recommendation> .
+@prefix restrisiko: <http://www.hazop2rdf.de/hazop/predicate/restrisiko> .
+@prefix riskgraph: <http://www.hazop2rdf.de/hazop/predicate/riskgraph> .
+@prefix safeguard: <http://www.hazop2rdf.de/hazop/predicate/safegurd> .
+@prefix severity: <http://www.hazop2rdf.de/hazop/predicate/severity> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 hazopcase:1 cause: [ description: "Zugeführtes Prozessmedium zu heiß (>200°C)" ;
@@ -29,14 +29,14 @@ hazopcase:1 cause: [ description: "Zugeführtes Prozessmedium zu heiß (>200°C)
             guideword: "Mehr" ;
             hazopnode: "Speicherbehälter" ;
             parameter: "Temperatur" ] ;
-    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
-            possibilityofavoiding: "G2 - fast unmöglich" ;
-            probability: "W2 - gering" ;
-            severity: "S2 - geringe" ] ;
     restrisiko: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
             possibilityofavoiding: "G2 - fast unmöglich" ;
             probability: "W2 - gering" ;
             severity: "S1 - minimale " ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G2 - fast unmöglich" ;
+            probability: "W2 - gering" ;
+            severity: "S2 - geringe" ] ;
     safeguard: [ hazopnode: "Speicherbehälter" ;
             otherinfo: "NaN"^^xsd:double ;
             parameter: "Hochwertige Dichtungen für Temp. über 200°C (bei 25bar)" ;
@@ -54,14 +54,14 @@ hazopcase:10 cause: [ description: "reines Lösungsmittel wird zugeführt" ;
             guideword: "Kein" ;
             hazopnode: "Speicherbehälter" ;
             parameter: "Konzentration" ] ;
-    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
-            possibilityofavoiding: "G1 - möglich" ;
-            probability: "W3 - relativ hoch" ;
-            severity: "S1 - minimale " ] ;
     restrisiko: [ frequencyofpresence: "NaN"^^xsd:double ;
             possibilityofavoiding: "NaN"^^xsd:double ;
             probability: "NaN"^^xsd:double ;
             severity: "NaN"^^xsd:double ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W3 - relativ hoch" ;
+            severity: "S1 - minimale " ] ;
     safeguard: [ hazopnode: "In 1 - Feed-Eingang" ;
             otherinfo: "NaN"^^xsd:double ;
             parameter: "keine Aktion erforderlich" ;
@@ -79,14 +79,14 @@ hazopcase:11 cause: [ description: "starke Säure oder Base wird zugeführt" ;
             guideword: "Mehr" ;
             hazopnode: "Speicherbehälter" ;
             parameter: "Konzentration" ] ;
-    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
-            possibilityofavoiding: "G2 - fast unmöglich" ;
-            probability: "W1 - sehr gering" ;
-            severity: "S4 - katastophal" ] ;
     restrisiko: [ frequencyofpresence: "A1 - selten bis häufig" ;
             possibilityofavoiding: "G2 - fast unmöglich" ;
             probability: "W1 - sehr gering" ;
             severity: "S1 - minimale " ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G2 - fast unmöglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S4 - katastophal" ] ;
     safeguard: [ hazopnode: "In 1 - Feed-Eingang" ;
             otherinfo: "NaN"^^xsd:double ;
             parameter: "Schulung und SOPs" ;
@@ -104,14 +104,14 @@ hazopcase:12 cause: [ description: "organisches Lösungsmittel wird angeschlosse
             guideword: "Mehr" ;
             hazopnode: "Speicherbehälter" ;
             parameter: "Konzentration" ] ;
-    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
-            possibilityofavoiding: "G1 - möglich" ;
-            probability: "W2 - gering" ;
-            severity: "S3 - schwerwiegende " ] ;
     restrisiko: [ frequencyofpresence: "A1 - selten bis häufig" ;
             possibilityofavoiding: "G2 - fast unmöglich" ;
             probability: "W1 - sehr gering" ;
             severity: "S1 - minimale " ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W2 - gering" ;
+            severity: "S3 - schwerwiegende " ] ;
     safeguard: [ hazopnode: "In 1 - Feed-Eingang" ;
             otherinfo: "NaN"^^xsd:double ;
             parameter: "Schulung und SOPs" ;
@@ -129,14 +129,14 @@ hazopcase:13 cause: [ description: "hoch viskoses Medium" ;
             guideword: "Mehr" ;
             hazopnode: "Speicherbehälter" ;
             parameter: "Konzentration" ] ;
-    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
-            possibilityofavoiding: "G2 - fast unmöglich" ;
-            probability: "W1 - sehr gering" ;
-            severity: "S2 - geringe" ] ;
     restrisiko: [ frequencyofpresence: "A1 - selten bis häufig" ;
             possibilityofavoiding: "G2 - fast unmöglich" ;
             probability: "W1 - sehr gering" ;
             severity: "S1 - minimale " ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G2 - fast unmöglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S2 - geringe" ] ;
     safeguard: [ hazopnode: "In 1 - Feed-Eingang" ;
             otherinfo: "NaN"^^xsd:double ;
             parameter: "Schulung und SOPs" ;
@@ -154,14 +154,14 @@ hazopcase:14 cause: [ description: "Feststoffe durch Überschreiten einer Sätti
             guideword: "Mehr" ;
             hazopnode: "Speicherbehälter" ;
             parameter: "Konzentration" ] ;
-    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
-            possibilityofavoiding: "G1 - möglich" ;
-            probability: "W2 - gering" ;
-            severity: "S2 - geringe" ] ;
     restrisiko: [ frequencyofpresence: "A1 - selten bis häufig" ;
             possibilityofavoiding: "G2 - fast unmöglich" ;
             probability: "W1 - sehr gering" ;
             severity: "S1 - minimale " ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W2 - gering" ;
+            severity: "S2 - geringe" ] ;
     safeguard: [ hazopnode: "NaN"^^xsd:double ;
             otherinfo: "NaN"^^xsd:double ;
             parameter: "NaN"^^xsd:double ;
@@ -179,14 +179,14 @@ hazopcase:15 cause: [ description: "Feststoffe gelangen in Behälter" ;
             guideword: "Mehr" ;
             hazopnode: "Speicherbehälter" ;
             parameter: "Konzentration" ] ;
-    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
-            possibilityofavoiding: "G1 - möglich" ;
-            probability: "W2 - gering" ;
-            severity: "S2 - geringe" ] ;
     restrisiko: [ frequencyofpresence: "A1 - selten bis häufig" ;
             possibilityofavoiding: "G2 - fast unmöglich" ;
             probability: "W1 - sehr gering" ;
             severity: "S1 - minimale " ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W2 - gering" ;
+            severity: "S2 - geringe" ] ;
     safeguard: [ hazopnode: "In 1 - Feed-Eingang" ;
             otherinfo: "NaN"^^xsd:double ;
             parameter: "Filter vor Behälter oder Schulung" ;
@@ -204,14 +204,14 @@ hazopcase:16 cause: [ description: "Feststoffe gelangen in Behälter" ;
             guideword: "Mehr" ;
             hazopnode: "Speicherbehälter" ;
             parameter: "Konzentration" ] ;
-    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
-            possibilityofavoiding: "G1 - möglich" ;
-            probability: "W2 - gering" ;
-            severity: "S2 - geringe" ] ;
     restrisiko: [ frequencyofpresence: "A1 - selten bis häufig" ;
             possibilityofavoiding: "G2 - fast unmöglich" ;
             probability: "W1 - sehr gering" ;
             severity: "S1 - minimale " ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W2 - gering" ;
+            severity: "S2 - geringe" ] ;
     safeguard: [ hazopnode: "NaN"^^xsd:double ;
             otherinfo: "NaN"^^xsd:double ;
             parameter: "NaN"^^xsd:double ;
@@ -229,14 +229,14 @@ hazopcase:17 cause: [ description: "Luft, O2, CH4 oder andere brennbare Medien -
             guideword: "Anderer/Anders als" ;
             hazopnode: "Speicherbehälter" ;
             parameter: "Konzentration" ] ;
-    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
-            possibilityofavoiding: "G2 - fast unmöglich" ;
-            probability: "W1 - sehr gering" ;
-            severity: "S4 - katastophal" ] ;
     restrisiko: [ frequencyofpresence: "A1 - selten bis häufig" ;
             possibilityofavoiding: "G2 - fast unmöglich" ;
             probability: "W1 - sehr gering" ;
             severity: "S1 - minimale " ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G2 - fast unmöglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S4 - katastophal" ] ;
     safeguard: [ hazopnode: "NaN"^^xsd:double ;
             otherinfo: "NaN"^^xsd:double ;
             parameter: "NaN"^^xsd:double ;
@@ -254,14 +254,14 @@ hazopcase:2 cause: [ description: "Hohe Temperatur aus vorangegangenem Prozesssc
             guideword: "Mehr" ;
             hazopnode: "Speicherbehälter" ;
             parameter: "Temperatur" ] ;
-    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
-            possibilityofavoiding: "G1 - möglich" ;
-            probability: "W1 - sehr gering" ;
-            severity: "S3 - schwerwiegende " ] ;
     restrisiko: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
             possibilityofavoiding: "G1 - möglich" ;
             probability: "W1 - sehr gering" ;
             severity: "S1 - minimale " ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S3 - schwerwiegende " ] ;
     safeguard: [ hazopnode: "Speicherbehälter" ;
             otherinfo: "NaN"^^xsd:double ;
             parameter: "Sicherheitsventil VY3010" ;
@@ -279,11 +279,11 @@ hazopcase:3 cause: [ description: "Brand im Außenbereich, Strahlungswärme >200
             guideword: "Mehr" ;
             hazopnode: "Speicherbehälter" ;
             parameter: "Temperatur" ] ;
-    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+    restrisiko: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
             possibilityofavoiding: "G1 - möglich" ;
             probability: "W1 - sehr gering" ;
             severity: "S2 - geringe" ] ;
-    restrisiko: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
             possibilityofavoiding: "G1 - möglich" ;
             probability: "W1 - sehr gering" ;
             severity: "S2 - geringe" ] ;
@@ -304,14 +304,14 @@ hazopcase:4 cause: [ description: "Verunreinigung, bspw. Säure/Lauge die zu ein
             guideword: "Mehr" ;
             hazopnode: "Speicherbehälter" ;
             parameter: "Temperatur" ] ;
-    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
-            possibilityofavoiding: "G1 - möglich" ;
-            probability: "W2 - gering" ;
-            severity: "S3 - schwerwiegende " ] ;
     restrisiko: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
             possibilityofavoiding: "G1 - möglich" ;
             probability: "W2 - gering" ;
             severity: "S1 - minimale " ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W2 - gering" ;
+            severity: "S3 - schwerwiegende " ] ;
     safeguard: [ hazopnode: "Speicherbehälter" ;
             otherinfo: "NaN"^^xsd:double ;
             parameter: "Sicherheitsventil VY3010" ;
@@ -329,11 +329,11 @@ hazopcase:5 cause: [ description: "Stoffverwechslung am Stickstoffeingang (z.B. 
             guideword: "Mehr" ;
             hazopnode: "Speicherbehälter" ;
             parameter: "Temperatur" ] ;
-    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+    restrisiko: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
             possibilityofavoiding: "G1 - möglich" ;
             probability: "W1 - sehr gering" ;
             severity: "S3 - schwerwiegende " ] ;
-    restrisiko: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
             possibilityofavoiding: "G1 - möglich" ;
             probability: "W1 - sehr gering" ;
             severity: "S3 - schwerwiegende " ] ;
@@ -354,14 +354,14 @@ hazopcase:6 cause: [ description: "Extrem niedrige Umgebungstemperatur" ;
             guideword: "Weniger" ;
             hazopnode: "Speicherbehälter" ;
             parameter: "Temperatur" ] ;
-    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
-            possibilityofavoiding: "G1 - möglich" ;
-            probability: "W1 - sehr gering" ;
-            severity: "S2 - geringe" ] ;
     restrisiko: [ frequencyofpresence: "NaN"^^xsd:double ;
             possibilityofavoiding: "NaN"^^xsd:double ;
             probability: "NaN"^^xsd:double ;
             severity: "NaN"^^xsd:double ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W1 - sehr gering" ;
+            severity: "S2 - geringe" ] ;
     safeguard: [ hazopnode: "NaN"^^xsd:double ;
             otherinfo: "NaN"^^xsd:double ;
             parameter: "NaN"^^xsd:double ;
@@ -379,14 +379,14 @@ hazopcase:7 cause: [ description: "Druck des eingehenden Mediums zu hoch" ;
             guideword: "Mehr" ;
             hazopnode: "Speicherbehälter" ;
             parameter: "Druck" ] ;
-    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
-            possibilityofavoiding: "G1 - möglich" ;
-            probability: "W2 - gering" ;
-            severity: "S3 - schwerwiegende " ] ;
     restrisiko: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
             possibilityofavoiding: "G1 - möglich" ;
             probability: "W2 - gering" ;
             severity: "S1 - minimale " ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W2 - gering" ;
+            severity: "S3 - schwerwiegende " ] ;
     safeguard: [ hazopnode: "Speicherbehälter" ;
             otherinfo: "NaN"^^xsd:double ;
             parameter: "Sicherheitsventil VY3010" ;
@@ -404,14 +404,14 @@ hazopcase:8 cause: [ description: "Verunreinigung im Behälter führt zu exother
             guideword: "Mehr" ;
             hazopnode: "Speicherbehälter" ;
             parameter: "Druck" ] ;
-    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
-            possibilityofavoiding: "G1 - möglich" ;
-            probability: "W2 - gering" ;
-            severity: "S3 - schwerwiegende " ] ;
     restrisiko: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
             possibilityofavoiding: "G1 - möglich" ;
             probability: "W2 - gering" ;
             severity: "S1 - minimale " ] ;
+    riskgraph: [ frequencyofpresence: "A2 - häufig bis andauernd" ;
+            possibilityofavoiding: "G1 - möglich" ;
+            probability: "W2 - gering" ;
+            severity: "S3 - schwerwiegende " ] ;
     safeguard: [ hazopnode: "Speicherbehälter" ;
             otherinfo: "NaN"^^xsd:double ;
             parameter: "Sicherheitsventil VY3010" ;

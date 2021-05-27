@@ -34,7 +34,4 @@ class Service:
         df[df.columns[0]] = df[df.columns[0]].astype("int32")
         df.sort_values(by=df.columns[0], ascending=True, inplace=True)
         filepath = os.path.join("data", "excel", df.name)
-        df.to_excel(filepath,
-                    columns=df.columns,
-                    index=False,
-                    sheet_name="HAZOP")
+        df.to_excel(filepath, index=False, sheet_name="HAZOP")
