@@ -37,8 +37,8 @@ Options:
   --help  Show this message and exit.
 
 Commands:
-  exporter  Exporter interface for RDF-Graphs
-  importer  Entry point for reading data and making RDF-Graphs
+  exporter  Exporter interface
+  importer  Importer interface
 ```
 
 * `cli importer` - [Importer API](#importer)
@@ -53,18 +53,18 @@ Command: `cli importer`
 ```cmd
 Usage: cli cli [OPTIONS] COMMAND [ARGS]...
 
-  Entry point for reading data and building RDF-Graphs
+  Importer interface
 
 Options:
   --help  Show this message and exit.
 
 Commands:
-  cmd-build-hazop-graphs  Build RDF-Graphs
-  cmd-list-excel-data     List Excel data
-  cmd-read-hazop-data     Read HAZOP data
+  cmd-build-hazop-graphs  Build HAZOP graphs
+  cmd-read-excel-data     Read excel data
+  cmd-read-hazop-data     Read hazop data
 ```
 
-* `cli importer cmd-list-excel-data`- to see the list of available Excel binary data
+* `cli importer cmd-read-excel-data`- to see the list of available Excel binary data
 * `cli importer cmd-read-hazop-data`- to read the HAZOP data if its config is available
 * `cli importer cmd-build-hazop-graphs`- to build HAZOP graphs, save it locally and upload to Fuseki server, if the server is up
 
@@ -77,16 +77,16 @@ Command: `cli exporter`
 ```cmd
 Usage: cli cli [OPTIONS] COMMAND [ARGS]...
 
-  Exporter interface for RDF-Graphs
+  Exporter interface
 
 Options:
   --help  Show this message and exit.
 
 Commands:
   cmd-export-graphs-from-fuseki-server
-                                  Export RDF-Graphs from Fuseki...
+                                  Export HAZOP graphs...
   cmd-export-graphs-from-local-directory
-                                  Export RDF-Graphs from local...
+                                  Export HAZOP graphs...
 ```
 
 * `cli exporter cmd-export-graphs-from-local-directory`- to convert graphs from Turtle in Excel format and save it locally
