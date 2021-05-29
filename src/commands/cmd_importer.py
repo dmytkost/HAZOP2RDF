@@ -8,16 +8,34 @@ from src.config.config import config
 
 
 class Context:
+    """Context object which holds state for this particular invocation
+
+    Attributes:
+        svc_importer (Service): Importer business logic described as Service
+        svc_triplestore (Service): Triplestore business logic described as Service
+    """
+
     def __init__(self):
         self.svc_importer = service_importer()
         self.svc_triplestore = service_triplestore()
 
 
-def list_excel_data(ctx):
+def read_excel_data(ctx):
+    """Reads excel data from data directory
+
+    Args:
+        ctx (Context): Context object
+
+    Returns:
+        list: List of excel data
+
+    Raises:
+        click.ClickException: If no excel data in data directory
+    """
     list_of_excel_data = ctx.obj.svc_importer.read_excel_data()
 
     if not bool(list_of_excel_data):
-        raise click.ClickException("No Excel data found")
+        raise click.ClickException("No excel data found")
 
     click.echo("List of Excel data:")
     click.echo(*list_of_excel_data)
@@ -26,7 +44,18 @@ def list_excel_data(ctx):
 
 
 def read_hazop_data(ctx):
-    list_of_excel_data = list_excel_data(ctx)
+    """Reads and validates HAZOP data
+
+    Args:
+        ctx (Context): Context object
+
+    Returns:
+        list: List of HAZOP data
+
+    Raises:
+        click.ClickException: If no valid HAZOP data in excel data
+    """
+    list_of_excel_data = read_excel_data(ctx)
     list_of_hazop_data = {}
 
     for filepath in list_of_excel_data:
@@ -63,6 +92,11 @@ def read_hazop_data(ctx):
 
 
 def build_hazop_graphs(ctx):
+    """Builds HAZOP graphs, saves it locally and uploads to Fuseki server
+
+    Args:
+        ctx (Context): Context object
+    """
     list_of_hazop_data = read_hazop_data(ctx)
 
     for key, val in list_of_hazop_data.items():
@@ -75,15 +109,29 @@ def build_hazop_graphs(ctx):
 
 
 def save_graph_locally(graph, filepath):
-    graph_str = graph.serialize(format="turtle").decode("utf-8")
+    """Saves graph locally
 
+    Args:
+        graph (str): Graph in string format
+        filepath (str): Path of the file
+    """
     with open(filepath, "w") as file:
-        file.write(graph_str)
+        file.write(graph)
 
     click.echo("Saved file in data turtle directory: {}".format(filepath))
 
 
 def upload_graph_to_fuseki(ctx, filename, filepath):
+    """Uploads graph to Fuseki server
+
+    Args:
+        ctx (Context): Context object
+        filename (str): Name of the file
+        filepath (str): Path of the file
+
+    Raises:
+        click.ClickException: If Fuseki server is offline
+    """
     response = ctx.obj.svc_triplestore.upload_hazop_graph(filename, filepath)
 
     if response != 0:
@@ -95,26 +143,26 @@ def upload_graph_to_fuseki(ctx, filename, filepath):
 @click.group()
 @click.pass_context
 def cli(ctx):
-    """Entry point for reading data and building RDF-Graphs"""
+    """Importer interface"""
     ctx.obj = Context()
 
 
 @cli.command()
 @click.pass_context
-def cmd_list_excel_data(ctx):
-    """List Excel data"""
-    list_excel_data(ctx)
+def cmd_read_excel_data(ctx):
+    """Read excel data"""
+    read_excel_data(ctx)
 
 
 @cli.command()
 @click.pass_context
 def cmd_read_hazop_data(ctx):
-    """Read HAZOP data"""
+    """Read hazop data"""
     read_hazop_data(ctx)
 
 
 @cli.command()
 @click.pass_context
 def cmd_build_hazop_graphs(ctx):
-    """Build RDF-Graphs"""
+    """Build HAZOP graphs"""
     build_hazop_graphs(ctx)

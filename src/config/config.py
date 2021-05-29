@@ -1,3 +1,4 @@
+"""Scheme for parsing and validation of excel data"""
 config = {
     "HAZOP": {
         "files": ["PEA-HAZOP-Dosiermodul_v07.xlsb"],

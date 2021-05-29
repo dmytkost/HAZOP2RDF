@@ -6,12 +6,32 @@ from rdflib import Namespace, Graph, URIRef, BNode, Literal
 
 
 class Service:
-    def read_excel_data(self):
-        path = os.path.join("data", "*.xlsb")
+    """Importer utilities
+    """
 
-        return glob.glob(path)
+    def read_excel_data(self):
+        """Reads excel data
+
+        Returns:
+            list: List of excel data
+        """
+        path = os.path.join("data", "*.xlsb")
+        excel_data_list = glob.glob(path)
+
+        return excel_data_list
 
     def read_hazop_data(self, filename, engine, header, sheet_name):
+        """Reads HAZOP data
+
+        Args:
+            filename (str): Name of the file
+            engine (str): Reading engine
+            header (TYPE): Row of the header
+            sheet_name (TYPE): Name of the sheet
+
+        Returns:
+            pandas.DataFrame: HAZOP dataframe
+        """
         df = pd.read_excel(filename,
                            engine=engine,
                            header=header,
@@ -22,6 +42,14 @@ class Service:
         return df_filtered
 
     def build_hazop_graph(self, df):
+        """Builds HAZOP graph
+
+        Args:
+            df (pandas.DataFrame): HAZOP dataframe
+
+        Returns:
+            str: Graph in string format
+        """
         uri = "http://www.hazop2rdf.de/hazop/"
         s_ref = uri + "subject/"
         p_ref = uri + "predicate/"
@@ -112,4 +140,6 @@ class Service:
             g.add((node_restrisiko, predicate_avoiding, Literal(row[23])))
             g.add((node_restrisiko, predicate_probability, Literal(row[24])))
 
-        return g
+        graph_str = g.serialize(format="turtle").decode("utf-8")
+
+        return graph_str
