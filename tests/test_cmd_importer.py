@@ -4,7 +4,7 @@ from src.commands.cmd_importer import cli
 
 def test_list_excel_data():
     runner = CliRunner()
-    result = runner.invoke(cli, ["cmd-list-excel-data"])
+    result = runner.invoke(cli, ["cmd-read-excel-data"])
     assert result.exit_code == 0
     assert not result.exception
     assert "PEA-HAZOP-Dosiermodul_v07.xlsb" in result.output
