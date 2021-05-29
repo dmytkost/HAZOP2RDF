@@ -1,20 +1,20 @@
-PREFIX cause: <http://www.cae-pa.de/hazop/predicate/cause>
-PREFIX consequence: <http://www.cae-pa.de/hazop/predicate/consequence>
-PREFIX description: <http://www.cae-pa.de/hazop/predicate/description>
-PREFIX deviation: <http://www.cae-pa.de/hazop/predicate/deviation>
-PREFIX frequencyofpresence: <http://www.cae-pa.de/hazop/predicate/frequencyofpresence>
-PREFIX guideword: <http://www.cae-pa.de/hazop/predicate/guideword>
-PREFIX hazopcase: <http://www.cae-pa.de/hazop/object/hazopcase/>
-PREFIX hazopnode: <http://www.cae-pa.de/hazop/predicate/hazopnode>
-PREFIX parameter: <http://www.cae-pa.de/hazop/predicate/parameter>
-PREFIX possibilityofavoiding: <http://www.cae-pa.de/hazop/predicate/possibilityofavoiding>
-PREFIX probability: <http://www.cae-pa.de/hazop/predicate/probability>
-PREFIX recommendation: <http://www.cae-pa.de/hazop/predicate/recommendation>
-PREFIX otherinfo: <http://www.cae-pa.de/hazop/predicate/otherinfo>
-PREFIX restrisiko: <http://www.cae-pa.de/hazop/predicate/restrisiko>
-PREFIX riskgraph: <http://www.cae-pa.de/hazop/predicate/iskgraph>
-PREFIX safeguard: <http://www.cae-pa.de/hazop/predicate/safegurd>
-PREFIX severity: <http://www.cae-pa.de/hazop/predicate/sverity>
+PREFIX cause: <http://www.hazop2rdf.de/hazop/predicate/cause>
+PREFIX consequence: <http://www.hazop2rdf.de/hazop/predicate/consequence>
+PREFIX description: <http://www.hazop2rdf.de/hazop/predicate/description>
+PREFIX deviation: <http://www.hazop2rdf.de/hazop/predicate/deviation>
+PREFIX frequencyofpresence: <http://www.hazop2rdf.de/hazop/predicate/frequencyofpresence>
+PREFIX guideword: <http://www.hazop2rdf.de/hazop/predicate/guideword>
+PREFIX hazopcase: <http://www.hazop2rdf.de/hazop/subject/hazopcase/>
+PREFIX hazopnode: <http://www.hazop2rdf.de/hazop/predicate/hazopnode>
+PREFIX otherinfo: <http://www.hazop2rdf.de/hazop/predicate/otherinfo>
+PREFIX parameter: <http://www.hazop2rdf.de/hazop/predicate/parameter>
+PREFIX possibilityofavoiding: <http://www.hazop2rdf.de/hazop/predicate/possibilityofavoiding>
+PREFIX probability: <http://www.hazop2rdf.de/hazop/predicate/probability>
+PREFIX recommendation: <http://www.hazop2rdf.de/hazop/predicate/recommendation>
+PREFIX restrisiko: <http://www.hazop2rdf.de/hazop/predicate/restrisiko>
+PREFIX riskgraph: <http://www.hazop2rdf.de/hazop/predicate/riskgraph>
+PREFIX safeguard: <http://www.hazop2rdf.de/hazop/predicate/safegurd>
+PREFIX severity: <http://www.hazop2rdf.de/hazop/predicate/severity>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 SELECT
