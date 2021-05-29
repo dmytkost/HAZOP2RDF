@@ -30,7 +30,7 @@ def read_excel_data(ctx):
         list: List of excel data
 
     Raises:
-        click.ClickException: If no excel data in data directory
+        click.ClickException: If no excel data found
     """
     list_of_excel_data = ctx.obj.svc_importer.read_excel_data()
 
@@ -53,7 +53,7 @@ def read_hazop_data(ctx):
         list: List of HAZOP data
 
     Raises:
-        click.ClickException: If no valid HAZOP data in excel data
+        click.ClickException: If no valid HAZOP data found
     """
     list_of_excel_data = read_excel_data(ctx)
     list_of_hazop_data = {}
@@ -78,7 +78,7 @@ def read_hazop_data(ctx):
             config["HAZOP"]["old_multiindex"]))
 
         if not bool(validator):
-            click.echo("HAZOP data does not match the schema")
+            click.echo("HAZOP data does not match the scheme")
             continue
 
         list_of_hazop_data[filename] = df
