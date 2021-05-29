@@ -91,19 +91,22 @@ def save_graph_in_data_excel_directory(ctx, graph, filename):
 @click.group()
 @click.pass_context
 def cli(ctx):
-    """Exporter interface"""
+    """Exporter interface
+    """
     ctx.obj = Context()
 
 
 @cli.command()
 @click.pass_context
 def cmd_export_graphs_from_fuseki_server(ctx):
-    """Export HAZOP graphs from Fuseki server"""
+    """Export HAZOP graphs from Fuseki server
+    """
     export_graphs_from_fuseki_server(ctx)
 
 
 @cli.command()
 @click.pass_context
 def cmd_export_graphs_from_local_directory(ctx):
-    """Export HAZOP graphs from local directory"""
+    """Export HAZOP graphs from local directory
+    """
     export_graphs_from_local_directory(ctx)

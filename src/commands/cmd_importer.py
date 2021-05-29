@@ -143,26 +143,30 @@ def upload_graph_to_fuseki(ctx, filename, filepath):
 @click.group()
 @click.pass_context
 def cli(ctx):
-    """Importer interface"""
+    """Importer interface
+    """
     ctx.obj = Context()
 
 
 @cli.command()
 @click.pass_context
 def cmd_read_excel_data(ctx):
-    """Read excel data"""
+    """Read excel data
+    """
     read_excel_data(ctx)
 
 
 @cli.command()
 @click.pass_context
 def cmd_read_hazop_data(ctx):
-    """Read hazop data"""
+    """Read hazop data
+    """
     read_hazop_data(ctx)
 
 
 @cli.command()
 @click.pass_context
 def cmd_build_hazop_graphs(ctx):
-    """Build HAZOP graphs"""
+    """Build HAZOP graphs
+    """
     build_hazop_graphs(ctx)
