@@ -26,8 +26,8 @@ class Service:
         Args:
             filename (str): Name of the file
             engine (str): Reading engine
-            header (TYPE): Row of the header
-            sheet_name (TYPE): Name of the sheet
+            header (int, list of int): Header index
+            sheet_name (int, str): Sheet index, name
 
         Returns:
             pandas.DataFrame: HAZOP dataframe
