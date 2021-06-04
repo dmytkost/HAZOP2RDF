@@ -8,7 +8,8 @@
 1. `cd hazop`
 1. `python -m venv .\venv`
 1. `venv\Scripts\activate`
-1. `pip install --use-feature=in-tree-build .`
+1. `pip install --upgrade pip`
+1. `pip install .`
 1. `venv\Scripts\cli [cmd]` See [API](#API) section for commands to run.
 1. `pytest` Run tests
 1. `deactivate`
@@ -19,6 +20,7 @@
 1. `cd hazop`
 1. `python3 -m venv ./venv`
 1. `source venv/bin/activate`
+1. `pip install --upgrade pip`
 1. `pip install .`
 1. `cli [cmd]` See [API](#API) section for commands to run.
 1. `pytest` Run tests

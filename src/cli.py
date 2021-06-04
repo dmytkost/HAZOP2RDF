@@ -14,7 +14,7 @@ class ComplexCLI(click.MultiCommand):
     Source: https://github.com/pallets/click/tree/main/examples/complex
     """
 
-   def list_commands(self, ctx):
+    def list_commands(self, ctx):
         commands = []
         commands_folder = os.path.abspath(
             os.path.join(os.path.dirname(__file__), "commands"))
