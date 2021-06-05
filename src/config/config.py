@@ -1,9 +1,6 @@
 """Config file for Excel data parsing"""
 excel_binary = {
-    "files": ["PEA-HAZOP-Dosiermodul_v07_1.xlsb",
-              "PEA-HAZOP-Dosiermodul_v07_2.xlsb",
-              "PEA-HAZOP-Dosiermodul_v07_3.xlsb",
-              "PEA-HAZOP-Dosiermodul_v07_4.xlsb"],
+    "files": ["PEA-HAZOP-Dosiermodul_v07.xlsb"],
     "engine": "pyxlsb",
     "header": [2, 3],
     "sheet_name": 1,
