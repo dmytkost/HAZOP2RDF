@@ -8,11 +8,6 @@ svc_importer.Service.build_hazop_graph.
 
 Output header (output_header) contains all the headers used for the output
 Excel data.
-
-To update the program with another input data format (for exmaple .xsl). Make a
-new section ".xsl" with parameters in the excel configuration (excel) below and
-update src_importer.Service.read_excel_data function to read and return a list
-of .xsl files.
 """
 
 excel = {
