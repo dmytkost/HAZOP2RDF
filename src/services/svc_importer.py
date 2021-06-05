@@ -39,7 +39,7 @@ class Service:
                            header=args[2],
                            sheet_name=args[3])
 
-        df_filtered = df[df.iloc[:, 0].notnull()]
+        df_filtered = df[df.iloc[:, 0].notnull()].drop_duplicates()
 
         return df_filtered
 
