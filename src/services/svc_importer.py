@@ -10,32 +10,34 @@ class Service:
     """
 
     def read_excel_data(self):
-        """Reads excel data
+        """Reads Excel data with .xlsb and .xlsx extensions
 
         Returns:
-            list: List of excel data
+            list: list of files with .xlsb and .xlsx extensions
         """
-        path = os.path.join("data", "*.xls*")
-        excel_data_list = glob.glob(path)
+        xlsb_list_path = os.path.join("data", "*.xlsb")
+        xlsx_list_path = os.path.join("data", "*.xlsx")
+
+        excel_xlsb_list = glob.glob(xlsb_list_path)
+        excel_xlsx_list = glob.glob(xlsx_list_path)
+
+        excel_data_list = excel_xlsb_list + excel_xlsx_list
 
         return excel_data_list
 
-    def read_hazop_data(self, filename, engine, header, sheet_name):
-        """Reads HAZOP data
+    def get_hazop_dataframe(self, args):
+        """Gets HAZOP dataframe
 
         Args:
-            filename (str): Name of the file
-            engine (str): Reading engine
-            header (int, list of int): Header index
-            sheet_name (int, str): Sheet index, name
+            args (tuple): tuple container with read excel parameters
 
         Returns:
             pandas.DataFrame: HAZOP dataframe
         """
-        df = pd.read_excel(filename,
-                           engine=engine,
-                           header=header,
-                           sheet_name=sheet_name)
+        df = pd.read_excel(args[0],
+                           engine=args[1],
+                           header=args[2],
+                           sheet_name=args[3])
 
         df_filtered = df[df.iloc[:, 0].notnull()]
 
