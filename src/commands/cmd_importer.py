@@ -55,7 +55,7 @@ def read_hazop_data(ctx):
         click.ClickException: If no valid HAZOP data found
     """
     excel_data_list = read_excel_data(ctx)
-    hazop_data_list = {}
+    hazop_data_dict = {}
 
     for filepath in excel_data_list:
         _, suffix = os.path.splitext(filepath)
@@ -69,17 +69,17 @@ def read_hazop_data(ctx):
         is_valid = df.columns.tolist() == config.excel[suffix]["valid_header"]
 
         if not bool(is_valid):
-            click.echo("There is no valid header for {}".format(filepath))
+            click.echo("There is no valid schema for {}".format(filepath))
             continue
 
-        hazop_data_list[filepath] = df
+        hazop_data_dict[filepath] = df
 
-    if not bool(hazop_data_list):
+    if not bool(hazop_data_dict):
         raise click.ClickException("No HAZOP data found")
 
-    click.echo(f"Number of files with HAZOP config: {len(hazop_data_list)}")
+    click.echo(f"List of valid HAZOP files: {list(hazop_data_dict.keys())}")
 
-    return hazop_data_list
+    return hazop_data_dict
 
 
 def build_hazop_graphs(ctx):
@@ -88,9 +88,9 @@ def build_hazop_graphs(ctx):
     Args:
         ctx (Context): Context object
     """
-    hazop_data_list = read_hazop_data(ctx)
+    hazop_data_dict = read_hazop_data(ctx)
 
-    for df_path, df in hazop_data_list.items():
+    for df_path, df in hazop_data_dict.items():
         graph = ctx.obj.svc_importer.build_hazop_graph(df)
 
         head, tail = os.path.split(df_path)
