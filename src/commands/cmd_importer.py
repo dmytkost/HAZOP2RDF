@@ -66,9 +66,9 @@ def read_hazop_data(ctx):
                 config.excel[suffix]["sheet_name"])
 
         df = ctx.obj.svc_importer.get_hazop_dataframe(args)
-        is_valid = df.columns.tolist() == config.excel[suffix]["valid_header"]
+        df_is_valid = df.columns.tolist() == config.valid_header
 
-        if not bool(is_valid):
+        if not bool(df_is_valid):
             click.echo("No valid schema for {}".format(filepath))
             continue
 
@@ -113,7 +113,7 @@ def save_graph_locally(graph, filepath):
     with open(filepath, "w") as file:
         file.write(graph)
 
-    click.echo("Saved file in data turtle directory: {}".format(filepath))
+    click.echo("Saved graph in turtle format: {}".format(filepath))
 
 
 def upload_graph_to_fuseki(ctx, filename, filepath):
