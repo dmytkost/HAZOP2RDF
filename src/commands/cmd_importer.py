@@ -103,12 +103,6 @@ def build_hazop_graphs(ctx):
         filepath = os.path.join("data", "turtle", filename)
 
         save_graph_locally(graph, filepath)
-
-    for key, val in list_of_hazop_data.items():
-        graph = ctx.obj.svc_importer.build_hazop_graph(val)
-        filename = key.replace(".xlsb", ".ttl")
-        filepath = os.path.join("data", "turtle", filename)
-
         upload_graph_to_fuseki(ctx, filename, filepath)
 
 
@@ -132,16 +126,11 @@ def upload_graph_to_fuseki(ctx, filename, filepath):
         ctx (Context): Context object
         filename (str): Name of the file
         filepath (str): Path of the file
-
-    Raises:
-        click.ClickException: If Fuseki server is offline
     """
     response = ctx.obj.svc_triplestore.upload_hazop_graph(filename, filepath)
 
-    if response != 0:
-        raise click.ClickException("Failed connection to Fuseki server")
-
-    click.echo("Uploaded file to Fuseki server: {}".format(filename))
+    if response == 0:
+        click.echo("Uploaded file to Fuseki server: {}".format(filename))
 
 
 @click.group()
