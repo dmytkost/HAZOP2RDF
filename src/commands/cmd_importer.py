@@ -27,19 +27,19 @@ def read_excel_data(ctx):
         ctx (Context): Context object
 
     Returns:
-        list: List of excel data
+        list: Excel data list
 
     Raises:
-        click.ClickException: If no excel data found
+        click.ClickException: If no Excel data found
     """
-    list_of_excel_data = ctx.obj.svc_importer.read_excel_data()
+    excel_data_list = ctx.obj.svc_importer.read_excel_data()
 
-    if not bool(list_of_excel_data):
-        raise click.ClickException("No excel data found")
+    if not bool(excel_data_list):
+        raise click.ClickException("No Excel data found")
 
-    click.echo("List of Excel data: {}".format(list_of_excel_data))
+    click.echo("Excel data list: {}".format(excel_data_list))
 
-    return list_of_excel_data
+    return excel_data_list
 
 
 def read_hazop_data(ctx):
@@ -49,44 +49,37 @@ def read_hazop_data(ctx):
         ctx (Context): Context object
 
     Returns:
-        list: List of HAZOP data
+        dict: key - HAZOP dataframe path, value - HAZOP dataframe
 
     Raises:
         click.ClickException: If no valid HAZOP data found
     """
-    list_of_excel_data = read_excel_data(ctx)
-    list_of_hazop_data = {}
+    excel_data_list = read_excel_data(ctx)
+    hazop_data_list = {}
 
-    for filepath in list_of_excel_data:
-        filename = os.path.split(filepath)[1]
+    for filepath in excel_data_list:
+        _, suffix = os.path.splitext(filepath)
 
-        if not filename in config.excel_binary["files"]:
-            click.echo("Missed config for {}".format(filename))
-            continue
+        args = (filepath,
+                config.excel[suffix]["engine"],
+                config.excel[suffix]["header"],
+                config.excel[suffix]["sheet_name"])
 
-        engine = config.excel_binary["engine"]
-        header = config.excel_binary["header"]
-        sheet_name = config.excel_binary["sheet_name"]
-
-        df = ctx.obj.svc_importer.read_hazop_data(filepath,
-                                                  engine,
-                                                  header,
-                                                  sheet_name)
-
-        is_valid = df.columns.tolist() == config.excel_binary["old_multiindex"]
+        df = ctx.obj.svc_importer.get_hazop_dataframe(args)
+        is_valid = df.columns.tolist() == config.excel[suffix]["valid_header"]
 
         if not bool(is_valid):
-            click.echo("HAZOP data does not match the scheme")
+            click.echo("There is no valid header for {}".format(filepath))
             continue
 
-        list_of_hazop_data[filename] = df
+        hazop_data_list[filepath] = df
 
-    if not bool(list_of_hazop_data):
+    if not bool(hazop_data_list):
         raise click.ClickException("No HAZOP data found")
 
-    click.echo(f"Number of files with HAZOP config: {len(list_of_hazop_data)}")
+    click.echo(f"Number of files with HAZOP config: {len(hazop_data_list)}")
 
-    return list_of_hazop_data
+    return hazop_data_list
 
 
 def build_hazop_graphs(ctx):
@@ -95,12 +88,16 @@ def build_hazop_graphs(ctx):
     Args:
         ctx (Context): Context object
     """
-    list_of_hazop_data = read_hazop_data(ctx)
+    hazop_data_list = read_hazop_data(ctx)
 
-    for key, val in list_of_hazop_data.items():
-        graph = ctx.obj.svc_importer.build_hazop_graph(val)
-        filename = key.replace(".xlsb", ".ttl")
-        filepath = os.path.join("data", "turtle", filename)
+    for df_path, df in hazop_data_list.items():
+        graph = ctx.obj.svc_importer.build_hazop_graph(df)
+
+        head, tail = os.path.split(df_path)
+        _, suffix = os.path.splitext(tail)
+
+        filename = tail.replace(suffix, ".ttl")
+        filepath = os.path.join(head, "turtle", filename)
 
         save_graph_locally(graph, filepath)
         upload_graph_to_fuseki(ctx, filename, filepath)
