@@ -69,15 +69,15 @@ def read_hazop_data(ctx):
         is_valid = df.columns.tolist() == config.excel[suffix]["valid_header"]
 
         if not bool(is_valid):
-            click.echo("There is no valid schema for {}".format(filepath))
+            click.echo("No valid schema for {}".format(filepath))
             continue
+
+        click.echo("Validated HAZOP file: {}".format(filepath))
 
         hazop_data_dict[filepath] = df
 
     if not bool(hazop_data_dict):
         raise click.ClickException("No HAZOP data found")
-
-    click.echo(f"List of valid HAZOP files: {list(hazop_data_dict.keys())}")
 
     return hazop_data_dict
 
