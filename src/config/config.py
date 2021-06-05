@@ -1,4 +1,4 @@
-"""Config file for Excel data parsing"""
+"""Config file for Excel data parsing and validation"""
 excel = {
     ".xlsb": {
         "engine": "pyxlsb",
