@@ -80,7 +80,7 @@ def save_graph_in_data_excel_directory(ctx, graph, filename):
         graph (str): Graph in string format
         filename (str): Name of the file
     """
-    columns = config.excel_binary["new_multiindex"]
+    columns = config.output_header
     graph_data = ctx.obj.svc_exporter.get_graph_data(graph)
     df = ctx.obj.svc_exporter.create_hazop_dataframe(graph_data, columns)
     filename = filename.replace(".ttl", ".xlsx")
