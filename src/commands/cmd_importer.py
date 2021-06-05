@@ -4,7 +4,7 @@ import os
 
 from src.services.svc_importer import Service as service_importer
 from src.services.svc_triplestore import Service as service_triplestore
-from src.config.config import config
+import src.config.config as config
 
 
 class Context:
@@ -37,8 +37,7 @@ def read_excel_data(ctx):
     if not bool(list_of_excel_data):
         raise click.ClickException("No excel data found")
 
-    click.echo("List of Excel data:")
-    click.echo(*list_of_excel_data)
+    click.echo("List of Excel data: {}".format(list_of_excel_data))
 
     return list_of_excel_data
 
@@ -61,23 +60,22 @@ def read_hazop_data(ctx):
     for filepath in list_of_excel_data:
         filename = os.path.split(filepath)[1]
 
-        if not filename in config["HAZOP"]["files"]:
+        if not filename in config.excel_binary["files"]:
             click.echo("Missed config for {}".format(filename))
             continue
 
-        engine = config["HAZOP"]["engine"]
-        header = config["HAZOP"]["header"]
-        sheet_name = config["HAZOP"]["sheet_name"]
+        engine = config.excel_binary["engine"]
+        header = config.excel_binary["header"]
+        sheet_name = config.excel_binary["sheet_name"]
 
         df = ctx.obj.svc_importer.read_hazop_data(filepath,
                                                   engine,
                                                   header,
                                                   sheet_name)
 
-        validator = (set(df.columns.tolist()) == set(
-            config["HAZOP"]["old_multiindex"]))
+        is_valid = df.columns.tolist() == config.excel_binary["old_multiindex"]
 
-        if not bool(validator):
+        if not bool(is_valid):
             click.echo("HAZOP data does not match the scheme")
             continue
 
@@ -105,6 +103,12 @@ def build_hazop_graphs(ctx):
         filepath = os.path.join("data", "turtle", filename)
 
         save_graph_locally(graph, filepath)
+
+    for key, val in list_of_hazop_data.items():
+        graph = ctx.obj.svc_importer.build_hazop_graph(val)
+        filename = key.replace(".xlsb", ".ttl")
+        filepath = os.path.join("data", "turtle", filename)
+
         upload_graph_to_fuseki(ctx, filename, filepath)
 
 

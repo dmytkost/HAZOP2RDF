@@ -15,7 +15,7 @@ class Service:
         Returns:
             list: List of excel data
         """
-        path = os.path.join("data", "*.xlsb")
+        path = os.path.join("data", "*.xls*")
         excel_data_list = glob.glob(path)
 
         return excel_data_list

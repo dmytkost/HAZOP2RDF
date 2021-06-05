@@ -9,7 +9,7 @@ def test_read_excel_data():
     result = runner.invoke(cli, ["cmd-read-excel-data"])
     assert result.exit_code == 0
     assert not result.exception
-    assert "PEA-HAZOP-Dosiermodul_v07.xlsb" in result.output
+    assert "PEA-HAZOP-Dosiermodul_v07_1.xlsb" in result.output
 
 
 def test_read_hazop_data():
@@ -19,7 +19,7 @@ def test_read_hazop_data():
     result = runner.invoke(cli, ["cmd-read-hazop-data"])
     assert result.exit_code == 0
     assert not result.exception
-    assert "Number of files with HAZOP config: 1" in result.output
+    assert "Number of files with HAZOP config: 4" in result.output
 
 
 def test_build_hazop_graphs():
@@ -28,4 +28,4 @@ def test_build_hazop_graphs():
     runner = CliRunner()
     result = runner.invoke(cli, ["cmd-build-hazop-graphs"])
     assert result.exit_code == 0 or result.exit_code == 1
-    assert "PEA-HAZOP-Dosiermodul_v07.ttl" in result.output
+    assert "PEA-HAZOP-Dosiermodul_v07_1.ttl" in result.output

@@ -5,7 +5,7 @@ import json
 
 from src.services.svc_exporter import Service as service_exporter
 from src.services.svc_triplestore import Service as service_triplestore
-from src.config.config import config
+import src.config.config as config
 
 
 class Context:
@@ -80,7 +80,7 @@ def save_graph_in_data_excel_directory(ctx, graph, filename):
         graph (str): Graph in string format
         filename (str): Name of the file
     """
-    columns = config["HAZOP"]["new_multiindex"]
+    columns = config.excel_binary["new_multiindex"]
     graph_data = ctx.obj.svc_exporter.get_graph_data(graph)
     df = ctx.obj.svc_exporter.create_hazop_dataframe(graph_data, columns)
     filename = filename.replace(".ttl", ".xlsx")
