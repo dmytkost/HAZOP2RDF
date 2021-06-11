@@ -7,7 +7,19 @@
 - project supervisor: Anselm Klose
 - Herr Prof. Dr.-Ing. habil. Leon Urbas
 
+## Table of contents
+
+- Abstract(Marcus)
+- Problem Analysis(Marcus)
+- Concept Development(main part)
+- Implementation(Dima)
+- Validation(Dima)
+- Summary and Outlook
+- Sources
+- Appendix
+
 ## Abstract
+
 * Introduction to
 * abstract of the project
 * RDF problem description
@@ -17,6 +29,12 @@
 * Why Hazop 2 RDF?
 * When can it help?
 * Whom can it help?
+
+## Concept Development(main part)
+
+* How did we solve the problem(framework)
+* How did we get to the concept?
+* Why did we choose this method of implementing
 
 ## Implementation
     
@@ -78,9 +96,40 @@ Windows and macOS platforms. We also included a detailed installation guide in t
 * Future Projects
 * Problems to be solved
 
+## User manual for HAZOP2RDF
 
-### Diagrams:
+* HOW to install
+* From github
 
+## Sources
+
+* HAZOP source
+* Refernezimplementationen beachten und zitieren
+
+## Appendix
+* additional graphs, pictures...
+
+--- END OF REPORT ---
+
+//additional info
+- source code digital abgeben
+- zip im OPAL
+
+// Diagrams:
+
+* don't put diagrams in appendix
 * [PlantUML](https://plantuml.com)
 * [Mermaid](https://mermaid-js.github.io/mermaid/#/)
 * [Guide for better Flowcharts](https://www.smartdraw.com/flowchart/flowchart-tips.htm)
+
+//Abschlusspräsentation
+- Überblick über problem(noch kürzer)
+- Programm vorstellen (main part)
+- Ergebnisse gut darstellen
+- Diagramme nutzen(nicht zu groß, muss lesbar sein)
+- Was ist der Mehrwert?
+- Einfach und Klar erkennbar was der Mehrwert ist
+- Mehr bilder als text
+
+// TODO
+- ontologie der importierten Hazop (png) an Anselm 
