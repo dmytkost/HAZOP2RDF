@@ -5,3 +5,4 @@ rdflib==5.0.0
 pytest==6.2.4
 openpyxl==3.0.7
 requests==2.25.1
+pytest-cov==2.12.1
