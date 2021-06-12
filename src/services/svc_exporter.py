@@ -53,7 +53,7 @@ class Service:
             * export graph to Excel
 
         Args:
-            args (tuple): tuple container with grap data, header and filename
+            args (tuple): graph data, header and filename
 
         Returns:
             pandas.DataFrame: HAZOP dataframe

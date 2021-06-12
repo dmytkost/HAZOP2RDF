@@ -29,7 +29,7 @@ class Service:
         """Gets HAZOP dataframe
 
         Args:
-            args (tuple): tuple container with read excel parameters
+            args (tuple): excel reading parameters
 
         Returns:
             pandas.DataFrame: HAZOP dataframe
