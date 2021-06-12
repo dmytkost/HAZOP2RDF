@@ -19,7 +19,7 @@ skinparam rectangleBorderThickness 1
 ```
 
 
-# Program components
+# Design program components
 
 How did we start?
 What are the main components of the program?
@@ -42,7 +42,7 @@ TripleStore <- Exporter
 ![](images/program_components.png)
 
 
-# User interaction
+# User interaction scenario
 
 How should users interact with the program?
 
@@ -65,7 +65,7 @@ User ----> Exporter
 ![](images/user_interaction.png)
 
 
-# Sketch Command Line Interface
+# Design Command Line Interface
 
 What would the command line interface structure look like?
 
