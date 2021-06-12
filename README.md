@@ -1,8 +1,13 @@
-# CAE-PA
+# Description
 
-## How to install
+The project HAZOP2RDF is part of the course Projektierung von Automatisierungssystem. The main goal of the project is to transform the HAZOP data, which is stored in Excel format into RDF format and visa versa.
 
-### Windows
+We implemented a command line interface (CLI) using ComplexCLI, which means CLI in CLI to combine all interfaces in a single interface.
+
+
+# How to install
+
+## Windows
 
 1. `git clone https://github.com/DimakDev/hazop.git`
 1. `cd hazop`
@@ -10,11 +15,11 @@
 1. `venv\Scripts\activate`
 1. `pip install --upgrade pip`
 1. `pip install .`
-1. `venv\Scripts\cli [cmd]` See [API](#API) section for commands to run.
-1. `pytest` Run tests
+1. `venv\Scripts\cli [cmd]` See [API](#API) section for commands to run
+1. `pytest` See [Tests](#Tests) section for commands to run
 1. `deactivate`
 
-### macOS
+## macOS
 
 1. `git clone https://github.com/DimakDev/hazop.git`
 1. `cd hazop`
@@ -22,11 +27,12 @@
 1. `source venv/bin/activate`
 1. `pip install --upgrade pip`
 1. `pip install .`
-1. `cli [cmd]` See [API](#API) section for commands to run.
-1. `pytest` Run tests
+1. `cli [cmd]` See [API](#API) section for commands to run
+1. `pytest` See [Tests](#Tests) section for commands to run
 1. `deactivate`
 
-## API
+
+# API
 
 To see the list of available commands, run `cli`.
 
@@ -46,9 +52,9 @@ Commands:
 * `cli importer` - [Importer API](#importer)
 * `cli exporter` - [Exporter API](#exporter)
 
-### Importer
+## Importer
 
-This API is an entry point for reading Excel data and building RDF-Graphs
+This API is an entry point for reading Excel data and building RDF-Graphs.
 
 Command: `cli importer`
 
@@ -70,9 +76,9 @@ Commands:
 * `cli importer cmd-read-hazop-data`- to read the HAZOP data if its config is available
 * `cli importer cmd-build-hazop-graphs`- to build HAZOP graphs, save it locally and upload to Fuseki server, if the server is up
 
-### Exporter
+## Exporter
 
-This API exports RDF-Data either from local directory or from Fuseki server, if it is available.
+This API exports RDF-Graphs to Excel either from local directory or from Fuseki server, if it is available.
 
 Command: `cli exporter`
 
@@ -93,3 +99,12 @@ Commands:
 
 * `cli exporter cmd-export-graphs-from-local-directory`- to convert graphs from Turtle in Excel format and save it locally
 * `cli exporter cmd-export-graphs-from-fuseki-server`- to get graphs from Fuseki server, if the server is running, convert it to Excel format and save it locally
+
+
+# Tests
+
+You can use the following commands to get quick results or customize the tests' configuration using pytest and pytest-cov flags:
+
+* `pytest`- to run quick test
+* `pytest --cov=src --cov-report term-missing`-to run a test with coverage report and missing statements
+* `pytest --cov=src --cov-report html`-to run a test with coverage report and missing statements in html format (by default open htmlcov/index.html to see the results)
