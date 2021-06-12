@@ -42,29 +42,27 @@ class Service:
 
         return data_list
 
-    def create_hazop_dataframe(self, data, columns):
-        """Creates HAZOP dataframe
+    def export_graph_to_excel(self, args):
+        """Exports graph to Excel
+
+        Workflow:
+            * replace all NaNs to blank cells
+            * convert HazopCase type to int32
+            * sort by HazopCase, reset index
+            * assign MultiIndex header
+            * export graph to Excel
 
         Args:
-            data (list): HAZOP data
-            columns (list): Columns of HAZOP dataframe
+            args (tuple): tuple container with grap data, header and filename
 
         Returns:
             pandas.DataFrame: HAZOP dataframe
         """
-        df = pd.DataFrame(data, columns=columns)
-
-        return df
-
-    def export_to_excel(self, df, filename):
-        """Exports HAZOP dataframe in excel format
-
-        Args:
-            df (pandas.DataFrame): HAZOP dataframe
-            filename (str): Name of the file
-        """
+        df = pd.DataFrame(args[0])
         df.replace(r"\bnan\b", "", regex=True, inplace=True)
         df[df.columns[0]] = df[df.columns[0]].astype("int32")
         df.sort_values(by=df.columns[0], ascending=True, inplace=True)
-        filepath = os.path.join("data", "excel", filename)
-        df.to_excel(filepath, index=False, sheet_name="HAZOP")
+        df.reset_index(drop=True, inplace=True)
+        df.columns = pd.MultiIndex.from_tuples(args[1])
+        filepath = os.path.join("data", "excel", args[2])
+        df.to_excel(filepath, index_label="Index", sheet_name="HAZOP")

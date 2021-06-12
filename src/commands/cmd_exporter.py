@@ -80,11 +80,13 @@ def save_graph_in_data_excel_directory(ctx, graph, filename):
         graph (str): Graph in string format
         filename (str): Name of the file
     """
-    columns = config.output_header
-    graph_data = ctx.obj.svc_exporter.get_graph_data(graph)
-    df = ctx.obj.svc_exporter.create_hazop_dataframe(graph_data, columns)
     filename = filename.replace(".ttl", ".xlsx")
-    ctx.obj.svc_exporter.export_to_excel(df, filename)
+
+    args = (ctx.obj.svc_exporter.get_graph_data(graph),
+            config.output_header,
+            filename)
+
+    ctx.obj.svc_exporter.export_graph_to_excel(args)
     click.echo("Saved file in data excel directory: {}".format(filename))
 
 
