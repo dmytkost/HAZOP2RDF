@@ -54,9 +54,6 @@ class Service:
 
         Args:
             args (tuple): graph data, header and filename
-
-        Returns:
-            pandas.DataFrame: HAZOP dataframe
         """
         df = pd.DataFrame(args[0])
         df.replace(r"\bnan\b", "", regex=True, inplace=True)
