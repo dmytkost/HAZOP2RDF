@@ -1,0 +1,6 @@
+@startuml
+package HAZOP2RDF {
+  [Importer] -> [TripleStore]
+  [TripleStore] <- [Exporter]
+}
+@enduml

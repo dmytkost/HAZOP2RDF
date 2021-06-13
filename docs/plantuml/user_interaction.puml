@@ -1,0 +1,13 @@
+@startuml
+left to right direction
+
+actor User
+
+package HAZOP2RDF {
+  usecase Importer
+  usecase Exporter
+}
+
+User --> Importer
+User --> Exporter
+@enduml

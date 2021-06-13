@@ -1,0 +1,51 @@
+@startuml Diagram1
+actor User
+
+participant "read-excel-data" as ReadExcelData << command >>
+participant "read-hazop-data" as ReadHazopData << command >>
+participant "build-hazop-graphs" as BuildHazopGraphs << command >>
+
+database "localhost" as Localhost << storage >>
+database "Fuseki server" as Fuseki << database >>
+
+User -> ReadExcelData: << call >>
+activate ReadExcelData
+
+ReadExcelData --> User: excel data list
+deactivate ReadExcelData
+
+User -> ReadHazopData: << call >>
+activate ReadHazopData
+
+ReadHazopData -> ReadExcelData: << call >>
+activate ReadExcelData
+
+ReadExcelData --> User: excel data list
+ReadExcelData --> ReadHazopData: return excel data list
+deactivate ReadExcelData
+
+ReadHazopData --> User: hazop data list
+deactivate ReadHazopData
+
+User -> BuildHazopGraphs: << call >>
+activate BuildHazopGraphs
+
+BuildHazopGraphs -> ReadHazopData: << call >>
+activate ReadHazopData
+
+ReadHazopData -> ReadExcelData: << call >>
+activate ReadExcelData
+
+ReadExcelData --> User: excel data list
+ReadExcelData --> ReadHazopData: return excel data list
+deactivate ReadExcelData
+
+ReadHazopData --> User: hazop data list
+ReadHazopData --> BuildHazopGraphs: return hazop data list
+deactivate ReadHazopData
+
+BuildHazopGraphs -> Localhost: save hazop data
+BuildHazopGraphs -> Fuseki: upload hazop data
+BuildHazopGraphs --> User: operation resposnse
+deactivate BuildHazopGraphs
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+skinparam componentStyle rectangle
+
+component "Command Line Interface" as CLI
+component "Importer" as ImporterInterface << Interface >>
+component "Exporter" as ExporterInterface << Interface >>
+component "Importer" as ImporterService << Service >>
+component "Exporter" as ExporterService << Service >>
+component "TripleStore" as TripleStoreService << Service >>
+
+CLI --> ImporterInterface
+CLI --> ExporterInterface
+ImporterInterface ..> ImporterService
+ImporterInterface ..> TripleStoreService
+ExporterInterface ..> ExporterService
+ExporterInterface ..> TripleStoreService
+@enduml
