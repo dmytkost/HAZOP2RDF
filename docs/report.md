@@ -7,6 +7,7 @@
 - project supervisor: Anselm Klose
 - Herr Prof. Dr.-Ing. habil. Leon Urbas
 
+
 ## Table of contents
 
 - Abstract(Marcus)
@@ -18,11 +19,13 @@
 - Sources
 - Appendix
 
+
 ## Abstract
 
 * Introduction to
 * abstract of the project
 * RDF problem description
+
 
 ## Problem Analysis
 
@@ -30,27 +33,24 @@
 * When can it help?
 * Whom can it help?
 
+
 ## Concept Development(main part)
 
-* How did we solve the problem(framework)
-* How did we get to the concept?
-* Why did we choose this method of implementing
 
 ## Implementation
 
+
 ## Validation
+
 
 ## Summary and Outlook
 
-* Discussion
-* Future Work
-* Future Projects
-* Problems to be solved
 
 ## Sources
 
 * HAZOP source
 * Refernezimplementationen beachten und zitieren
+
 
 ## Appendix
 

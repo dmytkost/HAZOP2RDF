@@ -39,6 +39,6 @@ src/services/svc_triplestore.py      16      3    81%   37-40
 TOTAL                               280     14    95%
 ```
 
-The user can although generate coverage report in HTML format and easily discover the missing statements.
+The user can although generate a coverage report in HTML format and easily discover the missing statements.
 
 There are predefined commands in the Makefile for quick access.
