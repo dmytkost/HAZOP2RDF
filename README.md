@@ -72,9 +72,9 @@ Commands:
   cmd-read-hazop-data     Read hazop data
 ```
 
-* `cli importer cmd-read-excel-data`- to see the list of available Excel binary data
-* `cli importer cmd-read-hazop-data`- to read the HAZOP data if its config is available
-* `cli importer cmd-build-hazop-graphs`- to build HAZOP graphs, save it locally and upload to Fuseki server, if the server is up
+* `cli importer cmd-read-excel-data` - to see the list of available Excel binary data
+* `cli importer cmd-read-hazop-data` - to read the HAZOP data if its config is available
+* `cli importer cmd-build-hazop-graphs` - to build HAZOP graphs, save it locally and upload to Fuseki server, if the server is up
 
 ## Exporter
 
@@ -97,8 +97,8 @@ Commands:
                                   Export HAZOP graphs...
 ```
 
-* `cli exporter cmd-export-graphs-from-local-directory`- to convert graphs from Turtle in Excel format and save it locally
-* `cli exporter cmd-export-graphs-from-fuseki-server`- to get graphs from Fuseki server, if the server is running, convert it to Excel format and save it locally
+* `cli exporter cmd-export-graphs-from-local-directory` - to convert graphs from Turtle in Excel format and save it locally
+* `cli exporter cmd-export-graphs-from-fuseki-server` - to get graphs from Fuseki server, if the server is running, convert it to Excel format and save it locally
 
 
 # Tests
@@ -106,5 +106,5 @@ Commands:
 You can use the following commands to get quick results or customize the tests' configuration using pytest and pytest-cov flags:
 
 * `pytest`- to run quick test
-* `pytest --cov=src --cov-report term-missing`-to run a test with coverage report and missing statements
-* `pytest --cov=src --cov-report html`-to run a test with coverage report and missing statements in html format (by default open htmlcov/index.html to see the results)
+* `pytest --cov=src --cov-report term-missing` - to run a test with coverage report and missing statements
+* `pytest --cov=src --cov-report html` - to run a test with coverage report and missing statements in html format (by default open htmlcov/index.html to see the results)
