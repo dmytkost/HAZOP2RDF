@@ -45,3 +45,30 @@ As a result the RDF Graphs will be stored locally in Excel format again.
     
 We developed the HAZOP2RDF Project with version control on the online platform GitHub. The program is available for 
 Windows and macOS platforms. We also included a detailed installation guide in the documentation on the GitHub platform.
+
+```plantuml
+skinparam monochrome true
+skinparam ranksep 80
+skinparam dpi 150
+skinparam arrowThickness 0.7
+skinparam packageTitleAlignment left
+skinparam usecaseBorderThickness 0.4
+skinparam defaultFontSize 16
+skinparam rectangleBorderThickness 1
+skinparam componentStyle rectangle
+
+component "Command Line Interface" as CLI
+component "Importer" as ImporterInterface << Interface >>
+component "Exporter" as ExporterInterface << Interface >>
+component "Importer" as ImporterService << Service >>
+component "Exporter" as ExporterService << Service >>
+component "TripleStore" as TripleStoreService << Service >>
+
+CLI --> ImporterInterface
+CLI --> ExporterInterface
+ImporterInterface ..> ImporterService
+ImporterInterface ..> TripleStoreService
+ExporterInterface ..> ExporterService
+ExporterInterface ..> TripleStoreService
+```
+

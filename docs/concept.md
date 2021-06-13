@@ -16,6 +16,7 @@ skinparam packageTitleAlignment left
 skinparam usecaseBorderThickness 1
 skinparam defaultFontSize 18
 skinparam rectangleBorderThickness 1
+skinparam componentStyle rectangle
 ```
 
 
@@ -28,13 +29,9 @@ What are the main components of the program?
 
 ```plantuml
 package HAZOP2RDF {
-  usecase Importer
-  usecase TripleStore
-  usecase Exporter
+  [Importer] -> [TripleStore]
+  [TripleStore] <- [Exporter]
 }
-
-Importer -> TripleStore
-TripleStore <- Exporter
 ```
 
 ## Diagram PNG
@@ -73,11 +70,11 @@ What would the command line interface structure look like?
 
 ```plantuml
 package "Command Line Interface" {
-  usecase "- export HAZOPs from local directory\n- get dataset information from Fuseki server\n- export dataset from the Fuseki server" << Exporter >>
-  usecase "- show list of Excel files\n- show list of HAZOPs\n- validate HAZOPs\n- build RDF Graphs\n- save to local directory\n- upload to Fuseki server" << Importer >>
+  rectangle "- export HAZOPs from local directory\n- get dataset information from Fuseki server\n- export dataset from the Fuseki server" << Exporter >>
+  rectangle "- show list of Excel files\n- show list of HAZOPs\n- validate HAZOPs\n- build RDF Graphs\n- save to local directory\n- upload to Fuseki server" << Importer >>
 }
 ```
 
 ## Diagram PNG
 
-![](images/sketch_cli.png)
+![](images/cli_design.png)
