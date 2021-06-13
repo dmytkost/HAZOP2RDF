@@ -4,7 +4,7 @@ The important part of the project is validation. We designed a test pattern to v
 
 In the tests' directory you can find a list of the following files:
 
-* `test_cli.py` - command line interface initialization test
+* `test_cli.py` - test command line interface initialization
 * `test_cmd_importer.py` - test importer interface
 * `test_cmd_exporter.py` - test exporter interface
 
@@ -16,9 +16,7 @@ The pattern covers the following test cases:
 * execution exceptions
 * output validation
 
-The user can run the tests with a coverage report using predefined commands in the Makefile.
-
-The code coverage value varies around 95 ± 2%. The value depends on the state of the Fuseki server. The code coverage value increases if the Fuseki server is running and there is a pre-uploaded data on the server.
+The code coverage value varies around 95 ± 2%. The value depends on the state of the Fuseki server. It increases if the Fuseki server is running and there is pre-uploaded data on the server.
 
 The coverage report below shows the detailed information about the tests results.
 
@@ -41,4 +39,6 @@ src/services/svc_triplestore.py      16      3    81%   37-40
 TOTAL                               280     14    95%
 ```
 
-Although you can generate a coverage report in HTML format and easily discover the missing statements.
+The user can although generate coverage report in HTML format and easily discover the missing statements.
+
+There are predefined commands in the Makefile for quick access.
