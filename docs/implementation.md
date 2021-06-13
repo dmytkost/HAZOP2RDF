@@ -8,11 +8,9 @@ The following diagram shows the structure of the Command Line Interface. It cont
 
 Using the Command Line Interface users can interact with our software.
      
-Using our Importer interface the user can import and validate incoming HAZOP data in Excel format and generate RDF
-graphs from it. They can be locally stored or uploaded to a Fuseki server. 
+Using our Importer interface the user can import and validate incoming HAZOP data in Excel format and generate RDF graphs from it. They can be locally stored or uploaded to a Fuseki server.
      
-Using our Exporter interface the user can export RDF graphs containing HAZOP data to Excel format. The source for the
-Exporter interface can either be a locally stored RDF file or an RDF file stored on a Fuseki server.
+Using our Exporter interface the user can export RDF graphs containing HAZOP data to Excel format. The source for the Exporter interface can either be a locally stored RDF file or an RDF file stored on a Fuseki server.
     
 ### Importer interface
     
@@ -22,7 +20,7 @@ The main command of the Importer interface is cmd-build-hazop-graphs, which read
 
 The installation of a Fuseki server is optional. If the server is offline, the files cannot be uploaded to the server resulting in an error message which is displayed to the user.
 
-### Sequence Diagram: Importer interface
+#### Sequence Diagram: Importer interface
 
 ![](plantuml/sequence_importer.png)
     
@@ -34,7 +32,7 @@ There are two main commands in the Exporter interface for the users to interact 
 
 As a result, the RDF graphs will be stored locally in Excel format again.
 
-### Sequence Diagram: Exporter interface
+#### Sequence Diagram: Exporter interface
 
 ![](plantuml/sequence_exporter.png)
     
