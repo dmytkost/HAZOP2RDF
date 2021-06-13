@@ -141,14 +141,14 @@ database "Fuseki server" as Fuseki << database >>
 User -> ExportFromStorage: << call >>
 activate ExportFromStorage
 
-ExportFromStorage -> Localhost: get hazop graph
+ExportFromStorage -> Localhost: get hazop graphs
 activate Localhost
 
-Localhost -> ExportFromStorage: return hazop graph
+Localhost -> ExportFromStorage: return hazop graphs
 note left: early return if no data
 deactivate Localhost
 
-ExportFromStorage -> Localhost: save hazop graph in excel
+ExportFromStorage -> Localhost: save hazop graphs in excel
 ExportFromStorage --> User: operation response
 deactivate ExportFromStorage
 
@@ -156,14 +156,14 @@ deactivate ExportFromStorage
 User -> ExportFromFuseki: << call >>
 activate ExportFromFuseki
 
-ExportFromFuseki -> Fuseki: get hazop graph
+ExportFromFuseki -> Fuseki: get hazop graphs
 activate Fuseki
 
-Fuseki -> ExportFromFuseki: return hazop graph
+Fuseki -> ExportFromFuseki: return hazop graphs
 note left: early return if no data
 deactivate Fuseki
 
-ExportFromFuseki -> Localhost: save hazop graph in excel
+ExportFromFuseki -> Localhost: save hazop graphs in excel
 ExportFromFuseki --> User: operation response
 deactivate ExportFromFuseki
 ```
