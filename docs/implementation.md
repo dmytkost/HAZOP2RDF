@@ -72,3 +72,98 @@ ExporterInterface ..> ExporterService
 ExporterInterface ..> TripleStoreService
 ```
 
+```plantuml
+actor User
+
+participant "read-excel-data" as ReadExcelData << command >>
+participant "read-hazop-data" as ReadHazopData << command >>
+participant "build-hazop-graphs" as BuildHazopGraphs << command >>
+
+database "localhost" as Localhost << storage >>
+database "Fuseki server" as Fuseki << database >>
+
+
+User -> ReadExcelData: << call >>
+activate ReadExcelData
+
+ReadExcelData --> User: excel data list
+deactivate ReadExcelData
+
+User -> ReadHazopData: << call >>
+activate ReadHazopData
+
+ReadHazopData -> ReadExcelData: << call >>
+activate ReadExcelData
+
+ReadExcelData --> User: excel data list
+ReadExcelData --> ReadHazopData: return excel data list
+deactivate ReadExcelData
+
+ReadHazopData --> User: hazop data list
+deactivate ReadHazopData
+
+User -> BuildHazopGraphs: << call >>
+activate BuildHazopGraphs
+
+BuildHazopGraphs -> ReadHazopData: << call >>
+activate ReadHazopData
+
+ReadHazopData -> ReadExcelData: << call >>
+activate ReadExcelData
+
+ReadExcelData --> User: excel data list
+ReadExcelData --> ReadHazopData: return excel data list
+deactivate ReadExcelData
+
+ReadHazopData --> User: hazop data list
+ReadHazopData --> BuildHazopGraphs: return hazop data list
+deactivate ReadHazopData
+
+BuildHazopGraphs -> Localhost: save hazop data
+BuildHazopGraphs -> Fuseki: upload hazop data
+deactivate BuildHazopGraphs
+activate Fuseki
+
+Fuseki --> User: operation resposnse
+deactivate Fuseki
+```
+
+```plantuml
+actor User
+
+participant "export-graphs-from\n-local-directory" as ExportFromStorage << command >>
+participant "export-graphs-from\n-fuseki-server" as ExportFromFuseki << command >>
+
+database "localhost" as Localhost << storage >>
+database "Fuseki server" as Fuseki << database >>
+
+
+User -> ExportFromStorage: << call >>
+activate ExportFromStorage
+
+ExportFromStorage -> Localhost: get hazop graph
+activate Localhost
+
+Localhost -> ExportFromStorage: return hazop graph
+note left: early return if no data
+deactivate Localhost
+
+ExportFromStorage -> Localhost: save hazop graph in excel
+ExportFromStorage --> User: operation response
+deactivate ExportFromStorage
+
+
+User -> ExportFromFuseki: << call >>
+activate ExportFromFuseki
+
+ExportFromFuseki -> Fuseki: get hazop graph
+activate Fuseki
+
+Fuseki -> ExportFromFuseki: return hazop graph
+note left: early return if no data
+deactivate Fuseki
+
+ExportFromFuseki -> Localhost: save hazop graph in excel
+ExportFromFuseki --> User: operation response
+deactivate ExportFromFuseki
+```
