@@ -21,9 +21,7 @@ class Service:
         excel_xlsb_list = glob.glob(xlsb_list_path)
         excel_xlsx_list = glob.glob(xlsx_list_path)
 
-        excel_data_list = excel_xlsb_list + excel_xlsx_list
-
-        return excel_data_list
+        return excel_xlsb_list + excel_xlsx_list
 
     def get_hazop_dataframe(self, args):
         """Gets HAZOP dataframe

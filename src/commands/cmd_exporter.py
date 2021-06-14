@@ -1,6 +1,6 @@
 import click
-import os
 import glob
+import os
 import json
 
 from src.services.svc_exporter import Service as service_exporter

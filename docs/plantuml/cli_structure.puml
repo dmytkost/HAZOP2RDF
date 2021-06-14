@@ -10,6 +10,7 @@ component "TripleStore" as TripleStoreService << Service >>
 
 CLI --> ImporterInterface
 CLI --> ExporterInterface
+
 ImporterInterface ..> ImporterService
 ImporterInterface ..> TripleStoreService
 ExporterInterface ..> ExporterService

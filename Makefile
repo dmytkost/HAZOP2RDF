@@ -1,4 +1,4 @@
-ds:
+fuseki:
 	fuseki-server --update --mem /ds
 
 cli:
