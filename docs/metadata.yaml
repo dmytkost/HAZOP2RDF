@@ -1,9 +1,17 @@
 ---
-title: __Project HAZOP2RDF__
+title: __Project CAE-PA__
+subtitle: __HAZOP2RDF__
 author:
-  - Dmytro Kostiuk
-  - Marcus Rothhaupt
-  - Artan Kabashi
-  - Vincenz Forkel
+    - Dmytro Kostiuk
+    - Marcus Rothhaupt
+    - Artan Kabashi
+    - Vincenz Forkel
+date: "22/22/22"
+documentclass: scrreprt
+pagenumbering: true
+toc-depth: 1
+toc: true
+colorlinks: blue
 fontsize: 12pt
+linestretch: 1.2
 ---

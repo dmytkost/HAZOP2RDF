@@ -21,7 +21,7 @@ The main command of the Importer interface is cmd-build-hazop-graphs, which read
 The installation of a Fuseki server is optional. If the server is offline, the files cannot be uploaded to the server resulting in an error message which is displayed to the user.
 
 ![Sequence Diagram: Importer interface](plantuml/sequence_importer.png)
-    
+
 ## Exporter interface
 
 After the HAZOP data was successfully imported and stored, the user can convert the RDF graph to Excel format again.
