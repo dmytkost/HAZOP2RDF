@@ -1,10 +1,10 @@
-## Implementation
+# Implementation
     
-We implemented the Command Line Interface using Click package. It is highly configurable and can build very complex applications. The ComplexCLI utility, we used in our project, combines multiple interfaces in a single Command Line Interface.
+We implemented the Command Line Interface using @Click package. It is highly configurable and can build very complex applications. The ComplexCLI utility, we used in our project, combines multiple interfaces in a single Command Line Interface.
 
 The following diagram shows the structure of the Command Line Interface. It contains Importer and Exporter interface, which use services. The services contain utilities needed for the interfaces to perform lower level actions.
 
-![](plantuml/cli_structure.png)
+![Structure: Command Line Interface](plantuml/cli_structure.png)
 
 Using the Command Line Interface users can interact with our software.
      
@@ -12,7 +12,7 @@ Using our Importer interface the user can import and validate incoming HAZOP dat
      
 Using our Exporter interface the user can export RDF graphs containing HAZOP data to Excel format. The source for the Exporter interface can either be a locally stored RDF file or an RDF file stored on a Fuseki server.
     
-### Importer interface
+## Importer interface
     
 The main purpose of the Importer interface is to build an RDF graph from incoming Excel data. To build an RDF graph, we carefully read the incoming HAZOP Data and validate it. To validate the data correctly we implemented a config file, which stores all the metadata needed to describe the importing and validating process.
 
@@ -20,11 +20,9 @@ The main command of the Importer interface is cmd-build-hazop-graphs, which read
 
 The installation of a Fuseki server is optional. If the server is offline, the files cannot be uploaded to the server resulting in an error message which is displayed to the user.
 
-#### Sequence Diagram: Importer interface
-
-![](plantuml/sequence_importer.png)
+![Sequence Diagram: Importer interface](plantuml/sequence_importer.png)
     
-### Exporter interface
+## Exporter interface
 
 After the HAZOP data was successfully imported and stored, the user can convert the RDF graph to Excel format again.
 
@@ -32,10 +30,8 @@ There are two main commands in the Exporter interface for the users to interact 
 
 As a result, the RDF graphs will be stored locally in Excel format again.
 
-#### Sequence Diagram: Exporter interface
-
-![](plantuml/sequence_exporter.png)
+![Sequence Diagram: Exporter interface](plantuml/sequence_exporter.png)
     
-### Remarks
+## Remarks
     
 We developed the HAZOP2RDF Project with version control on GitHub. The program is available for Windows and macOS. We also included a detailed installation guide in the documentation.

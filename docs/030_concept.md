@@ -5,29 +5,29 @@
 * Why did we choose this method of implementing
 
 
-# Design program components
+## Design program components
 
 How did we start?
 What are the main components of the program?
 
-## Diagram
+### Diagram
 
 ![](plantuml/program_components.png)
 
 
-# User interaction scenario
+## User interaction scenario
 
 How should users interact with the program?
 
-## Diagram
+### Diagram
 
 ![](plantuml/user_interaction.png)
 
 
-# Design Command Line Interface
+## Design Command Line Interface
 
 What would the command line interface structure look like?
 
-## Diagram PNG
+### Diagram
 
 ![](plantuml/cli_design.png)
