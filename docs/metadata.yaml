@@ -13,4 +13,6 @@ titlepage-background: "background10.pdf"
 toc: true
 toc-depth: 1
 fontsize: 12pt
+lof: true
+lot: true
 ...

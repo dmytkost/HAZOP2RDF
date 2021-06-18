@@ -1,4 +1,4 @@
-# Validation
+# Verification
 
 The important part of the project is validation. We designed a test pattern to validate the results of the program execution. This pattern is simple and extendable and covers the main parts of the program.
 
