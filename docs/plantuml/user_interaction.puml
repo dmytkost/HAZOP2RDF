@@ -1,6 +1,6 @@
 @startuml
 skinparam monochrome true
-skinparam dpi 100
+skinparam dpi 300
 skinparam defaultFontSize 12
 
 left to right direction
