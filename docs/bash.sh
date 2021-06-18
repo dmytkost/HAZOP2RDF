@@ -1,10 +1,10 @@
 # required Pandoc, TeX Live
 
-pandoc	--bibliography=references.bib \
-		--metadata-file=metadata.yaml \
-		*.md -o HAZOP2RDF_report.pdf \
+pandoc	--bibliography=bibliography/bibliography.bib \
+		--metadata-file=metadata/metadata.yaml \
+		markdown/*.md -o HAZOP2RDF_report.pdf \
 		--from=markdown \
-		--template=eisvogel.tex \
+		--template=template/eisvogel.tex \
 		--citeproc \
 		--listings \
 		--top-level-division=chapter \
