@@ -1,6 +1,6 @@
 # Verification
 
-The important part of the project is validation. We designed a test pattern to validate the results of the program execution. This pattern is simple and extendable and covers the main parts of the program.
+The important part of the project is verification. We designed a test pattern to verificate the results of the program execution. This pattern is simple and extendable and covers the main parts of the program.
 
 In the tests' directory you can find a list of the following files:
 
@@ -14,7 +14,7 @@ The pattern covers the following test cases:
 
 * execution errors
 * execution exceptions
-* output validation
+* output verification
 
 The code coverage value varies around 95 ± 2%. The value depends on the state of the Fuseki server. It increases if the Fuseki server is running and there is pre-uploaded data on the server.
 
