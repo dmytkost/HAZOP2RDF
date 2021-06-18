@@ -1,4 +1,8 @@
 @startuml Diagram1
+skinparam monochrome true
+skinparam dpi 200
+skinparam defaultFontSize 12
+
 actor User
 
 participant "read-excel-data" as ReadExcelData << command >>

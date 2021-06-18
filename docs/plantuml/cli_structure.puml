@@ -1,4 +1,7 @@
 @startuml
+skinparam monochrome true
+skinparam dpi 300
+skinparam defaultFontSize 12
 skinparam componentStyle rectangle
 
 component "Command Line Interface" as CLI
