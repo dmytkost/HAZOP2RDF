@@ -9,7 +9,7 @@ book: true
 classoption: [oneside]
 lang: "en"
 titlepage: true
-titlepage-background: "background/background10.pdf"
+titlepage-background: "background10.pdf"
 toc: true
 toc-depth: 1
 ...
