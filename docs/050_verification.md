@@ -16,7 +16,7 @@ The pattern covers the following test cases:
 * execution exceptions
 * output verification
 
-The code coverage value varies around 95 ± 2%. The value depends on the state of the Fuseki server. It increases if the Fuseki server is running and there is pre-uploaded data on the server.
+The code coverage value varies around 95±2%. The value depends on the state of the Fuseki server. It increases if the Fuseki server is running and there is pre-uploaded data on the server.
 
 The coverage report below shows the detailed information about the tests results.
 
