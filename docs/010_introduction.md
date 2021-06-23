@@ -1,9 +1,5 @@
 # Introduction
 
-* Introduction
-
-* abstract
-
 This research paper describes a program that handles HAZOP data from an excel spreadsheet. 
 With the described program an easy to handle back-and-fourth conversion from HAZOP data in excel Format 
 to RDF format is possible. Furthermore a verification of the HAZOP data takes 
@@ -23,6 +19,5 @@ file or an RDF file stored on a Fuseki server.
 
 As a result of our research we conclude that handling HAZOP data in RDF Format is much more convenient than 
 working with excel data because the descriptive format largely increases compatibility between different 
-modular plants.
-
-* RDF problem description
+modular plants. With RDF we can build graphs, examine dependencies between single HAZOP cases and store the
+RDF files in less disk space.
