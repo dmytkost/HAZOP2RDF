@@ -1,4 +1,4 @@
-# required Pandoc, TeX Live
+#!/bin/bash
 
 pandoc \
 	--bibliography=bibliography.bib \

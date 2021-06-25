@@ -16,11 +16,11 @@ The pattern covers the following test cases:
 * execution exceptions
 * output verification
 
-The code coverage value varies around 95±2%. The value depends on the state of the Fuseki server. It increases if the Fuseki server is running and there is pre-uploaded data on the server.
+The code coverage value varies around 94%. The value depends on the state of the Fuseki server. It increases if the Fuseki server is running and there is pre-uploaded data on the server.
 
 The coverage report below shows the detailed information about the tests results.
 
-```
+```shell
 ---------- coverage: platform darwin, python 3.8.2-final-0 -----------
 Name                              Stmts   Miss  Cover   Missing
 ---------------------------------------------------------------
@@ -33,10 +33,10 @@ src/config/__init__.py                0      0   100%
 src/config/config.py                  3      0   100%
 src/services/__init__.py              0      0   100%
 src/services/svc_exporter.py         28      0   100%
-src/services/svc_importer.py         97      0   100%
+src/services/svc_importer.py         66      0   100%
 src/services/svc_triplestore.py      16      3    81%   37-40
 ---------------------------------------------------------------
-TOTAL                               280     14    95%
+TOTAL                               249     14    94%
 ```
 
 The user can although generate a coverage report in HTML format and easily discover the missing statements.
