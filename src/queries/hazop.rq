@@ -1,20 +1,6 @@
-PREFIX cause: <http://www.hazop2rdf.de/hazop/predicate/cause>
-PREFIX consequence: <http://www.hazop2rdf.de/hazop/predicate/consequence>
-PREFIX description: <http://www.hazop2rdf.de/hazop/predicate/description>
-PREFIX deviation: <http://www.hazop2rdf.de/hazop/predicate/deviation>
-PREFIX frequencyofpresence: <http://www.hazop2rdf.de/hazop/predicate/frequencyofpresence>
-PREFIX guideword: <http://www.hazop2rdf.de/hazop/predicate/guideword>
-PREFIX hazopcase: <http://www.hazop2rdf.de/hazop/subject/hazopcase/>
-PREFIX hazopnode: <http://www.hazop2rdf.de/hazop/predicate/hazopnode>
-PREFIX otherinfo: <http://www.hazop2rdf.de/hazop/predicate/otherinfo>
-PREFIX parameter: <http://www.hazop2rdf.de/hazop/predicate/parameter>
-PREFIX possibilityofavoiding: <http://www.hazop2rdf.de/hazop/predicate/possibilityofavoiding>
-PREFIX probability: <http://www.hazop2rdf.de/hazop/predicate/probability>
-PREFIX recommendation: <http://www.hazop2rdf.de/hazop/predicate/recommendation>
-PREFIX restrisiko: <http://www.hazop2rdf.de/hazop/predicate/restrisiko>
-PREFIX riskgraph: <http://www.hazop2rdf.de/hazop/predicate/riskgraph>
-PREFIX safeguard: <http://www.hazop2rdf.de/hazop/predicate/safegurd>
-PREFIX severity: <http://www.hazop2rdf.de/hazop/predicate/severity>
+PREFIX blanknode: <http://www.hazop2rdf.de/hazop/blanknode/>
+PREFIX hazopcase: <http://www.hazop2rdf.de/hazop/hazopcase/>
+PREFIX predicate: <http://www.hazop2rdf.de/hazop/predicate/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 SELECT
@@ -45,42 +31,41 @@ SELECT
 ?restrisiko_probability
 
 WHERE {
-    ?case deviation: ?deviation .
-    ?deviation hazopnode: ?deviation_hazopnode .
-    ?deviation parameter: ?deviation_parameter .
-    ?deviation guideword: ?deviation_guideword .
-    ?deviation description: ?deviation_description .
+    ?case blanknode:deviation ?deviation .
+    ?deviation predicate:hazopnode ?deviation_hazopnode .
+    ?deviation predicate:parameter ?deviation_parameter .
+    ?deviation predicate:guideword ?deviation_guideword .
+    ?deviation predicate:description ?deviation_description .
 
-    ?case cause: ?cause .
-    ?cause hazopnode: ?cause_hazopnode .
-    ?cause parameter: ?cause_parameter .
-    ?cause guideword: ?cause_guideword .
-    ?cause description: ?cause_description .
+    ?case blanknode:cause ?cause .
+    ?cause predicate:hazopnode ?cause_hazopnode .
+    ?cause predicate:parameter ?cause_parameter .
+    ?cause predicate:guideword ?cause_guideword .
+    ?cause predicate:description ?cause_description .
 
-    ?case consequence: ?consequence .
-    ?consequence hazopnode: ?consequence_hazopnode .
-    ?consequence parameter: ?consequence_parameter .
-    ?consequence guideword: ?consequence_guideword .
-    ?consequence description: ?consequence_description .
+    ?case blanknode:consequence ?consequence .
+    ?consequence predicate:hazopnode ?consequence_hazopnode .
+    ?consequence predicate:parameter ?consequence_parameter .
+    ?consequence predicate:guideword ?consequence_guideword .
+    ?consequence predicate:description ?consequence_description .
 
-    ?case riskgraph: ?riskgraph .
-    ?riskgraph severity: ?riskgraph_severity .
-    ?riskgraph frequencyofpresence: ?riskgraph_presence .
-    ?riskgraph possibilityofavoiding: ?riskgraph_avoiding .
-    ?riskgraph probability: ?riskgraph_probability .
+    ?case blanknode:riskgraph ?riskgraph .
+    ?riskgraph predicate:severity ?riskgraph_severity .
+    ?riskgraph predicate:presence ?riskgraph_presence .
+    ?riskgraph predicate:avoiding ?riskgraph_avoiding .
+    ?riskgraph predicate:probability ?riskgraph_probability .
 
-    ?case safeguard: ?safeguard .
-    ?safeguard hazopnode: ?safeguard_hazopnode .
-    ?safeguard parameter: ?safeguard_parameter .
-    ?safeguard recommendation: ?safeguard_recommendation .
-    ?safeguard otherinfo: ?safeguard_otherinfo .
+    ?case blanknode:safeguard ?safeguard .
+    ?safeguard predicate:hazopnode ?safeguard_hazopnode .
+    ?safeguard predicate:parameter ?safeguard_parameter .
+    ?safeguard predicate:recommendation ?safeguard_recommendation .
+    ?safeguard predicate:otherinfo ?safeguard_otherinfo .
 
-    ?case restrisiko: ?restrisiko .
-    ?restrisiko severity: ?restrisiko_severity .
-    ?restrisiko frequencyofpresence: ?restrisiko_presence .
-    ?restrisiko possibilityofavoiding: ?restrisiko_avoiding .
-    ?restrisiko probability: ?restrisiko_probability .
-
+    ?case blanknode:restrisiko ?restrisiko .
+    ?restrisiko predicate:severity ?restrisiko_severity .
+    ?restrisiko predicate:presence ?restrisiko_presence .
+    ?restrisiko predicate:avoiding ?restrisiko_avoiding .
+    ?restrisiko predicate:probability ?restrisiko_probability .
 
     BIND(REPLACE(str(?case), ".*/", "") AS ?hazopcase)
 }
