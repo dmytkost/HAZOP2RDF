@@ -23,4 +23,4 @@ Great care was taken to design the programs separate and allow for alternative a
 
 To take full advantage of the modularity of our solution, a Command Line User Interface was chosen. This allows specific access to all functionalities of only the Importer and Exporter programs and eliminates convolution of the separate functions inside each program through precise commands. For security reasons, the user is only able to communicate with the Triplestore indirectly through Importer and Exporter functions. This furthermore ensures that data on the Triplestore will not be corrupted through operator errors.
 
-![Design: Command Line Interface](plantuml/cli_design.png)
+![Design of Command Line Interface](plantuml/cli_design.png)
