@@ -2,7 +2,7 @@
 
 * turtle data, output ontology in excel, documentation
 
-```ttl
+```{.ttl caption="HAZOP Ontology in Turtle format"}
 @prefix blanknode: <http://www.hazop2rdf.de/hazop/blanknode/> .
 @prefix hazopcase: <http://www.hazop2rdf.de/hazop/hazopcase/> .
 @prefix predicate: <http://www.hazop2rdf.de/hazop/predicate/> .
