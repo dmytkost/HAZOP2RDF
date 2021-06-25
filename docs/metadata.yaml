@@ -15,4 +15,5 @@ toc-depth: 1
 fontsize: 12pt
 lof: true
 lot: true
+colorlinks: true
 ...
