@@ -1,10 +1,10 @@
 ---
-title: "Project CAE-PA: HAZOP2RDF"
+title: "ET-12 01 21 CAE-PA Project Report: HAZOP2RDF"
 author: [Dmytro Kostiuk, Marcus Rothhaupt, Artan Kabashi, Vincenz Forkel]
-date: "22.22.2022"
+date: "21.07.2021"
 subject: "HAZOP transformation"
 keywords: [HAZOP, RDF]
-subtitle: "Subtitle"
+subtitle: "A robust program to handle HAZOP studies"
 book: true
 classoption: [oneside]
 lang: "en"
