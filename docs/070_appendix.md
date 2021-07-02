@@ -60,3 +60,5 @@ hazopcase:10 blanknode:cause [ predicate:description "reines Lösungsmittel wird
 ```
 
 ![Graph ontology in Excel](images/graph_ontology_excel.png)
+
+![HTML coverage report example](images/html_coverage_report.png)

@@ -33,5 +33,5 @@ As a result, the RDF graphs will be stored locally in Excel format again.
 ![Sequence diagram of Exporter interface](plantuml/sequence_exporter.png)
     
 ## Remarks
-    
+
 We developed the HAZOP2RDF Project with version control on GitHub. The program is available for Windows and macOS. We also included a detailed installation guide in the documentation.

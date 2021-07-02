@@ -1,10 +1,10 @@
 # Verification
 
-The important part of the project is verification. We designed a test pattern to verificate the results of the program execution. This pattern is simple and extendable and covers the main parts of the program.
+The important part of the project is verification. We designed a test pattern to verify the results of the program execution. This pattern is simple and extendable and covers the main parts of the program.
 
 In the tests' directory you can find a list of the following files:
 
-* `test_cli.py` - test command line interface initialization
+* `test_cli.py` - test command line interface initialisation
 * `test_cmd_importer.py` - test importer interface
 * `test_cmd_exporter.py` - test exporter interface
 
@@ -39,6 +39,4 @@ src/services/svc_triplestore.py      16      3    81%   37-40
 TOTAL                               249     14    94%
 ```
 
-The user can although generate a coverage report in HTML format and easily discover the missing statements.
-
-There are predefined commands in the Makefile for quick access.
+The user can although generate a coverage report in HTML format and easily discover the missing statements. See Appendix section for HTML coverage report example.
