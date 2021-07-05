@@ -19,9 +19,13 @@ titlepage-text-color: "FFFFFF"
 titlepage-rule-color: "FFFFFF"
 titlepage-rule-height: 2
 logo: "TU_Dresden_Logo_weiss.png"
+logo-width: 40mm
 mainfont: OpenSans-Regular.ttf
+sansfont: OpenSans-SemiBold.ttf
+monofont: OpenSans-Regular.ttf
+mathfont: OpenSans-Regular.ttf
 mainfontoptions:
-  - BoldFont=OpenSans-Bold.ttf
+  - BoldFont=OpenSans-SemiBold.ttf
   - ItalicFont=OpenSans-Italic.ttf
   - BoldItalicFont=OpenSans-BoldItalic.ttf
 ...
