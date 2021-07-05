@@ -9,4 +9,3 @@ pandoc \
 	--template=eisvogel.tex \
 	--citeproc \
 	--listings \
-	--top-level-division=chapter \

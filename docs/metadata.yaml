@@ -5,15 +5,23 @@ date: "21.07.2021"
 subject: "HAZOP transformation"
 keywords: [HAZOP, RDF]
 subtitle: "A robust program to handle HAZOP studies"
-book: true
-classoption: [oneside]
-lang: "en"
-titlepage: true
-titlepage-background: "background10.pdf"
+toc-own-page: true
 toc: true
-toc-depth: 1
+toc-depth: 2
+colorlinks: true
 fontsize: 12pt
 lof: true
 lot: true
-colorlinks: true
+lang: "en"
+titlepage: true
+titlepage-color: "00305d"
+titlepage-text-color: "FFFFFF"
+titlepage-rule-color: "FFFFFF"
+titlepage-rule-height: 2
+logo: "TU_Dresden_Logo_weiss.png"
+mainfont: OpenSans-Regular.ttf
+mainfontoptions:
+  - BoldFont=OpenSans-Bold.ttf
+  - ItalicFont=OpenSans-Italic.ttf
+  - BoldItalicFont=OpenSans-BoldItalic.ttf
 ...
