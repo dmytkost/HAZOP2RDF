@@ -1,4 +1,4 @@
-# Problem Analysis
+# Motivation
 
 Modular plants are getting more and more important in today's industry. They enable flexible production in 
 small quantities and over variable time periods. A modular plant can be built very quickly, because all 
@@ -16,8 +16,7 @@ easier and better to handle format.
 The Resource Description Framework, short RDF can be such a format. Because of its easy to handle language, 
 reusability and automatability we choose this widely spread format. 
 
-Thanks to RDF, a HAZOP study can be easily exchanged, edited and combined with other HAZOP studies. Through the usage
-of a DB Server like Fuseki, the transformed file can be shared and stored very conveniently.
+Through the usage of a DB Server like Fuseki, the transformed file can be shared and stored very conveniently.
 
 One of the biggest problem we faced was to verify and define a well-formed excel spreadsheet so that our importer
 was able to generate a correct RDF file. Now the verification process uses a user defined configuration to analyse 

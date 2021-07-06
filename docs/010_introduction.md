@@ -1,23 +1,14 @@
 # Introduction
 
-This research paper describes a program that handles HAZOP data from an excel spreadsheet. 
-With the described program an easy to handle back-and-fourth conversion from HAZOP data in excel Format 
-to RDF format is possible. Furthermore a verification of the HAZOP data takes 
-place and can also be configured. 
+Being able to convert excel spreadsheets to the RDF format is a huge time saver for engineers working with
+HAZOP studies. By analysing the structure of the HAZOP files we can draw conclusions about the risks of a plant.
 
-By analysing the needs of the faculty and working together with process control engineers we 
-developed this application. 
+In order to do so we started by writing sophisticated code to develop an engine that transforms the lines
+of HAZOP study excel spreadsheet into an RDF turtle formatted code.
 
-Our solution features a command line interface to give users an easy access to our software.
+In the following parts of this paper it is shown what our software is capable of, how we solved our problem and
+how the different commands of our command line interface can be used to ease the process of handling
+HAZOP studies.
 
-Using our Importer interface the user can import and validate incoming HAZOP data in 
-Excel format and generate RDF graphs from it. They can be locally stored or uploaded to a Fuseki server.
-
-Using our Exporter interface the user can export RDF graphs containing HAZOP data to 
-Excel format. The source for the Exporter interface can either be a locally stored RDF 
-file or an RDF file stored on a Fuseki server.
-
-As a result of our research we conclude that handling HAZOP data in RDF Format is much more convenient than 
-working with excel data because the descriptive format largely increases compatibility between different 
-modular plants. With RDF we can build graphs, examine dependencies between single HAZOP cases and store the
-RDF files in less disk space.
+It can be noted that our software can be especially useful when designing a modular plant with multiple HAZOP
+studies for each part of the plant.
