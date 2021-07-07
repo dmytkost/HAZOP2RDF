@@ -1,5 +1,6 @@
 # Introduction
 
+@Klose_2019
 Being able to convert excel spreadsheets to the RDF format is a huge time saver for engineers working with
 HAZOP studies. By analysing the structure of the HAZOP files we can draw conclusions about the risks of a plant.
 
