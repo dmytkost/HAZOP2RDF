@@ -5,7 +5,7 @@ import json
 
 from src.services.svc_exporter import Service as service_exporter
 from src.services.svc_triplestore import Service as service_triplestore
-import src.config.config as config
+import src.excel_config.excel_config as config
 
 
 class Context:

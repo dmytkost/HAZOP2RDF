@@ -1,16 +1,12 @@
-"""The file containing parameters for reading and validating Excel data.
+"""Parameters for reading and validating Excel data.
 
-Excel configuration (excel) is used in svc_importer.Service.read_hazop_dataframe
-function to find and read the HAZOP dataframe in Excel workbook.
+`excel_config` is used to find and read Excel data in a workbook.
+`valid_header` is a schema to validate the imported Excel data.
 
-Valid header (valid_header) is a validation schema for the function
-svc_importer.Service.build_hazop_graph.
-
-Output header (output_header) contains all the headers used for the output
-Excel data.
+`output_header` are the headers for the exported Excel data.
 """
 
-excel = {
+excel_config = {
     ".xlsb": {
         "engine": "pyxlsb",
         "header": [2, 3],

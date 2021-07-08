@@ -32,7 +32,7 @@ class Service:
         g = Graph()
         g.parse(data=graph, format="turtle")
 
-        query_path = os.path.join("src", "queries", "hazop.rq")
+        query_path = os.path.join("src", "sparql", "hazop.rq")
         with open(query_path, "r") as f:
             qres = g.query(f.read())
 

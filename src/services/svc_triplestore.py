@@ -45,7 +45,7 @@ class Service:
         Returns:
             bytes: HTTP response
         """
-        rq = "src/queries/bindings.rq"
+        rq = "src/sparql/bindings.rq"
         cmd = f"s-query --service={self.url}/query --query={rq}"
         response = os.popen(cmd).read()
 

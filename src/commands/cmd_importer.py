@@ -4,7 +4,7 @@ import os
 
 from src.services.svc_importer import Service as service_importer
 from src.services.svc_triplestore import Service as service_triplestore
-import src.config.config as config
+import src.excel_config.excel_config as config
 
 
 class Context:
@@ -61,9 +61,9 @@ def read_hazop_data(ctx):
         _, suffix = os.path.splitext(filepath)
 
         args = (filepath,
-                config.excel[suffix]["engine"],
-                config.excel[suffix]["header"],
-                config.excel[suffix]["sheet_name"])
+                config.excel_config[suffix]["engine"],
+                config.excel_config[suffix]["header"],
+                config.excel_config[suffix]["sheet_name"])
 
         df = ctx.obj.svc_importer.get_hazop_dataframe(args)
         df_is_valid = df.columns.tolist() == config.valid_header
