@@ -1,6 +1,6 @@
 # Concept
 
-## Design program components
+## Program Component Design
 
 We decided to structure our solution into three separate programs, all of which can stand alone, and operate independent of each other; and a Command Line User Interface for easier operability.
 - The Importer: Takes an Excel HAZOP-analysis file, validates it, converts the table structure into RDF-Triples, and finally stores the created RDF-Triples with all metadata either locally or in the TripleStore.
