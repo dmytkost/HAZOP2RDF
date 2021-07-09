@@ -1,6 +1,6 @@
 # Implementation
     
-We implemented the Command Line Interface using [Click](https://click.palletsprojects.com/en/8.0.x/) package. It is highly configurable and can build very complex applications. The ComplexCLI utility, we used in our project, combines multiple interfaces in a single Command Line Interface.
+We implemented the Command Line Interface using Click[^1] package. It is highly configurable and can build very complex applications. The ComplexCLI utility, we used in our project, combines multiple interfaces in a single Command Line Interface.
 
 The following diagram shows the structure of the Command Line Interface. It contains Importer and Exporter interface, which use services. The services contain utilities needed for the interfaces to perform lower level actions.
 
@@ -14,7 +14,7 @@ Using our Exporter interface the user can export RDF graphs containing HAZOP dat
     
 ## Importer interface
     
-The main purpose of the Importer interface is to build an RDF graph from incoming Excel data. To build an RDF graph, we carefully read the incoming HAZOP Data and validate it. To validate the data correctly we implemented a config file, which stores all the metadata needed to describe the importing and validating process.
+The main purpose of the Importer interface is to build an RDF graph from incoming Excel data. To build an RDF graph, we carefully read the incoming HAZOP data and validate it. To validate the data correctly we implemented a config file, which stores all the metadata needed to describe the importing and validating process.
 
 The main command of the Importer interface is cmd-build-hazop-graphs, which reads the HAZOP data stored in a local directory and transforms it to an RDF graph. The graph can be consequentially stored locally or uploaded to a Fuseki server. The two other commands cmd-read-excel-data and cmd-read-hazop-data make it possible for the user to perform steps of the main importer command individually.
 
@@ -34,4 +34,6 @@ As a result, the RDF graphs will be stored locally in Excel format again.
     
 ## Remarks
 
-We developed the HAZOP2RDF Project with version control on GitHub. The program is available for Windows and macOS. We also included a detailed installation guide in the documentation.
+We developed the HAZOP2RDF project with version control on GitHub. The program is available for Windows and macOS. We also included a detailed installation guide in the documentation.
+
+[^1]: Python package: [Click](https://click.palletsprojects.com/en/8.0.x/)
