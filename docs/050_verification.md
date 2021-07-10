@@ -22,21 +22,21 @@ The coverage report below shows the detailed information about the tests results
 
 ```{.shell caption="Coverage report"}
 ---------- coverage: platform darwin, python 3.8.2-final-0 -----------
-Name                              Stmts   Miss  Cover   Missing
----------------------------------------------------------------
-src/__init__.py                       0      0   100%
-src/cli.py                           20      3    85%   34-35, 43
-src/commands/__init__.py              0      0   100%
-src/commands/cmd_exporter.py         50      6    88%   37, 43, 48-50, 65
-src/commands/cmd_importer.py         66      2    97%   38, 80
-src/config/__init__.py                0      0   100%
-src/config/config.py                  3      0   100%
-src/services/__init__.py              0      0   100%
-src/services/svc_exporter.py         28      0   100%
-src/services/svc_importer.py         66      0   100%
-src/services/svc_triplestore.py      16      3    81%   37-40
----------------------------------------------------------------
-TOTAL                               249     14    94%
+Name                               Stmts   Miss  Cover   Missing
+----------------------------------------------------------------
+src/__init__.py                        0      0   100%
+src/cli.py                            20      3    85%   34-35, 43
+src/commands/__init__.py               0      0   100%
+src/commands/cmd_exporter.py          50      6    88%   37, 43, 48-50, 65
+src/commands/cmd_importer.py          66      2    97%   38, 80
+src/excel_config/__init__.py           0      0   100%
+src/excel_config/excel_config.py       3      0   100%
+src/services/__init__.py               0      0   100%
+src/services/svc_exporter.py          28      0   100%
+src/services/svc_importer.py          66      0   100%
+src/services/svc_triplestore.py       16      3    81%   37-40
+----------------------------------------------------------------
+TOTAL                                249     14    94%
 ```
 
 The user can also generate a coverage report in HTML and easily discover the missing statements. See [Appendix](#appendix) section for HTML coverage report example.

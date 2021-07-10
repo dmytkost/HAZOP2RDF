@@ -4,7 +4,7 @@ We implemented the Command Line Interface using Click[^1] package. It is highly 
 
 The following diagram shows the structure of the Command Line Interface. It contains Importer and Exporter interfaces, which use services. The services contain utilities needed for the interfaces to perform lower level actions.
 
-![Structure of Command Line Interface](plantuml/cli_structure.png){ width=70% }
+![Structure Command Line Interface](plantuml/cli_structure.png){ width=70% }
 
 Using the Command Line Interface users can interact with our software.
      
@@ -20,7 +20,7 @@ The main command of the Importer interface is cmd-build-hazop-graphs, which read
 
 The installation of a Fuseki server is optional. If the server is offline, the files cannot be uploaded to the server resulting in a warning message, which is displayed to the user.
 
-![Sequence diagram of Importer interface](plantuml/sequence_importer.png)
+![Sequence diagram Importer interface](plantuml/sequence_importer.png)
 
 ## Exporter interface
 
@@ -30,7 +30,7 @@ There are two main commands in the Exporter interface for the user to interact w
 
 As a result, the RDF graphs will be stored locally in the Excel format again.
 
-![Sequence diagram of Exporter interface](plantuml/sequence_exporter.png)
+![Sequence diagram Exporter interface](plantuml/sequence_exporter.png)
     
 ## Remarks
 
