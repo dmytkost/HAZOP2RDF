@@ -15,7 +15,7 @@ The RDF file for the Exporter can either be locally stored or on a Fuseki server
 
 Our findings show that our proposed computer-aided HAZOP system can effectively create RDF ontologies for 
 manually created HAZOP studies. These RDF ontologies, not only enable better storage for HAZOP studies, but 
-they are also machine readable, quarriable, and therefore allow for further automation.
+they are also machine readable, queryable, and therefore allow for further automation.
 
 
 **Keywords:**  HAZOP to RDF transformation, computer-aided  HAZOP  studies,  safety  engineering  ontologies, 
