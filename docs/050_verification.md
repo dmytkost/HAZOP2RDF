@@ -1,12 +1,12 @@
 # Verification
 
-The verification process includes checking of the code with the intent of finding failures. To make the program perform well, it should not contain critical errors and bugs. We designed a test pattern to verify the results of the program execution. This pattern is simple and extendable and covers the main parts of the program.
+The verification process aims to check the code with the intent of finding failures. To make the program perform well, it should not contain critical errors and bugs. We designed a test pattern to verify the results of the program execution. This pattern is simple and extendable and covers the main parts of the program.
 
-In the tests' directory of the project you can find a list of the following files:
+In the tests' directory of the project a list of the following files can be found:
 
-* `test_cli.py` - test command line interface initialisation
-* `test_cmd_importer.py` - test importer interface
-* `test_cmd_exporter.py` - test exporter interface
+* `test_cli.py` - test Command Line Interface initialisation
+* `test_cmd_importer.py` - test Importer interface
+* `test_cmd_exporter.py` - test Exporter interface
 
 The prime objective of the pattern is consistency. It allows us to apply this pattern to every test we want to implement.
 
@@ -39,4 +39,4 @@ src/services/svc_triplestore.py      16      3    81%   37-40
 TOTAL                               249     14    94%
 ```
 
-The user can although generate a coverage report in HTML format and easily discover the missing statements. See [Appendix](#appendix) section for HTML coverage report example.
+The user can also generate a coverage report in HTML and easily discover the missing statements. See [Appendix](#appendix) section for HTML coverage report example.

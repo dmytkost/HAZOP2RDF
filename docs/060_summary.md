@@ -21,13 +21,13 @@ detail and is focus of future research
 
 ## Future Work
 
-The application provides essential functionality for the HAZOP transformation. There is still a room for adoptions, tests and experiments have been left for the future work.
+The application provides essential functionality for the HAZOP transformation. There is still room left for future adoptions, tests and experiments.
 
 * The import of the HAZOP data can be improved and adopted with fixed constrains. It can be conditional statements, which parse different shapes of the incoming data and serve them for the RDF transformation.
 
-* Fuseki server offers HTTP access. Currently, we use a set of command line scripts[^2] to work with SPARQL. This API can be  although extended with Requests[^3] or SPARQLWrapper[^4] package to perform HTTP requests and internally customize them.
+* Fuseki servers offer HTTP access. Currently, we use a set of command line scripts[^2] to work with SPARQL. This API can be extended with the Requests[^3] or SPARQLWrapper[^4] package to perform HTTP requests internally and customise them.
 
-Obviously, other ideas and improvements have their place. We focused on the basic functionality, needed to transform the HAZOPs. To provide a richer experience for the client, the application can be extended dependent on the current environmental requirements.
+Other ideas and improvements have their place. We focused on the basic functionalities, needed to transform the HAZOPs. To provide a richer experience for the client, the application can be extended to meet their individual requirements.
 
 [^2]: Set of scripts: [SOH (SPARQL over HTTP)](https://jena.apache.org/documentation/fuseki2/soh.html)
 [^3]: Python package: [Requests](https://docs.python-requests.org/en/master/)
