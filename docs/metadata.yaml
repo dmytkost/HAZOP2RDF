@@ -4,7 +4,7 @@ author: [Dmytro Kostiuk, Marcus Rothhaupt, Artan Kabashi, Vincenz Forkel]
 date: "21.07.2021"
 subject: "HAZOP transformation"
 keywords: [HAZOP, RDF]
-subtitle: "A robust program to handle HAZOP studies"
+subtitle: "Software-Aided HAZOP: Handling HAZOP studies written in Excel"
 toc-own-page: true
 toc: true
 toc-depth: 2
