@@ -1,16 +1,16 @@
 # Concept
 
-## Program Component Design
+## Program component design
 
-We decided to structure our solution into separate elements. The  elements should have their own communication interfaces to perform certain actions with the incoming HAZOP data.
+We decided to structure our solution into separate components. The components should have their own communication interfaces to perform certain actions with the incoming HAZOP data.
 
-- The Importer should take the HAZOPs, validate them and convert them into the RDF format. Finally, the created RDF-Graph with all metadata is stored either locally or uploaded on the Fuseki server.
-- The Exporter should take the RDF-Graphs, parse the information and metadata, and store them in an Excel file.
-- The TripleStore module is a Fuseki server API. It stores HAZOP data in RDF-Triples. Acting as a central database for machine-readable, completed HAZOP-Analysis with easy accessibility.
+- **The Importer** should take the HAZOPs, validate them and convert them into the RDF format. Finally, the created RDF-Graph with all metadata is stored either locally or uploaded on the Fuseki server.
+- **The Exporter** should take the RDF-Graphs, parse the information and metadata, and store them in an Excel file.
+- **The TripleStore** is a Fuseki server API. It stores HAZOP data in RDF-Triples. Acting as a central database for machine-readable, completed HAZOP-Analysis with easy accessibility.
 
-We planned to integrate the modules to allow simultaneously operation. So, we can perform the complete cycle of HAZOP format conversion from and to Excel format. 
+We planned to integrate the components through dependency injection and open the functionality of the components to each other. So, we can perform the complete cycle of RDF transformation from and to the Excel format.
 
-![Program components](plantuml/program_components.png)
+![Program component integration](plantuml/program_components_integration.png)
 
 ## User interaction scenario
 
@@ -18,7 +18,7 @@ Through the communication with the program the user should have the opportunity 
 
 The concept allows the interaction with up to two interfaces, the importer and exporter.
 
-![User interaction](plantuml/user_interaction.png)
+![User interaction scenario](plantuml/user_interaction_scenario.png){ width=50% }
 
 ## Design Command Line Interface
 
@@ -26,4 +26,4 @@ We choose a Command Line Interface (CLI) as a fundament for our project. The CLI
 
 The diagram below shows the functionalities available to the user.
 
-![Design of Command Line Interface](plantuml/cli_design.png)
+![Design Command Line Interface](plantuml/cli_design.png)

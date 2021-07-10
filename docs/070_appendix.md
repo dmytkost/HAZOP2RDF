@@ -1,7 +1,5 @@
 # Appendix
 
-* turtle data, output ontology in excel, documentation
-
 ```{.ttl caption="HAZOP ontology in Turtle format"}
 @prefix blanknode: <http://www.hazop2rdf.de/hazop/blanknode/> .
 @prefix hazopcase: <http://www.hazop2rdf.de/hazop/hazopcase/> .

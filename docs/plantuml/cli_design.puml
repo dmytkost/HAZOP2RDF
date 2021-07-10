@@ -4,7 +4,7 @@ skinparam dpi 300
 skinparam defaultFontSize 12
 
 package "Command Line Interface" {
-  rectangle "- export HAZOPs from local directory\n- get dataset information from Fuseki server\n- export dataset from the Fuseki server" << Exporter >>
-  rectangle "- show list of Excel files\n- show list of HAZOPs\n- validate HAZOPs\n- build RDF Graphs\n- save to local directory\n- upload to Fuseki server" << Importer >>
+  rectangle "- export HAZOPs from local directory\n- get dataset information from Fuseki server\n- export dataset from Fuseki server" << Exporter >>
+  rectangle "- show list of Excel files\n- show list of HAZOPs\n- validate HAZOPs\n- build RDF-Graphs\n- save to local directory\n- upload to Fuseki server" << Importer >>
 }
 @enduml

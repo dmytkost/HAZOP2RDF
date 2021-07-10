@@ -11,7 +11,6 @@ toc-depth: 2
 colorlinks: true
 fontsize: 12pt
 lof: true
-lot: true
 lang: "en"
 titlepage: true
 titlepage-color: "00305d"

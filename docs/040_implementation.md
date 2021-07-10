@@ -4,7 +4,7 @@ We implemented the Command Line Interface using Click[^1] package. It is highly 
 
 The following diagram shows the structure of the Command Line Interface. It contains Importer and Exporter interfaces, which use services. The services contain utilities needed for the interfaces to perform lower level actions.
 
-![Structure of Command Line Interface](plantuml/cli_structure.png)
+![Structure of Command Line Interface](plantuml/cli_structure.png){ width=70% }
 
 Using the Command Line Interface users can interact with our software.
      
