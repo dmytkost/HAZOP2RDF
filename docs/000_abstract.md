@@ -1,14 +1,15 @@
 # Abstract
 
-This research paper describes a program that handles HAZOP data from an excel spreadsheet. 
-With the described program an easy to handle back-and-fourth conversion from HAZOP data in excel Format 
-to RDF format is possible. Furthermore a verification of the HAZOP data takes 
-place and can also be configured. 
+A Hazard and Operabilty (HAZOP) study is a widely used safety related document in the process industry.
+Designing such a document is a time and labor-intensive process. Because this document is hand crafted and written  
+human error can not be avoided. Computer-aided HAZOP systems can be used to support human experts.
 
-By analysing the needs of the faculty and working together with process control engineers we 
-developed this application. 
+This research paper describes a program which is able handle HAZOP data from an excel spreadsheet and thus provide 
+such a much needed computer-aided HAZOP system. With the described program an easy to handle back-and-fourth 
+conversion from HAZOP data(described in an excel spreadsheet) to RDF format is possible. Furthermore a 
+verification of the HAZOP data takes place and can also be configured. 
 
-Our solution features a command line interface to give users an easy access to our software.
+The program features a command line interface to give users an easy access to its software features.
 
 Using our Importer interface the user can import and validate incoming HAZOP data in 
 Excel format and generate RDF graphs from it. They can be locally stored or uploaded to a Fuseki server.
@@ -17,9 +18,8 @@ Using our Exporter interface the user can export RDF graphs containing HAZOP dat
 Excel format. The source for the Exporter interface can either be a locally stored RDF 
 file or an RDF file stored on a Fuseki server.
 
-The overall result of our findings is the largely increased compatibility of RDF files over excel files when
+The results of our findings show the largely increased compatibility of RDF files over excel files when
 storing, transforming or manipulating HAZOP studies.
 
-- needs to be more specific
-- what was done in this research and why?
-- what method was used?
+**Keywords:**  HAZOP to RDF transformation, computer-aided  HAZOP  studies,  safety  engineering  ontologies, 
+handling HAZOP studies, excel to rdf transformation, converting HAZOP studies
