@@ -1,3 +1,5 @@
+\newpage
+
 # Implementation
 
 We implemented the Command Line Interface using Click[^1] package. It is highly configurable and can build very complex applications. The ComplexCLI utility, we used in our project, combines multiple interfaces in a single Command Line Interface.

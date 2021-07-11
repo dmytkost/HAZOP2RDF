@@ -1,20 +1,22 @@
+\newpage
+
 # Verification
 
 The verification process aims to check the code with the intent of finding failures. To make the program perform well, it should not contain critical errors and bugs. We designed a test pattern to verify the results of the program execution. This pattern is simple and extendable and covers the main parts of the program.
 
 In the tests' directory of the project a list of the following files can be found:
 
-* `test_cli.py` - test Command Line Interface initialisation
-* `test_cmd_importer.py` - test Importer interface
-* `test_cmd_exporter.py` - test Exporter interface
+-   `test_cli.py` - test Command Line Interface initialisation
+-   `test_cmd_importer.py` - test Importer interface
+-   `test_cmd_exporter.py` - test Exporter interface
 
 The prime objective of the pattern is consistency. It allows us to apply this pattern to every test we want to implement.
 
 The pattern covers the following test cases:
 
-* execution errors
-* execution exceptions
-* output verification
+-   execution errors
+-   execution exceptions
+-   output verification
 
 The code coverage value varies around 94%. The value depends on the state of the Fuseki server. It increases if the Fuseki server is running and there is pre-uploaded data on the server.
 
