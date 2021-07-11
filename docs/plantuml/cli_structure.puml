@@ -12,6 +12,14 @@ interface CommandLineInterface << ComplexCLI >> {
 }
 
 namespace Commands {
+    interface Exporter {
+        __ Help page __
+        cli exporter
+        __ Commands __
+        cmd-export-graphs-from-fuseki-server
+        cmd-export-graphs-from-local-directory
+    }
+
     interface Importer {
         __ Help page __
         cli importer
@@ -20,27 +28,19 @@ namespace Commands {
         cmd-read-excel-data
         cmd-read-hazop-data
     }
-
-    interface Exporter {
-        __ Help page __
-        cli exporter
-        __ Commands __
-        cmd-export-graphs-from-fuseki-server
-        cmd-export-graphs-from-local-directory
-    }
 }
 
 namespace Services {
-    class Importer {
-        + read_excel_data()
-        + read_hazop_data()
-        + build_hazop_graph()
-    }
-
     class Exporter {
         + read_turtle_data()
         + parse_hazop_graph()
         + export_hazop_to_excel()
+    }
+
+    class Importer {
+        + read_excel_data()
+        + read_hazop_data()
+        + build_hazop_graph()
     }
 
     class TripleStore {
@@ -50,12 +50,12 @@ namespace Services {
     }
 }
 
-CommandLineInterface --> Commands.Importer
 CommandLineInterface --> Commands.Exporter
-
-Commands.Importer --> Services.Importer
-Commands.Importer --> Services.TripleStore
+CommandLineInterface --> Commands.Importer
 
 Commands.Exporter --> Services.Exporter
 Commands.Exporter --> Services.TripleStore
+
+Commands.Importer --> Services.Importer
+Commands.Importer --> Services.TripleStore
 @enduml
