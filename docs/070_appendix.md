@@ -35,8 +35,8 @@ hazopcase:1 blanknode:cause [ predicate:description "Zugeführtes Prozessmedium 
 
 ```
 
+![Example HAZOP Case RDF graph](images/example_hazop_case_graph.png)
+
 ![Graph ontology in Excel](images/graph_ontology_excel.png)
 
 ![HTML coverage report example](images/html_coverage_report.png)
-
-![Example HAZOP Case RDF graph](images/example_hazop_case_graph.png)
