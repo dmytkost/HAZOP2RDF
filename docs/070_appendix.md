@@ -62,3 +62,5 @@ hazopcase:10 blanknode:cause [ predicate:description "reines Lösungsmittel wird
 ![Graph ontology in Excel](images/graph_ontology_excel.png)
 
 ![HTML coverage report example](images/html_coverage_report.png)
+
+![Example RDF HAZOP graph](images/example_hazop_turtle_to_png.png)
