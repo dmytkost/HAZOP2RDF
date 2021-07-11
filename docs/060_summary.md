@@ -11,10 +11,10 @@ The result are enriched HAZOP studies that are
 designed to be conducive for human interpretation and also
 support machine-readability
 The HAZOP-data was stored as Resource Description Framework (RDF). An import and export was implemented to support the original
-documentation of the used HAZOPs
+documentation of the used HAZOP studies
   
 The vision would be to support humans in the decision-making in such a way
-that, based on HAZOPs from experts, even novices could also
+that, based on HAZOP studies from experts, even novices could also
 decide whether a plant is safe or not. Since safety scenarios
 are always critical, this aspect needs to be analysed in more
 detail and is focus of future research
