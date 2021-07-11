@@ -23,11 +23,11 @@ class Service:
 
         return excel_xlsb_list + excel_xlsx_list
 
-    def get_hazop_dataframe(self, args):
-        """Gets HAZOP dataframe
+    def read_hazop_data(self, args):
+        """Reads HAZOP from Excel
 
         Args:
-            args (tuple): excel reading parameters
+            args (tuple): reading parameters
 
         Returns:
             pandas.DataFrame: HAZOP dataframe
@@ -48,7 +48,7 @@ class Service:
             df (pandas.DataFrame): HAZOP dataframe
 
         Returns:
-            str: Graph in string format
+            str: graph in string
         """
         uri = "http://www.hazop2rdf.de/hazop/"
         g = Graph()

@@ -65,7 +65,7 @@ def read_hazop_data(ctx):
                 config.excel_config[suffix]["header"],
                 config.excel_config[suffix]["sheet_name"])
 
-        df = ctx.obj.svc_importer.get_hazop_dataframe(args)
+        df = ctx.obj.svc_importer.read_hazop_data(args)
         df_is_valid = df.columns.tolist() == config.valid_header
 
         if not bool(df_is_valid):

@@ -10,24 +10,24 @@ class Service:
     """
 
     def read_turtle_data(self):
-        """Reads turtle data from data directory
+        """Reads RDF data in turtle format
 
         Returns:
-            list: List of turtle data
+            list: list of files in turtle format
         """
         path = os.path.join("data", "turtle", "*.ttl")
         turtle_data_list = glob.glob(path)
 
         return turtle_data_list
 
-    def get_graph_data(self, graph):
-        """Gets graph data
+    def parse_hazop_graph(self, graph):
+        """Parses graph data
 
         Args:
-            graph (str): Graph in string format
+            graph (str): HAZOP graph in string
 
         Returns:
-            list: Graph data as list
+            list: parsed graph data
         """
         g = Graph()
         g.parse(data=graph, format="turtle")
@@ -42,10 +42,10 @@ class Service:
 
         return data_list
 
-    def export_graph_to_excel(self, args):
-        """Exports graph to Excel
+    def export_hazop_to_excel(self, args):
+        """Exports HAZOP to Excel
 
-        Workflow:
+        Pipeline:
             * replace all NaNs to blank cells
             * convert HazopCase type to int32
             * sort by HazopCase, reset index
@@ -53,7 +53,7 @@ class Service:
             * export graph to Excel
 
         Args:
-            args (tuple): graph data, header and filename
+            args (tuple): graph, header and filename
         """
         df = pd.DataFrame(args[0])
         df.replace(r"\bnan\b", "", regex=True, inplace=True)
