@@ -5,10 +5,7 @@ Our software lays the groundwork for our vision of a modular HAZOP for a modular
 The user is provided with a Command Line Interface that enables the input validation of Excel HAZOP data and the lossless back-and-forth transformation of Excel and RDF formats.
 A possible storage solution, in the form of a Fuseki server, is also provided. Alternatively, all work can be conducted in the local directory.
 
-
-## Future Work
-
-The application provides essential functionality for the HAZOP transformation. There is still room left for future adoptions, tests and experiments.
+The application provides the essential functionality for the HAZOP transformation. There is still room left for future adoptions, tests and experiments.
 
 * The import of the HAZOP data can be improved and adopted with fixed constrains. It can be conditional statements, which parse different shapes of the incoming data and serve them for the RDF transformation.
 
