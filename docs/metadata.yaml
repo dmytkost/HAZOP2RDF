@@ -8,6 +8,7 @@ subtitle: "Software-Aided HAZOP: Handling HAZOP studies written in Excel"
 toc-own-page: true
 toc: true
 toc-depth: 2
+link-citations: true
 colorlinks: true
 fontsize: 12pt
 lof: true
