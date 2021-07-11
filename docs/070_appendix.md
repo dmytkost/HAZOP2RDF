@@ -1,6 +1,6 @@
 # Appendix
 
-```{.ttl caption="HAZOP ontology in Turtle format"}
+```{.ttl caption="HAZOP ontology in turtle format"}
 @prefix blanknode: <http://www.hazop2rdf.de/hazop/blanknode/> .
 @prefix hazopcase: <http://www.hazop2rdf.de/hazop/hazopcase/> .
 @prefix predicate: <http://www.hazop2rdf.de/hazop/predicate/> .

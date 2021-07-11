@@ -2,20 +2,60 @@
 skinparam monochrome true
 skinparam dpi 300
 skinparam defaultFontSize 12
-skinparam componentStyle rectangle
 
-component "Command Line Interface" as CLI
-component "Importer" as ImporterInterface << Interface >>
-component "Exporter" as ExporterInterface << Interface >>
-component "Importer" as ImporterService << Service >>
-component "Exporter" as ExporterService << Service >>
-component "TripleStore" as TripleStoreService << Service >>
+interface CommandLineInterface << ComplexCLI >> {
+    __ Help page __
+    cli
+    __ Commands __
+    importer
+    exporter
+}
 
-CLI --> ImporterInterface
-CLI --> ExporterInterface
+namespace Commands {
+    interface Importer {
+        __ Help page __
+        cli importer
+        __ Commands __
+        cmd-build-hazop-graphs
+        cmd-read-excel-data
+        cmd-read-hazop-data
+    }
 
-ImporterInterface ..> ImporterService
-ImporterInterface ..> TripleStoreService
-ExporterInterface ..> ExporterService
-ExporterInterface ..> TripleStoreService
+    interface Exporter {
+        __ Help page __
+        cli exporter
+        __ Commands __
+        cmd-export-graphs-from-fuseki-server
+        cmd-export-graphs-from-local-directory
+    }
+}
+
+namespace Services {
+    class Importer {
+        + read_excel_data()
+        + read_hazop_data()
+        + build_hazop_graph()
+    }
+
+    class Exporter {
+        + read_turtle_data()
+        + parse_hazop_graph()
+        + export_hazop_to_excel()
+    }
+
+    class TripleStore {
+        + get_dataset_information()
+        + get_hazop_graph()
+        + upload_hazop_graph()
+    }
+}
+
+CommandLineInterface --> Commands.Importer
+CommandLineInterface --> Commands.Exporter
+
+Commands.Importer --> Services.Importer
+Commands.Importer --> Services.TripleStore
+
+Commands.Exporter --> Services.Exporter
+Commands.Exporter --> Services.TripleStore
 @enduml
