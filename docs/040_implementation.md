@@ -14,15 +14,19 @@ Using our Importer interface the user can import and validate incoming HAZOP dat
 
 Using our Exporter interface the user can export RDF graphs containing HAZOP data to the Excel format. The source for the Exporter interface can either be a locally stored RDF file or a RDF file stored on a Fuseki server.
 
-## Importer interface
+\newpage
 
-![Sequence diagram Importer interface](plantuml/sequence_importer.png)
+## Importer interface
 
 The main purpose of the Importer interface is to build an RDF graph from incoming Excel data. To build an RDF graph, we carefully read the incoming HAZOP data and validate it. To validate the data correctly we implemented a config file, which stores all the metadata needed to describe the importing and validation processes.
 
 The main command of the Importer interface is cmd-build-hazop-graphs, which reads the HAZOP data stored in a local directory and transforms it to an RDF graph. The graph can then be stored locally or uploaded to a Fuseki server. The two other commands cmd-read-excel-data and cmd-read-hazop-data can be used to check the local directory for the existing data.
 
 The installation of a Fuseki server is optional. If the server is offline, the files cannot be uploaded to the server resulting in a warning message, which is displayed to the user.
+
+![Sequence diagram Importer interface](plantuml/sequence_importer.png)
+
+\newpage
 
 ## Exporter interface
 
