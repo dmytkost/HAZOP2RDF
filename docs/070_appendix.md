@@ -63,4 +63,4 @@ hazopcase:10 blanknode:cause [ predicate:description "reines Lösungsmittel wird
 
 ![HTML coverage report example](images/html_coverage_report.png)
 
-![Example RDF HAZOP graph](images/example_hazop_turtle_to_png.png)
+![Example HAZOP Case RDF graph](images/example_hazop_case_graph.png)
