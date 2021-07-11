@@ -1,23 +1,10 @@
 # Summary
-  
-With increasing complexity of systems, the
-amount of generated data increases proportionally and easily
-exceeds the human capabilities for interpretation.
 
-Therefore, we propose an approach for data compression and
-models for correlations of causes, deviations and consequences.
+Our software lays the groundwork for our vision of a modular HAZOP for a modular plant. It is easily integratable into the traditional HAZOP workflow, by allowing the engineering team to continue conducting the HAZOP studies in Excel. However, it solves the many follow up problems associated with that format. The user is able to overcome the storage and reusability issues, while also having his HAZOP studies available in a machine readable format. The queriable nature of the RDF format allows for the seperate future building of a HAZOP-to-HAZOP interface.
 
-The result are enriched HAZOP studies that are
-designed to be conducive for human interpretation and also
-support machine-readability
-The HAZOP-data was stored as Resource Description Framework (RDF). An import and export was implemented to support the original
-documentation of the used HAZOP studies
-  
-The vision would be to support humans in the decision-making in such a way
-that, based on HAZOP studies from experts, even novices could also
-decide whether a plant is safe or not. Since safety scenarios
-are always critical, this aspect needs to be analysed in more
-detail and is focus of future research
+The user is provided with a Command Line Interface that enables the input validation of Excel HAZOP data and the lossless back-and-forth transformation of Excel and RDF formats.
+A possible storage solution, in the form of a Fuseki server, is also provided. Alternatively, all work can be conducted in the local directory.
+
 
 ## Future Work
 
@@ -28,6 +15,8 @@ The application provides essential functionality for the HAZOP transformation. T
 * Fuseki servers offer HTTP access. Currently, we use a set of command line scripts[^2] to work with SPARQL. This API can be extended with the Requests[^3] or SPARQLWrapper[^4] package to perform HTTP requests internally and customise them.
 
 Other ideas and improvements have their place. We focused on the basic functionalities, needed to transform the HAZOPs. To provide a richer experience for the client, the application can be extended to meet their individual requirements.
+
+With HAZOP data now readily available in RDF graphs, working on a HAZOP-to-HAZOP interface can begin.
 
 [^2]: Set of scripts: [SOH (SPARQL over HTTP)](https://jena.apache.org/documentation/fuseki2/soh.html)
 [^3]: Python package: [Requests](https://docs.python-requests.org/en/master/)
