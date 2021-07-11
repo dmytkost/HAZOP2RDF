@@ -12,6 +12,7 @@ link-citations: true
 colorlinks: true
 fontsize: 12pt
 lof: true
+lol: true
 lang: "en"
 titlepage: true
 titlepage-color: "00305d"

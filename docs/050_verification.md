@@ -22,7 +22,7 @@ The code coverage value varies around 94%. The value depends on the state of the
 
 The coverage report below shows the detailed information about the tests results.
 
-```{.shell caption="Coverage report"}
+```{.shell caption="Test coverage report"}
 ---------- coverage: platform darwin, python 3.8.2-final-0 -----------
 Name                               Stmts   Miss  Cover   Missing
 ----------------------------------------------------------------
