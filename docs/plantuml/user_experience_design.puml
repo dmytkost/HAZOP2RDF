@@ -1,0 +1,39 @@
+@startuml
+skinparam monochrome true
+skinparam dpi 150
+skinparam defaultFontSize 14
+
+left to right direction
+
+rectangle QuestionBox as "
+* //What is the motivation to use the program?//
+* //What functionality we can provide?//
+* //What is the access point?//"
+
+actor User
+
+package HAZOP2RDF {
+    usecase UserAction as "
+    action <&arrow-thick-right> function call"
+
+    usecase Importer << Importer >> as "
+    Interface that provides **Importer** functionality\n
+    __ ==== Functionality __
+    \n<&caret-right>import Excel files
+    <&caret-right>read HAZOPs
+    <&caret-right>save HAZOPs"
+
+    usecase Exporter << Exporter >> as "
+    Interface that provides **Exporter** functionality\n
+    __ ==== Functionality __
+    \n<&caret-right>show avalaible HAZOP graphs
+    <&caret-right>export HAZOP graphs in Excel"
+}
+
+QuestionBox -[hidden]up-> User
+
+User --> UserAction
+UserAction -- Importer
+UserAction -- Exporter
+User <.. HAZOP2RDF
+@enduml

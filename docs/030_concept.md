@@ -4,7 +4,7 @@
 
 ## Program component design
 
-We decided to structure our solution into separate components. The components should have their own communication interfaces to perform certain actions with the incoming HAZOP data.
+We decided to structure our solution into separate components. The components should contain utilities to perform certain actions with the incoming HAZOP data.
 
 -   **The Importer** should take the HAZOPs, validate them and convert them into the RDF format. Finally, the created RDF-Graph with all metadata is stored either locally or uploaded on the Fuseki server.
 -   **The Exporter** should take the RDF-Graphs, parse the information and metadata, and store them in an Excel file.
@@ -14,18 +14,20 @@ We planned to integrate the components through dependency injection and open the
 
 ![Program component integration](plantuml/program_components_integration.png)
 
-## User interaction scenario
+## User experience design
 
 Through the communication with the program the user should have the opportunity to load, read and store the HAZOPs in either format.
 
 The concept allows the interaction with up to two interfaces, the importer and exporter.
 
-![User interaction scenario](plantuml/user_interaction_scenario.png){ width=50% }
+On the following diagram we show the concept of the user interaction with the program. Using a program interface the full cycle of HAZOP2RDF transformation should be accessible to the user.
 
-## Design Command Line Interface
+![User experience design](plantuml/user_experience_design.png)
 
-We choose a Command Line Interface (CLI) as a fundament for our project. The CLI should be able to provide the complete functionality spectrum of the importer and exporter to the user.
+## Command Line Interface design 
 
-The diagram below shows the functionalities available to the user.
+We choose a Command Line Interface (CLI) as a fundament for our project. The CLI should be able to provide the complete spectrum of the importer and exporter functionality to the user.
 
-![Design Command Line Interface](plantuml/cli_design.png)
+The diagram below shows the main features of the Command Line Interface.
+
+![Command Line Interface design](plantuml/cli_design.png)
