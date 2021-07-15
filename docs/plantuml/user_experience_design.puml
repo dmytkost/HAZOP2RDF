@@ -20,8 +20,9 @@ package HAZOP2RDF {
     Interface that provides **Importer** functionality\n
     __ ==== Functionality __
     \n<&caret-right>import Excel files
-    <&caret-right>read HAZOPs
-    <&caret-right>save HAZOPs"
+    <&caret-right>read and validate HAZOPs
+    <&caret-right>transform to RDF
+    <&caret-right>save graphs"
 
     usecase Exporter << Exporter >> as "
     Interface that provides **Exporter** functionality\n
