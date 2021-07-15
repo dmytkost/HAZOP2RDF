@@ -2,7 +2,7 @@
 
 # Implementation
 
-We implemented the Command Line Interface using Click[^1] package. It is highly configurable and can build very complex applications. The ComplexCLI utility, we used in our project, combines multiple interfaces in a single Command Line Interface.
+We implemented the Command Line Interface using Click[^Click] package. It is highly configurable and can build very complex applications. The ComplexCLI utility, we used in our project, combines multiple interfaces in a single Command Line Interface.
 
 The following diagram shows the structure of the Command Line Interface. It contains Importer and Exporter interfaces, which use services. The services contain utilities needed for the interfaces to perform lower level actions.
 
@@ -38,4 +38,4 @@ As a result, the RDF graphs will be stored locally in the Excel format again.
 
 We developed the HAZOP2RDF project with version control on GitHub. The program is available for Windows and macOS. We also included a detailed installation guide in the documentation.
 
-[^1]: Python package: [Click](https://click.palletsprojects.com/en/8.0.x/)
+[^Click]: Python package: [Click](https://click.palletsprojects.com/en/8.0.x/)
