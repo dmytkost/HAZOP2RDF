@@ -6,7 +6,7 @@ Hazard and Operability (HAZOP) studies are conducted to identify and assess haza
 
 For over 30 years, different research groups proposed rule-based expert systems or graph-based approaches in order to automate HAZOP studies, see @Single2019_State_of_research. Like @Rodriguez2019_An_Ontology our software makes use of a promising ontology-based technology.
 
-Being able to convert excel spreadsheets to the RDF format is a big time saver for engineers working with HAZOP studies. By analyzing the structure of the HAZOP files, conclusions can be drawn about the risks of a plant.
+Being able to convert Excel spreadsheets to the RDF format is a big time saver for engineers working with HAZOP studies. Within the HAZOP analysis, information about risks of a plant are stored and can be made accessible for further conclusions.
 
 In the following parts of this paper, we show the capabilities of our software, how we solved the interfacing-problem of traditional HAZOP formats and how the different commands of our command line interface can be used to ease the process of handling HAZOP studies.
 
