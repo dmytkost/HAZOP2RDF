@@ -38,16 +38,16 @@ def export_graphs_from_fuseki_server(ctx):
 
     response_dict = json.loads(response)
 
-    list_of_graphs = []
-    for graph in response_dict["results"]["bindings"]:
-        list_of_graphs.append(graph["g"]["value"])
+    graphnames = []
+    for bindings in response_dict["results"]["bindings"]:
+        graphnames.append(bindings["g"]["value"])
 
-    if not bool(list_of_graphs):
+    if not bool(graphnames):
         raise click.ClickException("There is no data on Fuseki server")
 
-    for filename in list_of_graphs:
-        graph = ctx.obj.svc_triplestore.get_hazop_graph(filename)
-        save_graph_in_data_excel_directory(ctx, graph, filename)
+    for graphname in graphnames:
+        graph = ctx.obj.svc_triplestore.get_hazop_graph(graphname)
+        save_graph_in_data_excel_directory(ctx, graph, graphname)
 
 
 def export_graphs_from_local_directory(ctx):
@@ -59,35 +59,35 @@ def export_graphs_from_local_directory(ctx):
     Raises:
         click.ClickException: If no available data in local directory
     """
-    list_of_graphs = ctx.obj.svc_exporter.read_turtle_data()
+    graphpaths = ctx.obj.svc_exporter.read_turtle_data()
 
-    if not bool(list_of_graphs):
+    if not bool(graphpaths):
         raise click.ClickException("There is no data in local directory")
 
-    for filepath in list_of_graphs:
-        with open(filepath, "r") as f:
+    for graphpath in graphpaths:
+        with open(graphpath, "r") as f:
             graph = f.read()
 
-        filename = os.path.split(filepath)[1]
-        save_graph_in_data_excel_directory(ctx, graph, filename)
+        graphname = os.path.split(graphpath)[1]
+        save_graph_in_data_excel_directory(ctx, graph, graphname)
 
 
-def save_graph_in_data_excel_directory(ctx, graph, filename):
+def save_graph_in_data_excel_directory(ctx, graph, graphname):
     """Saves graphs in data directory
 
     Args:
         ctx (Context): Context object
         graph (str): Graph in string format
-        filename (str): Name of the file
+        graphname (str): Name of the graph
     """
-    filename = filename.replace(".ttl", ".xlsx")
+    graphname = graphname.replace(".ttl", ".xlsx")
 
     args = (ctx.obj.svc_exporter.parse_hazop_graph(graph),
             config.output_header,
-            filename)
+            graphname)
 
     ctx.obj.svc_exporter.export_hazop_to_excel(args)
-    click.echo("Saved file in data excel directory: {}".format(filename))
+    click.echo("Saved file in data excel directory: {}".format(graphname))
 
 
 @click.group()

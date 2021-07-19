@@ -15,10 +15,10 @@ class Service:
         Returns:
             list: list of files in turtle format
         """
-        path = os.path.join("data", "turtle", "*.ttl")
-        turtle_data_list = glob.glob(path)
+        turtle_path = os.path.join("data", "turtle", "*.ttl")
+        turtle_filepaths = glob.glob(turtle_path)
 
-        return turtle_data_list
+        return turtle_filepaths
 
     def parse_hazop_graph(self, graph):
         """Parses graph data
@@ -36,11 +36,11 @@ class Service:
         with open(query_path, "r") as f:
             qres = g.query(f.read())
 
-        data_list = []
+        graph_data = []
         for row in qres:
-            data_list.append(row)
+            graph_data.append(row)
 
-        return data_list
+        return graph_data
 
     def export_hazop_to_excel(self, args):
         """Exports HAZOP to Excel
