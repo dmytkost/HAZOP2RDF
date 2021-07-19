@@ -2,7 +2,7 @@
 
 # Summary
 
-Our software lays the groundwork for our vision of a modular HAZOP for a modular plant. It is easily integratable into the traditional HAZOP workflow, by allowing the engineering team to continue conducting the HAZOP studies in Excel. However, it solves the many follow up problems associated with that format. The user is able to overcome the storage and reusability issues, while also having his HAZOP studies available in a machine readable format. The queriable nature of the RDF format allows for the seperate future building of a HAZOP-to-HAZOP interface.
+Our software lays the groundwork for our vision of a modular HAZOP for a modular plant. It is easily integrable into the traditional HAZOP workflow, by allowing the engineering team to continue conducting the HAZOP studies in Excel. However, it solves the many follow up problems associated with that format. The user is able to overcome the storage and reusability issues, while also having his HAZOP studies available in a machine-readable format. The queryable nature of the RDF format allows for the separate future building of a HAZOP-to-HAZOP interface.
 
 The user is provided with a Command Line Interface that enables the input validation of Excel HAZOP data and the lossless back-and-forth transformation of Excel and RDF formats.
 A possible storage solution, in the form of a Fuseki server, is also provided. Alternatively, all work can be conducted in the local directory.
