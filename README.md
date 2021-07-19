@@ -9,7 +9,8 @@ The project HAZOP2RDF is part of the course Projektierung von Automatisierungssy
 We implemented a command line interface (CLI) using ComplexCLI, which means CLI in CLI to combine all interfaces in a single interface.
 
 # How to install
-
+1. `install git for Windows https://git-scm.com/downloads`
+2. `install python for Windows https://www.python.org/downloads/`
 ## Windows
 
 1. `git clone https://github.com/DimakDev/hazop.git`
