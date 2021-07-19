@@ -11,8 +11,10 @@ We implemented a command line interface (CLI) using ComplexCLI, which means CLI 
 # How to install
 
 ## Prerequisites
-- git : [Download](https://git-scm.com/downloads)
-- python :  [Download](https://www.python.org/downloads/)
+
+- Git 2.30+
+- Python 3.8+
+- Apache Jena Fuseki 4.1+
 
 ## Windows
 
