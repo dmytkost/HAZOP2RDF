@@ -16,8 +16,8 @@ We implemented a command line interface (CLI) using ComplexCLI, which means CLI 
 1. `cd hazop`
 1. `python -m venv .\venv`
 1. `venv\Scripts\activate`
-1. `pip install --upgrade pip`
-1. `pip install .`
+1. `python -m pip install --upgrade pip`
+1. `python -m pip install .`
 1. `venv\Scripts\cli [cmd]` See [API](#API) section for commands to run
 1. `pytest` See [Tests](#Tests) section for commands to run
 1. `deactivate`
