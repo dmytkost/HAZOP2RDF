@@ -15,13 +15,13 @@ class Service:
         Returns:
             list: list of files with .xlsb and .xlsx extensions
         """
-        xlsb_list_path = os.path.join("data", "*.xlsb")
-        xlsx_list_path = os.path.join("data", "*.xlsx")
+        xlsb_path = os.path.join("data", "*.xlsb")
+        xlsx_path = os.path.join("data", "*.xlsx")
 
-        excel_xlsb_list = glob.glob(xlsb_list_path)
-        excel_xlsx_list = glob.glob(xlsx_list_path)
+        xlsb_filepaths = glob.glob(xlsb_path)
+        xlsx_filepaths = glob.glob(xlsx_path)
 
-        return excel_xlsb_list + excel_xlsx_list
+        return xlsb_filepaths + xlsx_filepaths
 
     def read_hazop_data(self, args):
         """Reads HAZOP from Excel
