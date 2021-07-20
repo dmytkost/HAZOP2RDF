@@ -12,7 +12,7 @@ We decided to structure our solution into separate components. The components sh
 
 We planned to integrate the components through dependency injection and open the functionality of the components to each other. So, we can perform the complete cycle of RDF transformation from and to the Excel format.
 
-![Program component integration](plantuml/program_components_integration.png)
+![Program component integration](plantuml/program_components_integration.png){ width=80% }
 
 ## User experience design
 
@@ -22,7 +22,7 @@ The concept allows the interaction with up to two interfaces, the importer and e
 
 On the following diagram we show the concept of the user interaction with the program. Using a program interface the full cycle of HAZOP2RDF transformation should be accessible to the user.
 
-![User experience design](plantuml/user_experience_design.png)
+![User experience design](plantuml/user_experience_design.png){ width=80% }
 
 ## Command Line Interface design 
 
@@ -30,4 +30,4 @@ We choose a Command Line Interface (CLI) as a fundament for our project. The CLI
 
 The diagram below shows the main features of the Command Line Interface.
 
-![Command Line Interface design](plantuml/cli_design.png)
+![Command Line Interface design](plantuml/cli_design.png){ width=80% }

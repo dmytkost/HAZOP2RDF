@@ -2,11 +2,11 @@
 
 # Implementation
 
-We implemented the Command Line Interface using Click[^Click] package. It is highly configurable and can build very complex applications. The ComplexCLI utility, we used in our project, combines multiple interfaces in a single Command Line Interface.
+We implemented the Command Line Interface using the Click[^Click] package. It is highly configurable and can build very complex applications. The ComplexCLI utility, we used in our project, combines multiple interfaces in a single Command Line Interface.
 
 The following diagram shows the structure of the Command Line Interface. It contains Importer and Exporter interfaces, which use services. The services contain utilities needed for the interfaces to perform lower level actions.
 
-![Structure Command Line Interface](plantuml/cli_structure.png)
+![Structure Command Line Interface](plantuml/cli_structure.png){ width=60% }
 
 Using the Command Line Interface users can interact with our software.
 
@@ -22,7 +22,7 @@ The main command of the Importer interface is `cmd-build-hazop-graphs`, which re
 
 The installation of a Fuseki server is optional. If the server is offline, the files cannot be uploaded to the server resulting in a warning message, which is displayed to the user.
 
-![Sequence diagram Importer interface](plantuml/sequence_importer.png)
+![Sequence diagram Importer interface](plantuml/sequence_importer.png){ width=70% }
 
 ## Exporter interface
 
@@ -32,7 +32,7 @@ There are two main commands in the Exporter interface for the user to interact w
 
 As a result, the RDF graphs will be stored locally in the Excel format again.
 
-![Sequence diagram Exporter interface](plantuml/sequence_exporter.png)
+![Sequence diagram Exporter interface](plantuml/sequence_exporter.png){ width=70% }
 
 ## Remarks
 
