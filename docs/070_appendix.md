@@ -2,7 +2,7 @@
 
 # Appendix
 
-```{.ttl caption="HAZOP RDF ontology in Turtle format"}
+```{.ttl caption="HAZOP RDF ontology in Turtle format (short version)"}
 @prefix blanknode: <http://www.hazop2rdf.de/hazop/blanknode/> .
 @prefix hazopcase: <http://www.hazop2rdf.de/hazop/hazopcase/> .
 @prefix predicate: <http://www.hazop2rdf.de/hazop/predicate/> .
@@ -35,7 +35,7 @@ hazopcase:1 blanknode:cause [ predicate:description "Zugeführtes Prozessmedium 
 
 ```
 
-![Example HAZOP case RDF graph](images/example_hazop_case_graph.png)
+![HAZOP RDF graph (short version)](images/example_hazop_case_graph.png)
 
 ![Graph ontology in Excel](images/graph_ontology_excel.png)
 
