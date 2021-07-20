@@ -18,10 +18,6 @@ The pattern covers the following test cases:
 -   execution exceptions
 -   output verification
 
-The code coverage value varies around 94%. The value depends on the state of the Fuseki server. It increases if the Fuseki server is running and there is pre-uploaded data on the server.
-
-The coverage report below shows the detailed information about the tests results.
-
 ```{.shell caption="Test coverage report"}
 ---------- coverage: platform darwin, python 3.8.2-final-0 -----------
 Name                               Stmts   Miss  Cover   Missing
@@ -40,5 +36,9 @@ src/services/svc_triplestore.py       16      3    81%   37-40
 ----------------------------------------------------------------
 TOTAL                                249     14    94%
 ```
+
+The coverage report above shows the detailed information about the tests results.
+
+The code coverage value varies around 94%. The value depends on the state of the Fuseki server. It increases if the Fuseki server is running and there is pre-uploaded data on the server.
 
 The user can also generate a coverage report in HTML and easily discover the missing statements. See [Appendix](#appendix) section for HTML coverage report example.
