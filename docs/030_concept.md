@@ -14,7 +14,7 @@ We planned to integrate the components through dependency injection and open the
 
 ![Program component integration](plantuml/program_components_integration.png){ width=80% }
 
-## User experience design
+## User Experience design
 
 Through the communication with the program the user should have the opportunity to load, read and store the HAZOPs in either format.
 
@@ -22,7 +22,7 @@ The concept allows the interaction with up to two interfaces, the importer and e
 
 On the following diagram we show the concept of the user interaction with the program. Using a program interface the full cycle of HAZOP2RDF transformation should be accessible to the user.
 
-![User experience design](plantuml/user_experience_design.png){ width=80% }
+![User Experience design](plantuml/user_experience_design.png){ width=80% }
 
 ## Command Line Interface design 
 
