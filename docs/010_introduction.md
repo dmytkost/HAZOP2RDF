@@ -2,7 +2,7 @@
 
 # Introduction
 
-Hazard and Operability (HAZOP) studies are conducted to identify and assess hazards and malfunctions that arise from processes and process plants. The HAZOP methodology is a human-centered and moderated technique and it is conducted by an interdisciplinary team of experts. (@Single2020_Computer_Aided_Hazop)
+Hazard and Operability (HAZOP) studies are conducted to identify and assess hazards and malfunctions that arise from processes and process plants. The HAZOP methodology is a human-centered and moderated technique and it is conducted by an interdisciplinary team of experts. @Single2020_Computer_Aided_Hazop
 
 For over 30 years, different research groups proposed rule-based expert systems or graph-based approaches in order to automate HAZOP studies, see @Single2019_State_of_research. Like @Rodriguez2019_An_Ontology our software makes use of a promising ontology-based technology.
 
