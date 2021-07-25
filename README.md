@@ -18,7 +18,7 @@ We implemented a command line interface (CLI) using ComplexCLI, which means CLI 
 
 ## Windows
 
-1. `git clone https://github.com/DimakDev/hazop.git`
+1. `git clone https://github.com/DimakDev/HAZOP2RDF.git`
 1. `cd hazop`
 1. `python -m venv .\venv`
 1. `venv\Scripts\activate`
@@ -30,7 +30,7 @@ We implemented a command line interface (CLI) using ComplexCLI, which means CLI 
 
 ## macOS
 
-1. `git clone https://github.com/DimakDev/hazop.git`
+1. `git clone https://github.com/DimakDev/HAZOP2RDF.git`
 1. `cd hazop`
 1. `python3 -m venv ./venv`
 1. `source venv/bin/activate`
